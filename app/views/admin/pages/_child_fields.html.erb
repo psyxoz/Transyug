@@ -1,0 +1,8 @@
+<div class='fields'>
+  <i class="icon-move" style="margin-right: 5px; cursor: pointer"></i>
+  <%= f.text_field :title, :placeholder => 'Подкатегория' %>
+  <%= f.text_field :content, :placeholder => 'Содержание', :style=>'width: 410px' %>
+  <%= f.hidden_field :locale, :value => lang %>
+  <%= f.hidden_field :sort_id %>
+  <%= link_to_remove_fields "Удалить", f %>
+</div>

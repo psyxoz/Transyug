@@ -1,0 +1,10 @@
+<div class="control-group">
+  <%= label_tag 'Данные', nil, :class => 'control-label' %>
+  <div class="controls" style="padding-right: 15px">
+    <%= f.fields_for :options do |option| %>
+      <% next if option.object.locale != lang %>
+      <%= render :partial => "option_fields", :locals => {:f => option, :lang => lang} %>
+    <% end %>
+    <%= link_to_add_fields "Добавить", f, :options, nil, '', lang %>
+  </div>
+</div>

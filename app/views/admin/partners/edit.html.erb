@@ -1,0 +1,10 @@
+<h2>Партнеры:</h2>
+
+<div class="block">
+  <%= form_for(@partner, :url => admin_partner_path(@partner)) do |form| %>
+    <fieldset class="clearfix form-horizontal">
+      <legend>Редактирование партнера</legend>
+      <%= render 'form', :f => form %>
+    </fieldset>
+  <% end %>
+</div>

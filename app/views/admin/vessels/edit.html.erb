@@ -1,0 +1,10 @@
+<h2>Флот:</h2>
+
+<div class="block">
+  <%= form_for(@vessel, :url => admin_vessel_path(@vessel)) do |form| %>
+    <fieldset class="clearfix form-horizontal">
+      <legend>Редактирование судна</legend>
+      <%= render 'form', :f => form %>
+    </fieldset>
+  <% end %>
+</div>

@@ -1,0 +1,12 @@
+<div class='fields parent_fields well'>
+  <i class="icon-move" style="margin-right: 5px; cursor: pointer"></i>
+  <%= f.text_field :title, :placeholder => 'Категория' %>
+  <%= f.hidden_field :locale, :value => lang %>
+  <%= f.hidden_field :sort_id %>
+  <%= link_to_remove_fields "Удалить", f %>
+  <%= link_to_add_fields "Добавить подкатегорию", f, :children, nil, '', lang, '' %>
+
+  <%= f.fields_for :children do |c| %>
+    <%= render :partial => "child_fields", :locals => {:f => c, :lang => lang} %>
+  <% end %>
+</div>

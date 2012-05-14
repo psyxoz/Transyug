@@ -1,0 +1,31 @@
+<%= link_to "Добавить вакансию", new_admin_job_path, :class => 'btn btn-primary', :style => 'float: right' %>
+
+<h2>Вакансии</h2>
+
+<div class="row block">
+  <% if @jobs.size > 0 %>
+    <%= paginate @jobs %>
+    <table class="zebra-striped table">
+      <thead>
+        <tr>
+          <th>Название</th>
+          <th class="medium-big">Опции</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @jobs.each do |job| %>
+          <tr>
+            <td> <%= job.title_ru %></td>
+            <td>
+              <%= link_to "Править", edit_admin_job_path(job), :class => 'btn btn-mini' %>
+              <%= link_to "Удалить", admin_job_path(job), :confirm => 'Вы точно уверены?', :method => :delete, :class => 'btn btn-mini btn-danger' %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <%= paginate @jobs %>
+  <% else %>
+    Нет данных
+  <% end %>
+</div>

@@ -1,0 +1,94 @@
+<%= render :partial => 'admin/show_errors', :locals => {:model => @vessel} %>
+<script type="text/javascript">
+  $('.nav-tabs a[href="#russian"]').tab('show');
+</script>
+
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#russian" data-toggle="tab">Русская версия</a></li>
+  <li><a href="#english" data-toggle="tab">English version</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane fade in active" id="russian">
+    <div class="control-group">
+      <%= f.label :title_ru, 'Название', :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :title_ru %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :description_ru, 'Короткое описание', :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_area :description_ru, :rows => 4, :class => 'span5' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :content_ru, 'Описание', :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_area :content_ru, :rows => 4, :class => 'span5' %>
+      </div>
+    </div>
+  </div>
+  <div class="tab-pane fade" id="english">
+    <div class="control-group">
+      <%= f.label :title_en, 'Название', :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :title_en %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :description_en, 'Короткое описание', :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_area :description_en, :rows => 4, :class => 'span5' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :content_en, 'Описание', :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_area :content_en, :rows => 4, :class => 'span5' %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="control-group">
+  <%= f.label :location, 'Карта (код расположения)', :class => 'control-label' %>
+  <div class="controls"><%= f.text_area :location, :rows => 4, :class => 'span5' %></div>
+</div>
+
+<div class="control-group">
+  <%= f.label :archive, 'В архиве?', :class => 'control-label' %>
+  <div class="controls"><%= f.check_box :archive %></div>
+</div>
+
+<div class="control-group">
+  <%= f.label :featured, 'Показывать на главной странице?', :class => 'control-label' %>
+  <div class="controls"><%= f.check_box :featured %></div>
+</div>
+
+<div class="control-group">
+  <%= f.label :pocket_plan, 'Схема (pocket plan)', :class => 'control-label' %>
+  <div class="controls">
+    <%= image_tag f.object.pocket_plan.url(:mini) if f.object.pocket_plan?%>
+    <%= f.file_field :pocket_plan %>
+  </div>
+</div>
+
+<div class="control-group">
+  <%= label_tag 'Фотографии', nil, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.fields_for :images do |image| %>
+      <%= render :partial => "image_fields", :locals => {:f => image} %>
+    <% end %>
+    <%= link_to_add_fields "Добавить", f, :images %>
+  </div>
+</div>
+
+<div class="form-actions">
+  <%= f.submit :class => "btn btn-primary", :value => "Сохранить" %>
+  <%= link_to "Отмена", js_back_url, :class => 'btn' %>
+</div>

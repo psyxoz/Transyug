@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Transyug :: Admin panel</title>
+    <%= stylesheet_link_tag "admin" %>
+    <%= javascript_include_tag "admin" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner" data-dropdown="dropdown">
+        <div class="container">
+          <%= link_to "Admin panel", admin_path, :class => "brand" %>
+          <%= render :partial => 'admin/menu' if current_user %>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="content">
+        <% flash.each do |name, msg| %>
+          <div class="alert alert-<%={:error => "error", :notice => "success"}[name]%>"> <%= msg %> </div>
+        <% end unless flash.empty? %>
+        <%= yield %>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <span><b>&copy; Transyug.com</b> - <%= Date.today.year %></span>
+    </footer>
+  </body>
+</html>

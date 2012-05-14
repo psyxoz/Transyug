@@ -1,0 +1,10 @@
+<h2>Вакансии:</h2>
+
+<div class="block">
+  <%= form_for(@job, :url => admin_job_path(@job)) do |form| %>
+    <fieldset class="clearfix form-horizontal">
+      <legend>Редактирование вакансии</legend>
+      <%= render 'form', :f => form %>
+    </fieldset>
+  <% end %>
+</div>

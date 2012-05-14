@@ -1,0 +1,33 @@
+<%= link_to "Добавить пользователя", new_admin_user_path, :class => 'btn btn-primary', :style => 'float: right' %>
+
+<h2>Пользователи</h2>
+
+<div class="row block">
+  <%= paginate @users %>
+
+  <table class="zebra-striped table">
+    <thead>
+      <tr>
+        <th>E-mail</th>
+        <th class="small-medium">Роль</th>
+        <th class="medium-big">Дата регистрации</th>
+        <th class="medium-big">Опции</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user.email %></td>
+          <td><%= user.role %></td>
+          <td><%= format_date(user.created_at) %></td>
+          <td>
+            <%= link_to "Править", edit_admin_user_path(user), :class => 'btn btn-mini' %>
+            <%= link_to "Удалить", admin_user_path(user), :confirm => 'Вы точно уверены?', :method => :delete, :class => 'btn btn-mini btn-danger' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= paginate @users %>
+</div>

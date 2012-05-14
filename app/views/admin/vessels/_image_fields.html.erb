@@ -1,0 +1,8 @@
+<div class='fields'>
+  <% if f.object.new_record? %>
+    <%= f.file_field :file %>
+  <% else %>
+    <b><%= image_tag f.object.file.url(:mini) %></b>
+  <% end %>
+  <%= link_to_remove_fields "Удалить", f %>
+</div>

@@ -1,0 +1,28 @@
+<div class="nav-collapse">
+  <ul class="nav">
+    <li class='<%= active_class('company') %>'><%= link_to 'О компании', admin_page_path(:company) %></li>
+    <li class='<%= active_class('vessels') %>'>
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">Флот</a>
+      <ul class="dropdown-menu" id="vessels_menu">
+        <li><%= link_to 'Описание страницы', settings_admin_vessels_path %></li>
+        <li><%= link_to 'Список судов', admin_vessels_path %></li>
+      </ul>
+    </li>
+    <li class='<%= active_class('chartering') %>'><%= link_to 'Фрахтование', admin_page_path(:chartering) %></li>
+    <li class='<%= active_class('technical_department') %>'><%= link_to 'Технический отдел', admin_page_path(:technical_department) %></li>
+    <li class='<%= active_class('crewing') %>'><%= link_to 'Крюинг', admin_page_path(:crewing) %></li>
+    <li class='<%= active_class('jobs') %>'>
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">Вакансии</a>
+      <ul class="dropdown-menu" id="jobs_menu">
+        <li><%= link_to 'Описание страницы', settings_admin_jobs_path %></li>
+        <li><%= link_to 'Список вакансий', admin_jobs_path %></li>
+      </ul>
+    </li>
+    <li class='<%= active_class('partners') %>'><%= link_to 'Партнеры', admin_partners_path %></li>
+    <li class='<%= active_class('contacts') %>'><%= link_to 'Контакты', admin_page_path(:contacts) %></li>
+  </ul>
+  <ul class="nav pull-right">
+    <li><%= link_to 'Пользователи', admin_users_path %></li>
+    <li><%= link_to 'Выход', destroy_user_session_path, :method => :delete %></li>
+  </ul>
+</div>

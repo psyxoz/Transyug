@@ -1,0 +1,16 @@
+<div class="block">
+  <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
+    <%= devise_error_messages! %>
+    <fieldset class="clearfix form-horizontal">
+      <legend>Забыли пароль?</legend>
+      <div class="control-group">
+        <%= f.label :email, 'E-mail', :class => 'control-label' %>
+        <div class="controls"><%= f.email_field :email %></div>
+      </div>
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary">Сбросить пароль</button>
+        <%= link_to "Отмена", js_back_url, :class => 'btn' %>
+      </div>
+    </fieldset>
+  <% end %>
+</div>

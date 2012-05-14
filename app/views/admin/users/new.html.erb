@@ -1,0 +1,10 @@
+<h2>Пользователи</h2>
+
+<div class="block">
+  <%= form_for(@user, :url => admin_users_path(@user)) do |form| %>
+    <fieldset class="clearfix form-horizontal">
+      <legend>Новый пользователь</legend>
+      <%= render 'form', :f => form %>
+    </fieldset>
+  <% end %>
+</div>

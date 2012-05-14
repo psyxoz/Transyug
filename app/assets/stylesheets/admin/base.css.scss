@@ -1,0 +1,264 @@
+// General
+
+html {
+  background:#DDDDDD;
+}
+
+body {
+  padding-top: 60px !important;
+  background:#f2f2f2;
+}
+
+.full-width {
+  margin-left:20px;
+}
+
+.container {margin-bottom: 30px;}
+
+.span7{
+  overflow: hidden;
+  white-space: nowrap;
+  width: 400px;
+}
+.break-word {
+  word-wrap:break-word;
+}
+
+.block { // white background
+  background:#fff;
+  margin-left:0;
+  padding:5px 10px;
+  border-radius:5px;
+  margin-bottom:5px;
+}
+
+.clear {
+  clear:both;
+  visibility:hidden;
+}
+
+h2 {margin-bottom: 10px}
+
+.page-header {
+  margin-bottom:8px;
+}
+
+.well {
+  padding:10px;
+  margin-bottom:10px;
+}
+
+// Labels
+.label.inactive {
+  background-color:#D90000;
+}
+
+
+// table cells
+
+.x-small {
+  width:10px;
+}
+.small {
+  width:20px;
+}
+.small-medium {
+  width:80px;
+}
+.medium {
+  width:100px;
+}
+.medium-big {
+  width:150px;
+}
+.medium-large {
+  width:200px;
+}
+.medium-xxl {
+  width:250px;
+}
+.large {
+  width:400px;
+}
+td.number, th.number {
+  text-align:right;
+  font-family:courier, monospace;
+}
+tr.grey {
+  background:#f4f4f4;
+}
+
+span.thead_info {
+  font-size: xx-small;
+  font-style: italic;
+  font-weight: normal;
+}
+
+table.bordered-table th {
+  vertical-align: top;
+}
+
+
+div.item-show {
+  padding:5px 10px;
+  border:1px solid #ccc;
+  border-radius:4px;
+  background:#f9f9f9;
+  margin-bottom:10px;
+}
+
+// Forms
+
+#error_explanation {
+  h2 {
+    font-size:18px;
+    color:#d90000;
+    text-shadow:1px 1px 0 #fff;
+  }
+  ul {
+    list-style-position:inside;
+    padding:0;
+    margin:0;
+    background-color: #C43C35;
+    background-image: -moz-linear-gradient(center top , #EE5F5B, #C43C35);
+    background-repeat: repeat-x;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+
+    border-radius: 4px 4px 4px 4px;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset;
+    margin-bottom: 18px;
+    padding: 7px 15px;
+    position: relative;
+    li {
+      text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+      color: #FFFFFF;
+    }
+  }
+}
+
+div.field_with_errors input {
+border-color: #EE5F5B;
+ color: #B94A48;
+}
+
+// Footer
+
+.footer {
+  background-color: #ddd;
+  border-top: 1px solid #E5E5E5;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.024) inset;
+  padding: 30px 0;
+  text-shadow: 0 1px 0 #FFFFFF;
+}
+
+.footer span {
+  width: 1170px;
+  margin: 0 auto;
+  display: block
+}
+
+// Labels
+
+.label.admin {
+  background-color: #c43c35;
+}
+
+// Banner management page
+
+#banner-management {
+  div.well form {
+    margin-bottom:0;
+  }
+  h3, h4 {
+    text-align:center;
+  }
+  button {
+    width:90px;
+  }
+
+  .banner-management-div {
+    border-radius:4px;
+    border:1px solid #ccc;
+    min-height:600px;
+  }
+
+  div.link_action {
+    left: 699px;
+    position: fixed;
+  }
+  a.view:hover, a.zoom:hover {
+    text-decoration:none;
+  }
+}
+
+
+.span3.messenger_value {
+  width: 165px;
+}
+
+.topbar .brand-image{
+  float: left;
+}
+
+.pagination ul {
+  float: right;
+}
+
+.pagination span {
+  border-right:1px solid rgba(0, 0, 0, 0.148438);
+  float:left;
+  line-height:34px;
+  padding:0px 14px;
+}
+
+.btn[disabled] {
+  background-image: none;
+  background: #999;
+  box-shadow: none;
+  cursor: default;
+  opacity: 0.65;
+}
+
+
+.highlighted {
+  color: #FFF !important;
+  background: #670705;
+-webkit-box-shadow: inset 0px 0px 5px 1px #f55349;
+-moz-box-shadow: inset 0px 0px 5px 1px #f55349;
+box-shadow: inset 0px 0px 5px 1px #f55349;
+}
+
+.purr {
+  position: fixed;
+  top: 50px;
+  right: 100px;
+  width: 300px;
+  padding:0;
+  margin:0;
+  color: #FFF;
+  background-color: #C43C35;
+  background-image: -moz-linear-gradient(center top , #EE5F5B, #C43C35);
+  background-repeat: repeat-x;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  border-radius: 4px 4px 4px 4px;
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset;
+  margin-bottom: 18px;
+  padding: 7px 15px;
+  &:first-letter { text-transform: uppercase; }
+}
+
+label { width: 10em; float: left; }
+label.error { float: none; color: red; padding-left: .5em; vertical-align: top; }
+
+.fields {display: block;}
+.nav-tabs {margin-top: 18px;}
+.tab-content {border: 1px solid #DDD; border-top: none; margin: -18px 0 18px; padding-top: 18px;}
+
+#error_explanation h2 {display: none !important;}
+.navbar .nav > li {position: relative;}
+
+.parent_fields .fields {margin-left: 10px; padding-top: 10px}

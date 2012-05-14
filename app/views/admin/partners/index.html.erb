@@ -1,0 +1,31 @@
+<%= link_to "Добавить партнера", new_admin_partner_path, :class => 'btn btn-primary', :style => 'float: right' %>
+
+<h2>Партнеры</h2>
+
+<div class="row block">
+  <% if @partners.size > 0 %>
+    <%= paginate @partners %>
+    <table class="zebra-striped table">
+      <thead>
+        <tr>
+          <th>Название</th>
+          <th class="medium-big">Опции</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @partners.each do |partner| %>
+          <tr>
+            <td> <%= partner.title_ru %></td>
+            <td>
+              <%= link_to "Править", edit_admin_partner_path(partner), :class => 'btn btn-mini' %>
+              <%= link_to "Удалить", admin_partner_path(partner), :confirm => 'Вы точно уверены?', :method => :delete, :class => 'btn btn-mini btn-danger' %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <%= paginate @partners %>
+  <% else %>
+    Нет данных
+  <% end %>
+</div>

@@ -1,0 +1,92 @@
+<script type="text/javascript">
+  $('.nav-tabs a[href="#russian"]').tab('show');
+</script>
+
+<h2>Страница "<%= @page.title_ru %>":</h2>
+
+<div class="block">
+  <%= form_for(@page, :url => admin_page_path(@page.code)) do |f| %>
+    <fieldset class="clearfix form-horizontal">
+      <legend>Редактирование</legend>
+
+      <ul class="nav nav-tabs">
+        <li class="active"><a href="#russian" data-toggle="tab">Русская версия</a></li>
+        <li><a href="#english" data-toggle="tab">English version</a></li>
+      </ul>
+
+      <div class="tab-content">
+        <div class="tab-pane fade in active" id="russian">
+          <div class="control-group">
+            <%= f.label :title_ru, 'Название', :class => 'control-label' %>
+            <div class="controls">
+              <%= f.text_field :title_ru %>
+            </div>
+          </div>
+
+          <% if @page.code != 'chartering' %>
+            <div class="control-group">
+              <%= f.label :description_ru, 'Короткое описание', :class => 'control-label' %>
+              <div class="controls">
+                <%= f.text_area :description_ru, :rows => 4, :class => 'span5' %>
+              </div>
+            </div>
+          <% end %>
+
+          <div class="control-group">
+            <%= f.label :content_ru, 'Описание', :class => 'control-label' %>
+            <div class="controls">
+              <%= f.text_area :content_ru, :rows => 4, :class => 'span5' %>
+            </div>
+          </div>
+
+          <%= render(:partial => 'technical_department', :locals => {:f => f, :lang => 'ru'}) if @page.code == 'technical_department' %>
+        </div>
+
+        <div class="tab-pane fade" id="english">
+          <div class="control-group">
+            <%= f.label :title_en, 'Название', :class => 'control-label' %>
+            <div class="controls">
+              <%= f.text_field :title_en %>
+            </div>
+          </div>
+
+          <% if @page.code != 'chartering' %>
+            <div class="control-group">
+              <%= f.label :description_en, 'Короткое описание', :class => 'control-label' %>
+              <div class="controls">
+                <%= f.text_area :description_en, :rows => 4, :class => 'span5' %>
+              </div>
+            </div>
+          <% end %>
+
+          <div class="control-group">
+            <%= f.label :content_en, 'Описание', :class => 'control-label' %>
+            <div class="controls">
+              <%= f.text_area :content_en, :rows => 4, :class => 'span5' %>
+            </div>
+          </div>
+
+          <%= render(:partial => 'technical_department', :locals => {:f => f, :lang => 'en'}) if @page.code == 'technical_department' %>
+        </div>
+      </div>
+
+      <%= render(:partial => @page.code, :locals => {:f => f}) if ['company','contacts'].include? @page.code %>
+
+      <div class="form-actions">
+        <%= f.submit :class => "btn btn-primary", :value => "Сохранить" %>
+        <%= link_to "Отмена", js_back_url, :class => 'btn' %>
+      </div>
+    </fieldset>
+  <% end %>
+</div>
+<script type="text/javascript">
+  $('.controls').sortable({handle: 'i', items: '.parent_fields', update: function(event, ui) {reorder()}});
+  $('.parent_fields').sortable({handle: 'i', items: '.fields', update: function(event, ui) {reorder()}});
+
+  function reorder() {
+    $('input[name*="sort_id"]').each(function(index) {
+      $(this).val(index);
+    });
+  }
+  reorder();
+</script>

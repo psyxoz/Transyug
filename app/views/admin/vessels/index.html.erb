@@ -1,0 +1,33 @@
+<%= link_to "Добавить судно", new_admin_vessel_path, :class => 'btn btn-primary', :style => 'float: right' %>
+
+<h2>Флот:</h2>
+
+<div class="row block">
+  <% if @vessels.size > 0 %>
+    <%= paginate @vessels %>
+    <table class="zebra-striped table">
+      <thead>
+        <tr>
+          <th>Название</th>
+          <th class="medium">В архиве?</th>
+          <th class="medium-big">Опции</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @vessels.each do |vessel| %>
+          <tr>
+            <td><%= vessel.title_ru %></td>
+            <td><%= vessel.archive? ? 'Да' : 'Нет' %></td>
+            <td>
+              <%= link_to "Править", edit_admin_vessel_path(vessel), :class => 'btn btn-mini' %>
+              <%= link_to "Удалить", admin_vessel_path(vessel), :confirm => 'Вы точно уверены?', :method => :delete, :class => 'btn btn-mini btn-danger' %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <%= paginate @vessels %>
+  <% else %>
+    Нет данных
+  <% end %>
+</div>

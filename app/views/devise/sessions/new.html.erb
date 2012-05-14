@@ -1,0 +1,21 @@
+<div class="block">
+  <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+    <fieldset class="clearfix form-horizontal">
+      <legend>Вход</legend>
+      <div class="control-group">
+        <%= f.label :email, 'E-mail', :class => 'control-label' %>
+        <div class="controls"><%= f.email_field :email %></div>
+      </div>
+      <div class="control-group">
+        <%= f.label :password, 'Пароль', :class => 'control-label' %>
+        <div class="controls"><%= f.password_field :password %></div>
+      </div>
+
+      <span style="display: none"><%= f.check_box :remember_me, :checked => true %></span>
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary">Войти</button>
+        <%= link_to "Забыли пароль?", new_password_path(resource_name), :class => 'btn' %>
+      </div>
+    </fieldset>
+  <% end %>
+</div>

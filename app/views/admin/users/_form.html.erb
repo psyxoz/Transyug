@@ -1,0 +1,27 @@
+<%= render :partial => 'admin/show_errors', :locals => {:model => @user} %>
+
+<div class="control-group">
+  <%= f.label :email, 'E-mail', :class => 'control-label' %>
+  <div class="controls">
+    <%= f.email_field :email %>
+  </div>
+</div>
+
+<div class="control-group">
+  <%= f.label :password, 'Пароль', :class => 'control-label' %>
+  <div class="controls">
+    <%= password_field_tag :password, nil, :id => :user_password %><br/>
+  </div>
+</div>
+
+<div class="form-actions">
+  <%= f.submit :class => "btn btn-primary", :value => "Сохранить" %>
+  <%= link_to "Отмена", js_back_url, :class => 'btn' %>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+	  $('#user_email').attr('autocomplete', 'OFF');
+    $('#user_password').attr('autocomplete', 'OFF').val('');
+  });
+</script>

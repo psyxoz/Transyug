@@ -1,0 +1,19 @@
+<div class="control-group">
+  <%= label_tag 'Фотографии', nil, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.fields_for :pictures do |image| %>
+      <%= render :partial => "admin/vessels/image_fields", :locals => {:f => image} %>
+    <% end %>
+    <%= link_to_add_fields "Добавить", f, :pictures, :images, 'admin/vessels/' %>
+  </div>
+</div>
+
+<div class="control-group">
+  <%= label_tag 'Сертификаты', nil, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.fields_for :certificates do |image| %>
+      <%= render :partial => "admin/vessels/image_fields", :locals => {:f => image} %>
+    <% end %>
+    <%= link_to_add_fields "Добавить", f, :certificates, :images, 'admin/vessels/' %>
+  </div>
+</div>

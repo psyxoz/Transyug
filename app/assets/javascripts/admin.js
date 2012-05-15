@@ -31,6 +31,10 @@ function add_fields(link, association, content) {
     $(link).after(content.replace(regexp, new_id));
   }
   $('input[id*="_' + association + '_attributes_' + new_id + '_file"]').show().trigger('click');
+
+  if (association == 'children') {
+    $('.parent_fields').sortable({handle: 'i.child_icon', items: 'div', update: function(event, ui) {reorder()}});
+  }
 }
 
 $('.nav-tabs a').click(function (e) {

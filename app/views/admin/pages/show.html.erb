@@ -79,9 +79,10 @@
     </fieldset>
   <% end %>
 </div>
+
 <script type="text/javascript">
-  $('.controls').sortable({handle: 'i', items: '.parent_fields', update: function(event, ui) {reorder()}});
-  $('.parent_fields').sortable({handle: 'i', items: '.fields', update: function(event, ui) {reorder()}});
+  $('.parent_fields').sortable({handle: 'i.child_icon', items: 'div', update: function(event, ui) {reorder()}});
+  $('.controls').sortable({handle: 'i.parent_icon', items: '.parent_fields', update: function(event, ui) {reorder()}});
 
   function reorder() {
     $('input[name*="sort_id"]').each(function(index) {

@@ -20,14 +20,14 @@
     <div class="control-group">
       <%= f.label :description_ru, 'Короткое описание', :class => 'control-label' %>
       <div class="controls">
-        <%= f.text_area :description_ru, :rows => 4, :class => 'span5' %>
+        <%= f.text_area :description_ru, :rows => 4, :class => 'span5 ckeditor' %>
       </div>
     </div>
 
     <div class="control-group">
       <%= f.label :content_ru, 'Описание', :class => 'control-label' %>
       <div class="controls">
-        <%= f.text_area :content_ru, :rows => 4, :class => 'span5 ckeditor' %>
+        <%= f.text_area :content_ru, :rows => 4, :class => 'span5' %>
       </div>
     </div>
   </div>
@@ -42,14 +42,14 @@
     <div class="control-group">
       <%= f.label :description_en, 'Короткое описание', :class => 'control-label' %>
       <div class="controls">
-        <%= f.text_area :description_en, :rows => 4, :class => 'span5' %>
+        <%= f.text_area :description_en, :rows => 4, :class => 'span5 ckeditor' %>
       </div>
     </div>
 
     <div class="control-group">
       <%= f.label :content_en, 'Описание', :class => 'control-label' %>
       <div class="controls">
-        <%= f.text_area :content_en, :rows => 4, :class => 'span5 ckeditor' %>
+        <%= f.text_area :content_en, :rows => 4, :class => 'span5' %>
       </div>
     </div>
   </div>
@@ -92,3 +92,8 @@
   <%= f.submit :class => "btn btn-primary", :value => "Сохранить" %>
   <%= link_to "Отмена", js_back_url, :class => 'btn' %>
 </div>
+
+<script type="text/javascript">
+  CKEDITOR.replace('vessel_content_ru', {toolbar: 'Full' });
+  CKEDITOR.replace('vessel_content_en', {toolbar: 'Full' });
+</script>

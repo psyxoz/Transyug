@@ -85,10 +85,10 @@ ul.menu li.active {background: url("manu_bg.png") no-repeat; color: white !impor
 .right_column a.download_application {background: url("icons/download.png") no-repeat left bottom; line-height: 20px; margin: 20px 0 45px; padding: 10px 0 0 50px;}
 .right_column a.map {background: url("icons/wheel.png") no-repeat left top; line-height: 30px; margin-top: 15px; padding:0 0 20px 50px;}
 
-.slideshow {margin: 0 auto; width: 700px; margin-bottom: 30px}
-.slideshow_cover {background: url("cover.png") no-repeat; position: absolute; width: 700px; height: 547px; z-index: 11}
+.slideshow {margin: 0 auto; width: 700px; margin-bottom: 30px;}
+.slideshow_cover {background: url("cover.png") no-repeat; position: absolute; width: 700px; height: 547px; z-index: 11; overflow: hidden;}
 #slideshow {padding: 26px 0 0 24px; width: 652px; height: 547px; position: relative; overflow: hidden;}
-#slideshow img {position:absolute; z-index:8; opacity:0.0;}
+#slideshow img {position:absolute; z-index:8; opacity:0.0; max-width: 652px; }
 #slideshow img.active {z-index:10; opacity:1.0;}
 #slideshow img.last-active {z-index:9;}
 

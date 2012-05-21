@@ -11,7 +11,7 @@
   <div class="slideshow_cover"></div>
   <div id="slideshow">
     <% @page.pictures.each_with_index do |c, i| %>
-      <%= image_tag c.file.url(:normal), class: "#{i==1 ? 'active' : ''}" %>
+      <%= image_tag c.file.url(:normal), class: "#{i==0 ? 'active' : ''}" %>
     <% end if @page.pictures %>
   </div>
 </div>
@@ -22,7 +22,7 @@
 
   <div class="certificates">
     <% @page.certificates.each do |c| %>
-      <%= link_to image_tag(c.file.url(:small)), c.file.url(:normal), class: 'fancybox' %>
+      <%= link_to image_tag(c.file.url(:small)), c.file.url, class: 'fancybox' %>
     <% end if @page.certificates %>
   </div>
 </div>

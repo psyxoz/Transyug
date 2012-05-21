@@ -95,6 +95,8 @@ ul.menu li.active {background: url("manu_bg.png") no-repeat; color: white !impor
 .wrapper_700 {margin: 0 auto; width: 700px;}
 h3.title {height: 40px; line-height: 40px; font-size: 30px; text-align: center; color: #ffffff; margin-bottom: 15px;}
 .text p {line-height: 20px; margin-bottom: 20px; font-size: 16px;}
+.text li {line-height: 20px; font-size: 16px;}
+.text ul {padding-bottom: 10px}
 
 .certificates {width: 484px; text-align: center; margin: 70px auto 0;}
 .certificates a {margin: 0 10px 70px 10px; display: inline-block; width: 220px;}

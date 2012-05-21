@@ -1,0 +1,28 @@
+<%= stylesheet_link_tag "jquery.fancybox" %>
+<%= javascript_include_tag "pages", "jquery.fancybox" %>
+<script type="text/javascript">
+  $(function() {
+    setInterval("slideSwitch()", 5000);
+    $(".fancybox").fancybox();
+  });
+</script>
+
+<div class="slideshow">
+  <div class="slideshow_cover"></div>
+  <div id="slideshow">
+    <% @page.pictures.each_with_index do |c, i| %>
+      <%= link_to image_tag(c.file.url(:small)), c.file.url(:normal), class: "#{i==1 ? 'active' : ''}" %>
+    <% end if @page.pictures %>
+  </div>
+</div>
+
+<div class="wrapper_700">
+  <h3 class="title"><%= t("menu.company") %></h3>
+  <div class="text"><%= row show_translate(@page, :content) %></div>
+
+  <div class="certificates">
+    <% @page.certificates.each do |c| %>
+      <%= link_to image_tag(c.file.url(:small)), c.file.url(:normal), class: 'fancybox' %>
+    <% end if @page.certificates %>
+  </div>
+</div>

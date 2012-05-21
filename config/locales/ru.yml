@@ -1,4 +1,23 @@
 ru:
+  menu:
+    company: 'О компании'
+    fleet: 'Флот'
+    chartering: 'Фрахтование'
+    technical_department: 'Тех. отдел'
+    crewing: 'Крюинг'
+    jobs: 'Вакансии'
+    partners: 'Партнеры'
+    contacts: 'Контакты'
+
+  more_information: 'Подробнее'
+  technical_department: 'Технический отдел'
+  list_of_necessary_equipment: 'Список необходимого оборудования'
+  all_fleet: 'Весь флот'
+  fill_in_application_form: 'Заполнить Application Form'
+  download_application_form: 'Скачать Application Form'
+  contacts: 'Контактная информация'
+  look_on_the_map: 'Посмотреть на карте'
+
   activerecord:
     models:
       user: "Пользователи"

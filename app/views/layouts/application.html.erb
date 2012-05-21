@@ -1,14 +1,50 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
   <title>Transyug</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 <body>
-
-<%= yield %>
-
+  <div class="base <%= 'base_highlight' if controller_name == 'home' %>">
+    <div class="wrapper">
+      <%= link_to 'Transyug Shipping Co. Ltd.', root_path(locale), class: :logo %>
+      <ul class="lang">
+        <li class="<%= 'active' if locale.to_s == 'en' %>"><a href="/en" class="en">En</a></li>
+        <li class="<%= 'active' if locale.to_s == 'ru' %>"><a href="/ru" class="ru">Ru</a></li>
+      </ul>
+      <div class="clear"></div>
+      <ul class="menu">
+        <li class='<%= active_class('company') %>'><%= link_to t("menu.company"), page_path(locale, :company) %></li>
+        <li class='<%= active_class('fleet') %>'><%= link_to t("menu.fleet"), fleet_path(locale) %></li>
+        <li class='<%= active_class('chartering') %>'><%= link_to t("menu.chartering"), page_path(locale, :chartering) %></li>
+        <li class='<%= active_class('technical_department') %>'><%= link_to t("menu.technical_department"), page_path(locale, :technical_department) %></li>
+        <li class='<%= active_class('crewing') %>'><%= link_to t("menu.crewing"), page_path(locale, :crewing) %></li>
+        <li class='<%= active_class('jobs') %>'><%= link_to t("menu.jobs"), jobs_path(locale) %></li>
+        <li class='<%= active_class('partners') %>'><%= link_to t("menu.partners"), partners_path(locale) %></li>
+        <li class='<%= active_class('contacts') %>'><%= link_to t("menu.contacts"), page_path(locale, :contacts) %></li>
+      </ul>
+      <div class="clear"></div>
+      <div class="content">
+        <%= yield %>
+      </div>
+      <div class="footer_inner"></div>
+    </div>
+  </div>
+  <div class="footer">
+    <%= link_to 'Transyug <br/> Shipping Co. Ltd'.html_safe, root_path(locale), class: :logo %>
+    <ul class="menu">
+      <li><%= link_to t("menu.company"), page_path(locale, :company) %></li>
+      <li><%= link_to t("menu.fleet"), fleet_path(locale) %></li>
+      <li><%= link_to t("menu.chartering"), page_path(locale, :chartering) %></li>
+      <li><%= link_to t("menu.technical_department"), page_path(locale, :technical_department) %></li>
+      <li><%= link_to t("menu.crewing"), page_path(locale, :crewing) %></li>
+      <li><%= link_to t("menu.jobs"), jobs_path(locale) %></li>
+      <li><%= link_to t("menu.partners"), partners_path(locale) %></li>
+      <li><%= link_to t("menu.contacts"), page_path(locale, :contacts) %></li>
+    </ul>
+  </div>
 </body>
 </html>

@@ -8,7 +8,7 @@ class VesselImageUploader < CarrierWave::Uploader::Base
   end
 
   version :mini do
-    process :resize_to_fill => [150, 100, ::Magick::NorthGravity]
+    process :resize_to_fill => [156, 116, ::Magick::NorthGravity]
   end
 
   def store_dir

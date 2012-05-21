@@ -27,4 +27,13 @@ module ApplicationHelper
     end
     link_to_function(name, "add_fields(this, '#{association}','#{escape_javascript(fields)}')", :class => 'btn btn-info btn-mini', :style => style)
   end
+
+  def show_translate(model, method)
+    value = model.read_attribute("#{method}_#{I18n.locale}")
+    if value.empty?
+      model.read_attribute("#{method}_#{I18n.default_locale}")
+    else
+      value
+    end
+  end
 end

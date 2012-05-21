@@ -2,4 +2,21 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  menu:
+    company: 'Company'
+    fleet: 'Fleet'
+    chartering: 'Chartering'
+    technical_department: 'Tech. dep.'
+    crewing: 'Crewing'
+    jobs: 'Vacancy'
+    partners: 'Partners'
+    contacts: 'Contacts'
+
+  more_information: 'More information'
+  technical_department: 'Technical department'
+  list_of_necessary_equipment: 'List of necessary<br/> equipment'
+  all_fleet: 'Other fleet'
+  fill_in_application_form: 'Fill in Application<br/> Form'
+  download_application_form: 'Download Application Form'
+  contacts: 'Contact information'
+  look_on_the_map: 'Look on the map'

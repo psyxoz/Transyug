@@ -10,3 +10,93 @@
  *
  *= require_self
 */
+
+/* RESET DEFAULT STYLES */
+html,body,div,span,applet,object,iframe,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dl,dt,dd,ol,ul,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,label,legend,p,blockquote,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;vertical-align:baseline;}
+html,body {height: 100%; min-height: 100%;}
+body{line-height:1;color:black;background:white;}:focus{outline:0;}
+table{border-collapse:collapse;border-spacing:0;}
+caption,th,td{text-align:left;font-weight:normal;}
+fieldset,img{border:0;}
+address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}
+ol,ul{list-style:none;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+blockquote:before,blockquote:after,q:before,q:after{content:"";}
+blockquote,q{quotes:"" "";}
+abbr,acronym{border:0;}
+
+.clear {clear:both; visibility:hidden;}
+
+html {background: url("bg.png");}
+body {background: url("bg_top.png") no-repeat center top; color: #bae9ff; font-size: 14px; font-family: Georgia}
+
+.base {height: auto !important; min-height: 100%; width: 100%}
+.base_highlight {background: url("bg_top_index.png") no-repeat center top}
+.logo {background: url("logo.png") no-repeat left top; padding: 20px 0px 30px 120px; height: 60px; line-height: 60px; float: left; font-size: 40px; color: #ffffff; text-decoration: none; display: block;}
+
+.breaker {background: url("breakers.png") no-repeat; height: 12px; line-height: 12px; display: block;}
+.br1 {background-position: 0 0}
+.br2 {background-position: 0 -12px}
+.br3 {background-position: 0 -24px}
+.br4 {background-position: 0 -36px}
+.br5 {background-position: 0 -48px}
+
+ul.lang {float: right; margin-top: 30px; width: 240px}
+ul.lang li {float: left; height: 40px; padding-left: 40px; width: 60px; margin-left: 20px;}
+ul.lang li a {float: left; display: inline-block; height: 40px; line-height: 40px; color: #8bd4f6; padding-left: 21px; text-decoration: none}
+ul.lang li a.ru {background: url("icons/flag_ru.png") no-repeat left center}
+ul.lang li a.en {background: url("icons/flag_en.png") no-repeat left center}
+ul.lang li.active {background: url("lang_bg.png") no-repeat;}
+ul.lang li.active a {color: white}
+
+ul.menu {list-style: none; margin: 10px 0 80px -20px; position: relative; overflow: hidden;}
+ul.menu li {float: left; width: 100px; margin-left: 20px}
+ul.menu li a {height: 40px; line-height: 40px; display: block; color: white; text-decoration: underline; text-align: center}
+ul.menu li a:hover {color: #5ccfff;}
+ul.menu li.active {background: url("manu_bg.png") no-repeat; color: white !important;}
+
+.wrapper {padding: 20px;}
+.wrapper, .footer {width: 940px; margin: 0 auto; position: relative; overflow: hidden;}
+.footer, .footer_inner {height: 60px; position: relative;}
+.footer {margin-top: -60px;}
+.footer .logo {background: url("logo_footer.png") no-repeat top left; padding: 2px 0px 10px 60px; height: auto !important; line-height: 22px; font-size: 20px;}
+.footer .menu {width: 720px; float: right; height: 40px; margin: 5px 0 0 !important;}
+.footer .menu li {width: 90px; margin-left: 0;}
+.footer .menu li a {font-size: 11px;}
+
+.content {position: relative; overflow: hidden;}
+
+.home {margin-top: 360px;}
+.home .left_column {width: 280px; margin-right: 80px; float: left;}
+.home .center_column {width: 340px; margin-right: 20px; float: left;}
+.home .right_column {width: 220px; float: left}
+.home .breaker {margin-bottom: 45px;}
+.block h4 {line-height: 32px; padding: 3px 0 5px; margin-bottom: 15px; font-size: 30px; color: white}
+.block p {line-height: 20px; color: #bae9ff; margin-bottom: 10px;}
+.block a {display: inline-block; color: white; text-decoration: underline}
+.left_column a.link_more {background: url("icons/flag.png") no-repeat left top; line-height: 50px; height: 50px; padding: 0 0 10px 50px; margin-bottom: 45px}
+.left_column a.link_list_equipment {background: url("icons/settings.png") no-repeat left 5px; line-height: 20px; margin-top: 25px; padding-left: 50px;}
+.center_column img {float: left; border: 2px solid white; margin: 5px 20px 20px 0;}
+.center_column .vessel p {margin-top: 10px;}
+.center_column a.link_vessel {font-size: 18px; display: inline; line-height: 20px;}
+.center_column a.link_fleet {background: url("icons/ship.png") no-repeat left top; line-height: 30px; height: 30px; padding-left: 60px; margin-bottom: 55px}
+.center_column ul.jobs {list-style-type: none;}
+.center_column ul.jobs li {padding: 5px 0; margin-bottom: 5px;}
+.right_column a.fill_application {background: url("icons/pen.png") no-repeat left top; line-height: 20px; margin-top: 25px; padding-left: 50px;}
+.right_column a.download_application {background: url("icons/download.png") no-repeat left bottom; line-height: 20px; margin: 20px 0 45px; padding: 10px 0 0 50px;}
+.right_column a.map {background: url("icons/wheel.png") no-repeat left top; line-height: 30px; margin-top: 15px; padding:0 0 20px 50px;}
+
+.slideshow {margin: 0 auto; width: 700px; margin-bottom: 30px}
+.slideshow_cover {background: url("cover.png") no-repeat; position: absolute; width: 700px; height: 547px; z-index: 11}
+#slideshow {padding: 26px 0 0 24px; width: 651px; height: 547px; position: relative; overflow: hidden;}
+#slideshow img {position:absolute; z-index:8; opacity:0.0;}
+#slideshow img.active {z-index:10; opacity:1.0;}
+#slideshow img.last-active {z-index:9;}
+
+.wrapper_700 {margin: 0 auto; width: 700px;}
+h3.title {height: 40px; line-height: 40px; font-size: 30px; text-align: center; color: #ffffff; margin-bottom: 15px;}
+.text p {line-height: 20px; margin-bottom: 20px; font-size: 16px;}
+.certificates {width: 484px; text-align: center; margin: 70px auto 0;}
+.certificates a {margin: 0 10px 70px 10px; display: inline-block; width: 220px;}
+.certificates img {border: 5px solid white}
+

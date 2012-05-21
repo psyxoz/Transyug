@@ -1,6 +1,6 @@
 class Page < ActiveRecord::Base
   attr_accessible :title_ru, :description_ru, :content_ru, :title_en, :description_en, :content_en,
-                  :code, :images_attributes, :images_attributes, :options_attributes
+                  :code, :images_attributes, :images_attributes, :options_attributes, :extra
 
   has_many :images, :class_name => "PageImage", :dependent => :destroy
   has_many :options, :class_name => "PageOption", :dependent => :delete_all, :order => 'sort_id ASC'

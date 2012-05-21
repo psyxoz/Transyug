@@ -3,6 +3,14 @@ class PageImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::RMagick
   storage :file
 
+  version :normal do
+    process :resize_to_fill => [652, 471, ::Magick::NorthGravity]
+  end
+
+  version :small do
+    process :resize_to_fit => [210, 310]
+  end
+
   version :mini do
     process :resize_to_fill => [150, 100, ::Magick::NorthGravity]
   end

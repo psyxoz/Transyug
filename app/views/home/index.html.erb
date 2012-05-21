@@ -1,0 +1,52 @@
+<div class="home">
+  <div class="left_column">
+    <div class="block">
+      <h4><%= t("menu.company") %></h4>
+      <%= row show_translate(@pages[:company], :description) %>
+      <%= link_to t("more_information"), page_path(locale, :company), class: :link_more %>
+    </div>
+    <div class="breaker br2"></div>
+    <div class="block">
+      <h4><%= t("technical_department") %></h4>
+      <%= row show_translate(@pages[:technical_department], :description) %>
+      <%= link_to t("list_of_necessary_equipment").html_safe, page_path(locale, :technical_department), class: :link_list_equipment %>
+    </div>
+  </div>
+
+  <div class="center_column">
+    <div class="block vessel">
+      <h4><%= t("menu.fleet") %></h4>
+      <img src="/assets/temp/fleet_mini.jpg" alt=""/>
+      <%= link_to 'Alessandra I', fleet_show_path(locale, 1), class: :link_vessel %>
+      <p>Type: Bulker<br/>DWT: ~12500mts<br/>on 7.5meters - draft<br/>Built: 1987, Malta<br/>Flag: Malta</p>
+      <div class="clear"></div>
+      <%= link_to t("all_fleet"), fleet_path(locale), class: :link_fleet %>
+    </div>
+    <div class="breaker br3"></div>
+    <div class="block">
+      <h4><%= t("menu.jobs") %></h4>
+      <%= row show_translate(@pages[:jobs], :description) %>
+      <ul class="jobs">
+        <li><a href="#">Секретарь</a></li>
+        <li><a href="#">Сотрудник охраны</a></li>
+        <li><a href="#">Незаменимый человек</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="right_column">
+    <div class="block">
+      <h4><%= t("menu.crewing") %></h4>
+      <%= row show_translate(@pages[:crewing], :description) %>
+      <%= link_to t("fill_in_application_form").html_safe, page_path(locale, :crewing), class: :fill_application %>
+      <%= link_to t("download_application_form").html_safe, "#", class: :download_application %>
+    </div>
+    <div class="breaker br1"></div>
+    <div class="block">
+      <h4><%= t("contacts") %></h4>
+      <%= row show_translate(@pages[:contacts], :description) %>
+      <%= link_to t("look_on_the_map").html_safe, page_path(locale, :contacts), class: :map %>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>

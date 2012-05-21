@@ -15,11 +15,6 @@ class PageImageUploader < CarrierWave::Uploader::Base
     process :resize_to_fill => [150, 100, ::Magick::NorthGravity]
   end
 
-  process :update_checksum
-  def update_checksum
-    model.checksum = crc32
-  end
-
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{model.id}"
   end

@@ -8,7 +8,7 @@ class PageImageUploader < CarrierWave::Uploader::Base
   end
 
   version :small do
-    process :resize_to_fit => [210, 310]
+    process :resize_to_fill => [210, 310, ::Magick::NorthGravity]
   end
 
   version :mini do

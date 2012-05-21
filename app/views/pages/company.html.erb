@@ -11,14 +11,14 @@
   <div class="slideshow_cover"></div>
   <div id="slideshow">
     <% @page.pictures.each_with_index do |c, i| %>
-      <%= link_to image_tag(c.file.url(:small)), c.file.url(:normal), class: "#{i==1 ? 'active' : ''}" %>
+      <%= image_tag c.file.url(:normal), class: "#{i==1 ? 'active' : ''}" %>
     <% end if @page.pictures %>
   </div>
 </div>
 
 <div class="wrapper_700">
   <h3 class="title"><%= t("menu.company") %></h3>
-  <div class="text"><%= row show_translate(@page, :content) %></div>
+  <div class="text"><%== show_translate(@page, :content) %></div>
 
   <div class="certificates">
     <% @page.certificates.each do |c| %>

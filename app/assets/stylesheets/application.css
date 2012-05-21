@@ -12,14 +12,13 @@
 */
 
 /* RESET DEFAULT STYLES */
-html,body,div,span,applet,object,iframe,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dl,dt,dd,ol,ul,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,label,legend,p,blockquote,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;vertical-align:baseline;}
+html,body,div,span,applet,object,iframe,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dl,dt,dd,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,label,legend,p,blockquote,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;vertical-align:baseline;}
 html,body {height: 100%; min-height: 100%;}
 body{line-height:1;color:black;background:white;}:focus{outline:0;}
 table{border-collapse:collapse;border-spacing:0;}
 caption,th,td{text-align:left;font-weight:normal;}
 fieldset,img{border:0;}
 address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}
-ol,ul{list-style:none;}
 h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
 blockquote:before,blockquote:after,q:before,q:after{content:"";}
 blockquote,q{quotes:"" "";}
@@ -41,7 +40,7 @@ body {background: url("bg_top.png") no-repeat center top; color: #bae9ff; font-s
 .br4 {background-position: 0 -36px}
 .br5 {background-position: 0 -48px}
 
-ul.lang {float: right; margin-top: 30px; width: 240px}
+ul.lang {float: right; margin-top: 30px; width: 240px; list-style:none; padding: 0}
 ul.lang li {float: left; height: 40px; padding-left: 40px; width: 60px; margin-left: 20px;}
 ul.lang li a {float: left; display: inline-block; height: 40px; line-height: 40px; color: #8bd4f6; padding-left: 21px; text-decoration: none}
 ul.lang li a.ru {background: url("icons/flag_ru.png") no-repeat left center}
@@ -49,7 +48,7 @@ ul.lang li a.en {background: url("icons/flag_en.png") no-repeat left center}
 ul.lang li.active {background: url("lang_bg.png") no-repeat;}
 ul.lang li.active a {color: white}
 
-ul.menu {list-style: none; margin: 10px 0 80px -20px; position: relative; overflow: hidden;}
+ul.menu {list-style: none; margin: 10px 0 80px -20px; position: relative; overflow: hidden; padding: 0}
 ul.menu li {float: left; width: 100px; margin-left: 20px}
 ul.menu li a {height: 40px; line-height: 40px; display: block; color: white; text-decoration: underline; text-align: center}
 ul.menu li a:hover {color: #5ccfff;}
@@ -96,6 +95,7 @@ ul.menu li.active {background: url("manu_bg.png") no-repeat; color: white !impor
 .wrapper_700 {margin: 0 auto; width: 700px;}
 h3.title {height: 40px; line-height: 40px; font-size: 30px; text-align: center; color: #ffffff; margin-bottom: 15px;}
 .text p {line-height: 20px; margin-bottom: 20px; font-size: 16px;}
+
 .certificates {width: 484px; text-align: center; margin: 70px auto 0;}
 .certificates a {margin: 0 10px 70px 10px; display: inline-block; width: 220px;}
 .certificates img {border: 5px solid white}

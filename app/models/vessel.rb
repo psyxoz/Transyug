@@ -6,4 +6,7 @@ class Vessel < ActiveRecord::Base
   has_many  :images, :class_name => "VesselImage", :dependent => :destroy
 
   accepts_nested_attributes_for :images, :allow_destroy => true, :reject_if => proc { |attr| attr['file'].blank? }
+
+  scope :active, where(:archive => false).includes(:images)
+  scope :archive, where(:archive => true).includes(:images)
 end

@@ -75,12 +75,14 @@ ul.menu li.active {background: url("manu_bg.png") no-repeat; color: white !impor
 .block a {display: inline-block; color: white; text-decoration: underline}
 .left_column a.link_more {background: url("icons/flag.png") no-repeat left top; line-height: 50px; height: 50px; padding: 0 0 10px 50px; margin-bottom: 45px}
 .left_column a.link_list_equipment {background: url("icons/settings.png") no-repeat left 5px; line-height: 20px; margin-top: 25px; padding-left: 50px;}
-.center_column img {float: left; border: 2px solid white; margin: 5px 20px 20px 0;}
-.center_column .vessel p {margin-top: 10px;}
-.center_column a.link_vessel {font-size: 18px; display: inline; line-height: 20px;}
+
+.center_column img, a.vessel img {float: left; border: 2px solid white; margin: 5px 20px 20px 0;}
+.center_column .vessel p, a.vessel p {margin-top: 10px;}
+.center_column a.link_vessel, a.vessel h5 {font-size: 18px; display: inline; line-height: 20px;}
 .center_column a.link_fleet {background: url("icons/ship.png") no-repeat left top; line-height: 30px; height: 30px; padding-left: 60px; margin-bottom: 55px}
-.center_column ul.jobs {list-style-type: none;}
+.center_column ul.jobs {list-style-type: none; margin: 0; padding: 0}
 .center_column ul.jobs li {padding: 5px 0; margin-bottom: 5px;}
+
 .right_column a.fill_application {background: url("icons/pen.png") no-repeat left top; line-height: 20px; margin-top: 25px; padding-left: 50px;}
 .right_column a.download_application {background: url("icons/download.png") no-repeat left bottom; line-height: 20px; margin: 20px 0 45px; padding: 10px 0 0 50px;}
 .right_column a.map {background: url("icons/wheel.png") no-repeat left top; line-height: 30px; margin-top: 15px; padding:0 0 20px 50px;}
@@ -101,4 +103,19 @@ h3.title {height: 40px; line-height: 40px; font-size: 30px; text-align: center; 
 .certificates {width: 484px; text-align: center; margin: 70px auto 0;}
 .certificates a {margin: 0 10px 70px 10px; display: inline-block; width: 220px;}
 .certificates img {border: 5px solid white}
+
+.vessels {position: relative; overflow: hidden; margin-top: 5px;}
+.vessels ul {margin: -20px 0 0 -11px; padding: 0; position: relative; list-style: none}
+.vessels ul li {background: url("fleets_line.png") no-repeat left center; float: left; width: 340px; height: 180px; position: relative; overflow: hidden; margin-left: 10px; margin-bottom: 8px;}
+.vessels ul li a {background: url("fleet_bg.png") no-repeat left 320px; display: block; padding: 10px; width: 320px; height: 140px; position: relative; overflow: hidden; margin-top: 8px; text-decoration: none !important;}
+.vessels ul li a p {line-height: 20px; max-height: 80px; overflow: hidden;}
+.vessels ul li h5 {margin-top: 4px; display: inline-block;}
+.vessels ul li a p, .vessels ul li h5 {color: white; text-decoration: none}
+.vessels ul li h5 {text-decoration: underline}
+.vessels ul li a:hover {background-position: left top;}
+.vessels ul li a:hover p {color: #8bd4f6}
+.vessels ul li a:hover h5 {color: #00d8ff; text-decoration: none}
+.vessels ul li a img {margin: 10px 20px 10px 10px;}
+.m_b_30 {margin-bottom: 30px; position: relative; overflow: hidden;}
+
 

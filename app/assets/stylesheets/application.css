@@ -104,10 +104,10 @@ h3.title {height: 40px; line-height: 40px; font-size: 30px; text-align: center; 
 .certificates a {margin: 0 10px 70px 10px; display: inline-block; width: 220px;}
 .certificates img {border: 5px solid white}
 
-.vessels {position: relative; overflow: hidden; margin-top: 5px;}
-.vessels ul {margin: -20px 0 0 -11px; padding: 0; position: relative; list-style: none}
-.vessels ul li {background: url("fleets_line.png") no-repeat left center; float: left; width: 340px; height: 180px; position: relative; overflow: hidden; margin-left: 10px; margin-bottom: 8px;}
-.vessels ul li a {background: url("fleet_bg.png") no-repeat left 320px; display: block; padding: 10px; width: 320px; height: 140px; position: relative; overflow: hidden; margin-top: 8px; text-decoration: none !important;}
+.vessels {position: relative; overflow: hidden; margin-top: 2px;}
+.vessels ul {margin: -16px 0 0 -20px; padding: 0; position: relative; list-style: none}
+.vessels ul li {background: url("fleets_line.png") no-repeat left 36px; float: left; width: 340px; height: 180px; position: relative; overflow: hidden; margin-left: 10px; margin-bottom: 2px; padding-left: 10px}
+.vessels ul li a {background: url("fleet_bg.png") no-repeat left 320px; display: block; padding: 10px; width: 320px; height: 140px; position: relative; overflow: hidden; margin-top: 4px; text-decoration: none !important;}
 .vessels ul li a p {line-height: 20px; max-height: 80px; overflow: hidden;}
 .vessels ul li h5 {margin-top: 4px; display: inline-block;}
 .vessels ul li a p, .vessels ul li h5 {color: white; text-decoration: none}
@@ -116,6 +116,8 @@ h3.title {height: 40px; line-height: 40px; font-size: 30px; text-align: center; 
 .vessels ul li a:hover p {color: #8bd4f6}
 .vessels ul li a:hover h5 {color: #00d8ff; text-decoration: none}
 .vessels ul li a img {margin: 10px 20px 10px 10px;}
+
 .m_b_30 {margin-bottom: 30px; position: relative; overflow: hidden;}
+.m_b_60 {margin-bottom: 60px; position: relative; overflow: hidden;}
 
 

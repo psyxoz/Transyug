@@ -17,6 +17,7 @@ ru:
   download_application_form: 'Скачать Application Form'
   contacts: 'Контактная информация'
   look_on_the_map: 'Посмотреть на карте'
+  archive: 'Архив'
 
   activerecord:
     models:

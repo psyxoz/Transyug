@@ -1,0 +1,68 @@
+<%= stylesheet_link_tag "jquery.fancybox" %>
+<%= javascript_include_tag "jquery.fancybox", "easySlider1.7" %>
+
+<div class="vessel_head">
+  <div class="left">
+    <%= link_to "#{t('vessel.prev_vessel')}<i></i>".html_safe, fleet_show_path(locale, @prev_vessel.id) rescue nil %>
+  </div>
+  <div class="center">
+    <h3><%== show_translate(@vessel, :title) %></h3>
+    <%== show_translate(@vessel, :full_description) %>
+  </div>
+  <div class="right">
+    <%= link_to "#{t('vessel.next_vessel')}<i></i>".html_safe, fleet_show_path(locale, @next_vessel.id) rescue nil %>
+  </div>
+</div>
+<div class="clear"></div>
+
+<div class="vessel_media">
+  <% if @vessel.images.size > 0 %>
+    <script type="text/javascript">
+      $(function() {
+        $("#slider").easySlider({auto: false, continuous: true});
+      });
+    </script>
+    <div class="images">
+      <h5><%= t('vessel.photos') %></h5>
+      <div class="cover">
+        <div id="slider">
+          <ul>
+            <% @vessel.images.each do |i| %>
+              <li><%= image_tag i.file.url(:thumb) %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="breaker br5"></div>
+  <% end %>
+
+  <% if @vessel.pocket_plan? %>
+    <script type="text/javascript">
+      $(function() {
+        $(".fancybox").fancybox();
+      });
+    </script>
+    <div class="pocket_plan">
+      <h5><%= t('vessel.pocket_plan') %></h5>
+      <div class="cover">
+        <%= link_to 'Zoom', @vessel.pocket_plan.url, :class => :fancybox %>
+        <%= image_tag @vessel.pocket_plan.url(:thumb), :class => :back %>
+      </div>
+    </div>
+    <div class="breaker br5"></div>
+  <% end %>
+
+  <% unless @vessel.location.blank? %>
+  <div class="location_map">
+    <h5><%= t('vessel.location_map') %></h5>
+    <div class="cover"><%= @vessel.location %></div>
+  </div>
+  <% end %>
+</div>
+
+<div class="vessel_info">
+  <h5><%= t('vessel.tech_info') %></h5>
+  <%== show_translate(@vessel, :content) %>
+</div>
+<div class="clear"></div>

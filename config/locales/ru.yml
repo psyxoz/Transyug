@@ -19,6 +19,14 @@ ru:
   look_on_the_map: 'Посмотреть на карте'
   archive: 'Архив'
 
+  vessel:
+    prev_vessel: 'Предыдущее судно'
+    next_vessel: 'Следующее судно'
+    tech_info: 'Технические данные'
+    photos: 'Фотографии'
+    pocket_plan: 'Pocket plan'
+    location_map: 'Местоположение судна'
+
   activerecord:
     models:
       user: "Пользователи"

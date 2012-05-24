@@ -6,6 +6,8 @@ class FleetController < ApplicationController
   end
 
   def show
-    @vessel = Vessel.find(params[:id])
+    @vessel = Vessel.find(params[:id], :include => :images)
+    @prev_vessel = Vessel.where('id < ?', @vessel.id).order('id DESC').first
+    @next_vessel = Vessel.where('id > ?', @vessel.id).order('id ASC').first
   end
 end

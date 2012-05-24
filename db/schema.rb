@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120510145426) do
+ActiveRecord::Schema.define(:version => 20120524052949) do
 
   create_table "jobs", :force => true do |t|
     t.string   "title_ru"
@@ -103,11 +103,13 @@ ActiveRecord::Schema.define(:version => 20120510145426) do
     t.text     "content_en"
     t.text     "location"
     t.string   "pocket_plan"
-    t.boolean  "archive",        :default => false
-    t.boolean  "featured",       :default => false
-    t.integer  "sort_id",        :default => 0
-    t.datetime "created_at",                        :null => false
-    t.datetime "updated_at",                        :null => false
+    t.boolean  "archive",             :default => false
+    t.boolean  "featured",            :default => false
+    t.integer  "sort_id",             :default => 0
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
+    t.text     "full_description_ru"
+    t.text     "full_description_en"
   end
 
 end

@@ -30,7 +30,7 @@ module ApplicationHelper
 
   def show_translate(model, method)
     value = model.read_attribute("#{method}_#{I18n.locale}")
-    unless value
+    if value.blank? || value.nil?
       model.read_attribute("#{method}_#{I18n.default_locale}")
     else
       value

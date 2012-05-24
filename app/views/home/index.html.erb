@@ -16,9 +16,9 @@
   <div class="center_column">
     <div class="block vessel">
       <h4><%= t("menu.fleet") %></h4>
-      <img src="/assets/temp/fleet_mini.jpg" alt=""/>
-      <%= link_to 'Alessandra I', fleet_show_path(locale, 1), class: :link_vessel %>
-      <p>Type: Bulker<br/>DWT: ~12500mts<br/>on 7.5meters - draft<br/>Built: 1987, Malta<br/>Flag: Malta</p>
+      <%= image_tag(@vessel.images.first.file.url(:mini)) rescue nil %>
+      <%= link_to show_translate(@vessel, :title), fleet_show_path(locale, @vessel.id), class: :link_vessel %>
+      <%== show_translate(@vessel, :description) %>
       <div class="clear"></div>
       <%= link_to t("all_fleet"), fleet_path(locale), class: :link_fleet %>
     </div>
@@ -27,9 +27,9 @@
       <h4><%= t("menu.jobs") %></h4>
       <%== show_translate(@pages[:jobs], :description) %>
       <ul class="jobs">
-        <li><a href="#">Секретарь</a></li>
-        <li><a href="#">Сотрудник охраны</a></li>
-        <li><a href="#">Незаменимый человек</a></li>
+        <% @jobs.each do |j| %>
+          <li><%= link_to show_translate(j, :title), jobs_path(locale) %></li>
+        <% end %>
       </ul>
     </div>
   </div>

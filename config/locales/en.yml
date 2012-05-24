@@ -21,3 +21,11 @@ en:
   contacts: 'Contact information'
   look_on_the_map: 'Look on the map'
   archive: 'Archive'
+
+  vessel:
+    prev_vessel: 'Previous vessel'
+    next_vessel: 'Next vessel'
+    tech_info: 'Technical information'
+    photos: 'Photos'
+    pocket_plan: 'Pocket plan'
+    location_map: 'Location'

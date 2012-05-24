@@ -23,9 +23,14 @@
         <%= f.text_area :description_ru, :rows => 4, :class => 'span5 ckeditor' %>
       </div>
     </div>
-
     <div class="control-group">
-      <%= f.label :content_ru, 'Описание', :class => 'control-label' %>
+      <%= f.label :full_description_ru, 'Описание', :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_area :full_description_ru, :rows => 4, :class => 'span5 ckeditor' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :content_ru, 'Технические данные', :class => 'control-label' %>
       <div class="controls">
         <%= f.text_area :content_ru, :rows => 4, :class => 'span5' %>
       </div>
@@ -45,7 +50,12 @@
         <%= f.text_area :description_en, :rows => 4, :class => 'span5 ckeditor' %>
       </div>
     </div>
-
+    <div class="control-group">
+      <%= f.label :full_description_en, 'Описание', :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_area :full_description_en, :rows => 4, :class => 'span5 ckeditor' %>
+      </div>
+    </div>
     <div class="control-group">
       <%= f.label :content_en, 'Описание', :class => 'control-label' %>
       <div class="controls">

@@ -16,8 +16,10 @@
       </li>
       <% end %>
     </ul>
+    <div class="breaker br4"></div>
   </div>
 
+  <% if @vessels_archive.size > 0 %>
   <h3 class="title"><%= t("archive") %></h3>
   <div class="breaker br4"></div>
   <div class="vessels m_b_30">
@@ -33,5 +35,7 @@
       </li>
       <% end %>
     </ul>
+    <div class="breaker br4"></div>
   </div>
+  <% end %>
 </div>

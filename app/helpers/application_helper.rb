@@ -29,6 +29,7 @@ module ApplicationHelper
   end
 
   def show_translate(model, method)
+    return nil if model.nil?
     value = model.read_attribute("#{method}_#{I18n.locale}")
     if value.blank? || value.nil?
       model.read_attribute("#{method}_#{I18n.default_locale}")

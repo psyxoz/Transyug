@@ -1,0 +1,92 @@
+<%= stylesheet_link_tag "validationEngine.jquery" %>
+<%= javascript_include_tag "jquery.validationEngine", "jquery.validationEngine-#{locale}", "jquery.dropdown" %>
+<script type="text/javascript">
+  $(function() {
+    $("form").validationEngine().live('ajax:before', function(event, elements) {
+      $(".submit input").prop('disabled', true);
+      $("form").fadeTo("slow", 0.00, function(){
+        $('.thanks').fadeTo("slow", 1);
+        $(this).slideUp("slow");
+      });
+    });
+    $('a.send').click(function(){
+      $(".thanks").fadeTo("slow", 0.00, function(){
+        $(this).slideUp("fast");
+        $('form').fadeTo("slow", 1);
+        $(".submit input").prop('disabled', false);
+      });
+      return false;
+    });
+  });
+</script>
+
+<div class="wrapper_700 chartering">
+  <h3 class="title"><%== show_translate(@page, :title) %></h3>
+
+  <div class="wrapper_580">
+    <div class="text"><%== show_translate(@page, :content) %></div>
+    <div class="box thanks">
+      <h5><%= t('chartering.send_thanks') %></h5>
+      <p><%= t('chartering.send_details') %></p>
+      <a href="#" class="send"><%= t('chartering.send_more') %></a>
+      <div class="clear"></div>
+    </div>
+  </div>
+
+  <%= form_tag(chartering_send_path(locale), :remote => true) do -%>
+
+    <div class="box title">
+      <%= t('chartering.title') %>
+      <div class="arrow_down"></div>
+    </div>
+
+    <fieldset id="step_1">
+      <div class="box">
+        <%= label_tag 'message[name]', t('chartering.first_last_name') %>
+        <%= text_field_tag 'message[name]', nil, class: 'input validate[required]' %>
+
+        <%= label_tag 'message[email]', t('chartering.email') %>
+        <%= text_field_tag 'message[email]', nil, class: 'input validate[required]' %>
+
+        <%= label_tag 'message[mobile]', t('chartering.mobile') %>
+        <%= text_field_tag 'message[mobile]', nil, class: 'input validate[required]' %>
+
+        <%= label_tag 'message[skype]', t('chartering.skype') %>
+        <%= text_field_tag 'message[skype]', nil, class: 'input' %>
+        <div class="arrow_right"></div>
+      </div>
+      <div class="box submit">
+        <%= submit_tag t('submit') %>
+      </div>
+    </fieldset>
+
+    <fieldset id="step_2" class="box">
+      <%= label_tag 'message[load_port]', t('chartering.load_port') %>
+      <%= text_field_tag 'message[load_port]', nil, class: 'input' %>
+
+      <%= label_tag 'message[discharge_port]', t('chartering.discharge_port') %>
+      <%= text_field_tag 'message[discharge_port]', nil, class: 'input' %>
+
+      <%= label_tag 'message[cargo_description]', t('chartering.cargo_description') %>
+      <%= select 'message', 'cargo_description', cargo_description.collect { |p| [ p, p] }, class: 'input validate[required]' %>
+      <script type="text/javascript">$("#message_cargo_description").MyDropdown();</script>
+
+      <div class="small first">
+        <%= label_tag 'message[cargo_quantity]', t('chartering.cargo_quantity') %>
+        <%= text_field_tag 'message[cargo_quantity]', nil, class: 'input' %>
+      </div>
+      <div class="small">
+        <%= label_tag 'message[cargo_tolerance]', t('chartering.cargo_tolerance') %>
+        <%= text_field_tag 'message[cargo_tolerance]', nil, class: 'input' %>
+      </div>
+      <div class="clear"></div>
+
+      <%= label_tag 'message[load_rate]', t('chartering.load_rate') %>
+      <%= text_field_tag 'message[load_rate]', nil, class: 'input' %>
+
+      <%= label_tag 'message[discharge_rate]', t('chartering.discharge_rate') %>
+      <%= text_field_tag 'message[discharge_rate]', nil, class: 'input' %>
+      <div class="arrow_left"></div>
+    </fieldset>
+  <% end -%>
+</div>

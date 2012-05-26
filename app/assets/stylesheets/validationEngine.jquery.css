@@ -1,0 +1,60 @@
+.inputContainer {
+	position: relative;
+	float: left;
+}
+
+.formError {
+	position: absolute;
+	z-index: 5000;
+	cursor: pointer;
+}
+
+.formError .formErrorContent {
+	width: 100%;
+	position:absolute;
+	z-index:5001;
+	color: #ffc500;
+	font-size: 12px;
+	margin-left:-24px;
+	line-height: 30px;
+  width: 78px;
+  margin-top: -28px;
+  text-align: right;
+}
+
+.formError .formErrorArrow {
+	width: 15px;
+  z-index: 5006;
+  position: absolute;
+  width: 224px;
+  height: 34px;
+  border: 2px solid #ffc500;
+  border-radius: 2px;
+  left: -174px;
+  top: -2px;
+}
+
+.formError .formErrorArrowBottom {
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+	margin: 0px 0 0 12px;
+  top:2px;
+}
+
+.formError .formErrorArrowBottom div {
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+.requar {
+	background-image:url(icons/required.png);
+	height:30px;
+	width:20px;
+	margin-top:-30px;
+	float:right;
+	position: absolute;
+	top:32px;
+	right:-28px;
+}

@@ -14,6 +14,7 @@ Transyug::Application.routes.draw do
   scope ':locale' do
     match '/' => 'home#index', :as => :root
     match 'pages/:code' => 'pages#show', :as => :page
+    match 'pages/chartering/send' => 'pages#chartering_send', :as => :chartering_send
     match 'fleet' => 'fleet#index', :as => :fleet
     match 'fleet/:id' => 'fleet#show', :as => :fleet_show
     match 'vacancy' => 'jobs#index', :as => :jobs

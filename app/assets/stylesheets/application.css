@@ -95,6 +95,8 @@ ul.menu li.active {background: url("manu_bg.png") no-repeat; color: white !impor
 #slideshow img.last-active {z-index:9;}
 
 .wrapper_700 {margin: 0 auto; width: 700px;}
+.wrapper_580 {margin: 0 auto; width: 580px;}
+
 h3.title {height: 40px; line-height: 40px; font-size: 30px; text-align: center; color: #ffffff; margin-bottom: 15px;}
 .text p {line-height: 20px; margin-bottom: 20px; font-size: 16px;}
 .text li {line-height: 20px; font-size: 16px;}
@@ -160,3 +162,34 @@ h3.title {height: 40px; line-height: 40px; font-size: 30px; text-align: center; 
 .vessel_info td {vertical-align: top; line-height: 20px; color: #bae9ff; padding: 5px 0}
 .vessel_info tr td:first-child {color: white}
 
+form label {display: block; font-size: 12px; color: white; height: 30px; line-height: 30px; cursor: pointer}
+form .input {height: 30px; background: url(input_bg.png); border: none; color: #303f5c; font-size: 15px; border-radius: 2px; behavior: url('border-radius.htc'); padding: 0 10px; z-index: 5010; position: relative;}
+form input {margin-bottom: 20px;}
+
+.box {background: url("form_bg.png"); position: relative; border-radius: 2px; border-top: 1px solid #011F32; box-shadow: inset 0px 1px 1px #01273E; -moz-box-shadow: inset 0px 1px 1px #01273E; -webkit-box-shadow: inset 0px 1px 1px #01273E}
+.box.thanks {padding: 70px 50px 50px 100px !important; display: none; width: 430px !important;}
+.box.thanks h5 {height: 40px; line-height: 40px; font-size: 30px; color: white; margin-bottom: 10px}
+.box.thanks p {color: #8bd4f6; display: block; width: 340px; line-height: 28px; margin-bottom: 40px; font-size: 30px;}
+.box.thanks a {float: right; display: inline-block; height: 30px; line-height: 30px; color: #00d8ff; font-size: 18px;}
+
+.chartering .input {width: 200px;}
+.chartering fieldset {float: left;}
+.chartering .box {padding: 40px 60px; width: 220px;}
+.chartering .box.title {height: 40px; line-height: 40px; padding: 30px 0; width: 700px; text-align: center; font-size: 30px; color: #bae9ff; margin-bottom: 20px;}
+.chartering .box.submit {padding: 40px; width: 260px; margin-top: 20px;}
+.chartering .box.submit input {width: 260px; height: 60px; line-height: 60px; border: none; background: transparent url("button_bg.png"); color: white; font-size: 24px; margin-bottom: 0; text-shadow: 0px -1px #2287c5}
+.chartering .box.submit input:hover {background-position: 0 -60px; cursor: pointer}
+.chartering .small {width: 100px; float: left;}
+.chartering .small input {width: 80px}
+.chartering fieldset#step_1, .chartering .small.first {margin-right: 20px;}
+
+.genHeader {background: url("select_box_bg.png") no-repeat; cursor:pointer; width:170px; color: #303f5c; font-size: 15px; padding: 0 40px 0 10px; margin-bottom: 20px}
+.menuHeader, .genHeader {height:30px; line-height:30px; overflow:hidden;}
+.menuHeader {position:absolute; width:220px; z-index:10000;}
+.advMenuUL {list-style: none; background-color: white; z-index:5011; margin-top: -21px; padding-left: 0px;}
+.advMenuUL li {height:30px; line-height:30px; padding-left: 10px; margin: 0; cursor:pointer; z-index: 5020; position: relative; color: #525357}
+.advMenuUL li.sel, .advMenuUL li:hover {background:#d2f1ff; color: #303f5c;}
+
+.arrow_down {background: url("arrow_down.png"); width: 20px; height: 10px; position: absolute; bottom: -10px; left:160px}
+.arrow_right {background: url("arrow_right.png"); width: 10px; height: 20px; position: absolute; right: -10px; top:190px; border-left: 1px solid #002d47}
+.arrow_left {background: url("arrow_left.png"); width: 10px; height: 20px; position: absolute; left: -10px; bottom:60px; border-right: 1px solid #002c47}

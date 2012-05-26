@@ -1,4 +1,6 @@
 ru:
+  submit: 'Отправить'
+
   menu:
     company: 'О компании'
     fleet: 'Флот'
@@ -26,6 +28,23 @@ ru:
     photos: 'Фотографии'
     pocket_plan: 'Pocket plan'
     location_map: 'Местоположение судна'
+
+  chartering:
+    title: 'Заявка на фрахтование'
+    send_thanks: 'Спасибо!'
+    send_details: 'Мы ответим на ваш запрос как можно скорее.'
+    send_more: 'Отправить еще запрос?'
+    first_last_name: 'Ваше имя и фамилия:'
+    email: 'Ваш e-mail:'
+    mobile: 'Ваш телефон:'
+    skype: 'Ваш Skype ID:'
+    load_port: 'Load port:'
+    discharge_port: 'Discharge port:'
+    cargo_description: 'Cargo description:'
+    cargo_quantity: 'Cargo quantity:'
+    cargo_tolerance: 'Cargo tolerance:'
+    load_rate: 'Load rate:'
+    discharge_rate: 'Discharge rate:'
 
   activerecord:
     models:

@@ -2,6 +2,8 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  submit: 'Submit'
+
   menu:
     company: 'Company'
     fleet: 'Fleet'
@@ -29,3 +31,20 @@ en:
     photos: 'Photos'
     pocket_plan: 'Pocket plan'
     location_map: 'Location'
+
+  chartering:
+    title: 'Ask for freight indication'
+    send_thanks: 'Thank you!'
+    send_details: 'We’ll respond to your request as soon as possible.'
+    send_more: 'Ask one more?'
+    first_last_name: 'Your first and last name:'
+    email: 'Your e-mail:'
+    mobile: 'Your mobile:'
+    skype: 'Your Skype ID:'
+    load_port: 'Load port:'
+    discharge_port: 'Discharge port:'
+    cargo_description: 'Cargo description:'
+    cargo_quantity: 'Cargo quantity:'
+    cargo_tolerance: 'Cargo tolerance:'
+    load_rate: 'Load rate:'
+    discharge_rate: 'Discharge rate:'

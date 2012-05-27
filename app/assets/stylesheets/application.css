@@ -182,6 +182,7 @@ form textarea, form input {margin-bottom: 20px;}
 .box.submit {padding: 40px; width: 260px; margin-top: 20px;}
 .box.submit input {width: 260px; height: 60px; line-height: 60px; border: none; background: transparent url("button_bg.png"); color: white; font-size: 24px; margin-bottom: 0; text-shadow: 0px -1px #2287c5}
 .box.submit input:hover {background-position: 0 -60px; cursor: pointer}
+.box.submit input.disabled {background-position: 0 0 !important; cursor: default}
 
 .genHeader {background: url("select_box_bg.png") no-repeat; cursor:pointer; width:170px; color: #303f5c; font-size: 15px; padding: 0 40px 0 10px; margin-bottom: 20px}
 .menuHeader, .genHeader {height:30px; line-height:30px; overflow:hidden;}
@@ -216,3 +217,6 @@ form textarea, form input {margin-bottom: 20px;}
 .tech_dep .info {width: 300px; float: left;}
 .tech_dep .info h5 {font-size: 30px; margin: 10px 0 28px; line-height: 30px;}
 .tech_dep .info p {color: #bae9ff; font-size: 12px; line-height: 18px;}
+.tech_dep .symbols_left {font-size:12px; float:right; display: inline-block; height: 30px; line-height: 30px; color: #75afca;}
+.tech_dep input.symbols_count {width: 27px; float: right; background: none; border: none; color: #75afca; margin-bottom: 0px; height: 30px; line-height: 30px; text-align: right; margin-right: 5px;}
+.tech_dep .symbols {margin-top: -20px; position: relative;}

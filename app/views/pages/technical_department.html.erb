@@ -1,10 +1,31 @@
 <%= stylesheet_link_tag "validationEngine.jquery" %>
 <%= javascript_include_tag "jquery.validationEngine", "jquery.validationEngine-#{locale}", "jquery.ui" %>
 <script type="text/javascript">
+  function custom_validator() {
+    var count_required = $(".required").length;
+    var count_required_values = 0;
+    $(".required").each(function(i,e){
+      var value = e.value;
+      if (value != '') count_required_values += 1;
+    });
+
+    if (count_required == count_required_values) {
+      $('form .submit').animate({opacity: 1});
+      $('form .submit input').prop('disabled', false).removeClass('disabled');
+    } else {
+      $('form .submit').animate({opacity: 0.50});
+      $('form .submit input').prop('disabled', true).addClass('disabled');
+    }
+  }
+
   $(function() {
     $(".level_1").accordion({collapsible: true, header: "strong.root", active: -1, autoHeight: false});
 
-    $("form").validationEngine('attach', { relative: true }).live('ajax:before', function(event, elements) {
+    $(".required").keyup(function(){custom_validator()});
+    $("form .submit").animate({opacity:0.50}).find('input').prop('disabled', true).addClass('disabled');
+    $("form").validationEngine('attach', {relative: true});
+
+    $("form").live('ajax:before', function(event, elements) {
       $(".submit input").prop('disabled', true);
       $("form").fadeTo("slow", 0.00, function(){
         $('.thanks').fadeTo("slow", 1);
@@ -67,13 +88,18 @@
       </div>
       <fieldset id="step_1">
         <%= label_tag 'message[name]', t('chartering.first_last_name') %>
-        <%= text_field_tag 'message[name]', nil, class: 'input validate[required]' %>
+        <%= text_field_tag 'message[name]', nil, class: 'input validate[required] required' %>
 
         <%= label_tag 'message[email]', t('chartering.email') %>
-        <%= text_field_tag 'message[email]', nil, class: 'input validate[required]' %>
+        <%= text_field_tag 'message[email]', nil, class: 'input validate[required] required' %>
 
         <%= label_tag 'message[message]', t('technical_department.message') %>
-        <%= text_area_tag 'message[message]', nil %>
+        <%= text_area_tag 'message[message]', nil, onKeyDown: "limitText(this,this.form.count,162);", onKeyUp: "limitText(this,this.form.count,162);" %>
+
+        <div class="symbols">
+          <span class="symbols_left"><%= t('technical_department.symbols_left') %></span>
+          <%= text_field_tag 'count', 162, readonly: 'readonly', class: 'symbols_count' %>
+        </div>
       </fieldset>
       <div class="clear"></div>
       <div class="arrow_down"></div>

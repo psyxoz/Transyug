@@ -12,7 +12,6 @@ ru:
     contacts: 'Контакты'
 
   more_information: 'Подробнее'
-  technical_department: 'Технический отдел'
   list_of_necessary_equipment: 'Список необходимого оборудования'
   all_fleet: 'Весь флот'
   fill_in_application_form: 'Заполнить Application Form'
@@ -47,6 +46,7 @@ ru:
     discharge_rate: 'Discharge rate:'
 
   technical_department:
+    name: 'Технический отдел'
     title: 'Вы можете<br/> нас заинтересовать?'
     info: 'Мы всегда открыты для интересных предложений, просто заполните эту форму!'
     message: 'Сообщение:'

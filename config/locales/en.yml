@@ -15,7 +15,6 @@ en:
     contacts: 'Contacts'
 
   more_information: 'More information'
-  technical_department: 'Technical department'
   list_of_necessary_equipment: 'List of necessary<br/> equipment'
   all_fleet: 'Other fleet'
   fill_in_application_form: 'Fill in Application<br/> Form'
@@ -50,6 +49,7 @@ en:
     discharge_rate: 'Discharge rate:'
 
   technical_department:
+    name: 'Technical department'
     title: 'You can interest us?'
     info: 'We are always open to interesting offers,<br/> just fill this form!'
     message: 'Your message:'

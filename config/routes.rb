@@ -15,6 +15,7 @@ Transyug::Application.routes.draw do
     match '/' => 'home#index', :as => :root
     match 'pages/:code' => 'pages#show', :as => :page
     match 'pages/chartering/send' => 'pages#chartering_send', :as => :chartering_send
+    match 'pages/technical_department/send' => 'pages#technical_department_send', :as => :technical_department_send
     match 'fleet' => 'fleet#index', :as => :fleet
     match 'fleet/:id' => 'fleet#show', :as => :fleet_show
     match 'vacancy' => 'jobs#index', :as => :jobs

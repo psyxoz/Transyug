@@ -163,8 +163,9 @@ h3.title {height: 40px; line-height: 40px; font-size: 30px; text-align: center; 
 .vessel_info tr td:first-child {color: white}
 
 form label {display: block; font-size: 12px; color: white; height: 30px; line-height: 30px; cursor: pointer}
-form .input {height: 30px; background: url(input_bg.png); border: none; color: #303f5c; font-size: 15px; border-radius: 2px; behavior: url('border-radius.htc'); padding: 0 10px; z-index: 5010; position: relative;}
-form input {margin-bottom: 20px;}
+form .input {height: 30px; width: 200px; background: url(input_bg.png); border: none; color: #303f5c; font-size: 15px; border-radius: 2px; behavior: url('border-radius.htc'); padding: 0 10px; z-index: 5010; position: relative;}
+form textarea {height: 90px; width: 200px; background: #f2fbff url(text_area_bg.png) repeat-x; border: none; color: #303f5c; font-size: 15px; border-radius: 2px; behavior: url('border-radius.htc'); padding: 10px; z-index: 5010; position: relative;}
+form textarea, form input {margin-bottom: 20px;}
 
 .box {background: url("form_bg.png"); position: relative; border-radius: 2px; border-top: 1px solid #011F32; box-shadow: inset 0px 1px 1px #01273E; -moz-box-shadow: inset 0px 1px 1px #01273E; -webkit-box-shadow: inset 0px 1px 1px #01273E}
 .box.thanks {padding: 70px 50px 50px 100px !important; display: none; width: 430px !important;}
@@ -172,16 +173,15 @@ form input {margin-bottom: 20px;}
 .box.thanks p {color: #8bd4f6; display: block; width: 340px; line-height: 28px; margin-bottom: 40px; font-size: 30px;}
 .box.thanks a {float: right; display: inline-block; height: 30px; line-height: 30px; color: #00d8ff; font-size: 18px;}
 
-.chartering .input {width: 200px;}
 .chartering fieldset {float: left;}
 .chartering .box {padding: 40px 60px; width: 220px;}
 .chartering .box.title {height: 40px; line-height: 40px; padding: 30px 0; width: 700px; text-align: center; font-size: 30px; color: #bae9ff; margin-bottom: 20px;}
-.chartering .box.submit {padding: 40px; width: 260px; margin-top: 20px;}
-.chartering .box.submit input {width: 260px; height: 60px; line-height: 60px; border: none; background: transparent url("button_bg.png"); color: white; font-size: 24px; margin-bottom: 0; text-shadow: 0px -1px #2287c5}
-.chartering .box.submit input:hover {background-position: 0 -60px; cursor: pointer}
 .chartering .small {width: 100px; float: left;}
 .chartering .small input {width: 80px}
 .chartering fieldset#step_1, .chartering .small.first {margin-right: 20px;}
+.box.submit {padding: 40px; width: 260px; margin-top: 20px;}
+.box.submit input {width: 260px; height: 60px; line-height: 60px; border: none; background: transparent url("button_bg.png"); color: white; font-size: 24px; margin-bottom: 0; text-shadow: 0px -1px #2287c5}
+.box.submit input:hover {background-position: 0 -60px; cursor: pointer}
 
 .genHeader {background: url("select_box_bg.png") no-repeat; cursor:pointer; width:170px; color: #303f5c; font-size: 15px; padding: 0 40px 0 10px; margin-bottom: 20px}
 .menuHeader, .genHeader {height:30px; line-height:30px; overflow:hidden;}
@@ -193,3 +193,26 @@ form input {margin-bottom: 20px;}
 .arrow_down {background: url("arrow_down.png"); width: 20px; height: 10px; position: absolute; bottom: -10px; left:160px}
 .arrow_right {background: url("arrow_right.png"); width: 10px; height: 20px; position: absolute; right: -10px; top:190px; border-left: 1px solid #002d47}
 .arrow_left {background: url("arrow_left.png"); width: 10px; height: 20px; position: absolute; left: -10px; bottom:60px; border-right: 1px solid #002c47}
+
+.tech_dep ul.level_1 {margin: 0 0 64px; padding: 0; list-style: none; padding-top: 20px;}
+.tech_dep ul.level_1 ul {margin: 0; padding: 0; list-style: none}
+.tech_dep ul.level_1 li {margin: 0; padding: 0}
+.tech_dep ul .root {line-height: 40px; height: 40px; font-size: 24px; color: #ffffff; position: relative; display: block; cursor: pointer; text-decoration: underline}
+.tech_dep ul .root .ui-icon {background: url("arrow_list.png") 0 0; width: 20px; height: 10px; display: inline-block; left: -30px; top: 17px; position: absolute;}
+.tech_dep ul strong.ui-state-active {text-decoration: none !important;}
+.tech_dep ul strong.ui-state-active .ui-icon {background-position: 0 -10px;}
+.tech_dep ul.child {margin-bottom: 30px !important;}
+.tech_dep ul.child li {padding-left: 10px !important;}
+.tech_dep ul.child li strong {height: 30px; line-height: 30px; display: block; color: #ffffff; position: relative; font-size: 20px; text-decoration: underline}
+.tech_dep ul.child li p {line-height: 22px; padding: 5px 30px; font-size: 18px; color: #8bd4f6; display: block;}
+.tech_dep ul.child .ui-icon {background: url("arrow_list_small.png") left top no-repeat; width: 20px; height: 6px; display: inline-block;}
+.tech_dep ul.child .ui-state-active .ui-icon {background-position: 0 -6px;}
+
+.tech_dep .arrow_down {left: 520px !important;}
+.tech_dep .box {padding: 40px 60px;}
+.tech_dep .box.submit {float: right; padding: 40px !important;}
+.tech_dep form, .tech_dep .box.thanks {margin-top: 64px;}
+.tech_dep fieldset {float: right;}
+.tech_dep .info {width: 300px; float: left;}
+.tech_dep .info h5 {font-size: 30px; margin: 10px 0 28px; line-height: 30px;}
+.tech_dep .info p {color: #bae9ff; font-size: 12px; line-height: 18px;}

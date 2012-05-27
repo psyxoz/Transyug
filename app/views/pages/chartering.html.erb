@@ -2,13 +2,14 @@
 <%= javascript_include_tag "jquery.validationEngine", "jquery.validationEngine-#{locale}", "jquery.dropdown" %>
 <script type="text/javascript">
   $(function() {
-    $("form").validationEngine().live('ajax:before', function(event, elements) {
+    $("form").validationEngine('attach', { relative: true }).live('ajax:before', function(event, elements) {
       $(".submit input").prop('disabled', true);
       $("form").fadeTo("slow", 0.00, function(){
         $('.thanks').fadeTo("slow", 1);
         $(this).slideUp("slow");
       });
     });
+
     $('a.send').click(function(){
       $(".thanks").fadeTo("slow", 0.00, function(){
         $(this).slideUp("fast");

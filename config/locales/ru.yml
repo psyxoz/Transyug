@@ -46,6 +46,11 @@ ru:
     load_rate: 'Load rate:'
     discharge_rate: 'Discharge rate:'
 
+  technical_department:
+    title: 'Вы можете<br/> нас заинтересовать?'
+    info: 'Мы всегда открыты для интересных предложений, просто заполните эту форму!'
+    message: 'Сообщение:'
+
   activerecord:
     models:
       user: "Пользователи"

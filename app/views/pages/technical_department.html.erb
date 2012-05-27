@@ -1,0 +1,94 @@
+<%= stylesheet_link_tag "validationEngine.jquery" %>
+<%= javascript_include_tag "jquery.validationEngine", "jquery.validationEngine-#{locale}", "jquery.ui" %>
+<script type="text/javascript">
+  $(function() {
+    $(".level_1").accordion({collapsible: true, header: "strong.root", active: -1, autoHeight: false});
+
+    $("form").validationEngine('attach', { relative: true }).live('ajax:before', function(event, elements) {
+      $(".submit input").prop('disabled', true);
+      $("form").fadeTo("slow", 0.00, function(){
+        $('.thanks').fadeTo("slow", 1);
+        $(this).slideUp("slow");
+      });
+    });
+
+    $('a.send').click(function(){
+      $(".thanks").fadeTo("slow", 0.00, function(){
+        $(this).slideUp("fast");
+        $('form').fadeTo("slow", 1);
+        $(".submit input").prop('disabled', false);
+      });
+      return false;
+    });
+  });
+</script>
+
+<div class="wrapper_700 tech_dep">
+  <h3 class="title"><%== show_translate(@page, :title) %></h3>
+
+  <div class="wrapper_580">
+    <div class="text">
+      <%== show_translate(@page, :content) %>
+      <div class="clear"></div>
+    </div>
+
+    <% if defined?(@options) %>
+    <ul class="level_1">
+      <% @options.each do |item| %>
+      <li style="cursor: pointer">
+        <strong class="root"><%= item.title %></strong>
+        <% if item.children && item.children.size > 0 %>
+          <ul class="child child_<%= item.id %>">
+            <% item.children.each do |child| %>
+            <li>
+              <strong><%= child.title %></strong>
+              <%= "<p>#{child.content}</p>".html_safe unless child.content.blank? %>
+            </li>
+            <% end %>
+          </ul>
+          <script>
+            $(function() {
+              $(".child_<%= item.id %>").accordion({collapsible: true, header: "strong", active: -1, autoHeight: false});
+            });
+          </script>
+        <% end %>
+      </li>
+      <% end %>
+    </ul>
+    <% end %>
+  </div>
+
+  <div class="breaker br4"></div>
+  <%= form_tag(technical_department_send_path(locale), :remote => true) do -%>
+    <div class="box">
+      <div class="info">
+        <h5><%== t('technical_department.title') %></h5>
+        <p><%== t('technical_department.info') %></p>
+      </div>
+      <fieldset id="step_1">
+        <%= label_tag 'message[name]', t('chartering.first_last_name') %>
+        <%= text_field_tag 'message[name]', nil, class: 'input validate[required]' %>
+
+        <%= label_tag 'message[email]', t('chartering.email') %>
+        <%= text_field_tag 'message[email]', nil, class: 'input validate[required]' %>
+
+        <%= label_tag 'message[message]', t('technical_department.message') %>
+        <%= text_area_tag 'message[message]', nil %>
+      </fieldset>
+      <div class="clear"></div>
+      <div class="arrow_down"></div>
+    </div>
+    <div class="box submit">
+      <%= submit_tag t('submit') %>
+    </div>
+  <% end -%>
+
+  <div class="wrapper_580">
+    <div class="box thanks">
+      <h5><%= t('chartering.send_thanks') %></h5>
+      <p><%= t('chartering.send_details') %></p>
+      <a href="#" class="send"><%= t('chartering.send_more') %></a>
+      <div class="clear"></div>
+    </div>
+  </div>
+</div>

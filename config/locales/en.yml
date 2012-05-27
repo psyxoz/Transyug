@@ -48,3 +48,8 @@ en:
     cargo_tolerance: 'Cargo tolerance:'
     load_rate: 'Load rate:'
     discharge_rate: 'Discharge rate:'
+
+  technical_department:
+    title: 'You can interest us?'
+    info: 'We are always open to interesting offers,<br/> just fill this form!'
+    message: 'Your message:'

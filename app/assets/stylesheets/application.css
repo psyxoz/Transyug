@@ -63,7 +63,7 @@ ul.menu li.active {background: url("manu_bg.png") no-repeat; color: white !impor
 .footer .menu li {width: 90px; margin-left: 0;}
 .footer .menu li a {font-size: 11px;}
 
-.content {position: relative; overflow: hidden;}
+.content {position: relative; overflow: hidden; margin-bottom: 20px}
 
 .home {margin-top: 360px;}
 .home .left_column {width: 280px; margin-right: 80px; float: left;}

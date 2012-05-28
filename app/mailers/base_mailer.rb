@@ -14,10 +14,10 @@ class BaseMailer < ActionMailer::Base
 
   def crewing(message)
     @message = message
-    if params[:file]
+    if message[:file]
       attachments['application_form'] = {
-        content:    params[:file].read,
-        mime_type:  params[:file].content_type
+        content:    message[:file].read,
+        mime_type:  message[:file].content_type
       }
     end
     mail(to: "af@transyug.com", subject: "Application form")
@@ -26,5 +26,16 @@ class BaseMailer < ActionMailer::Base
   def application_form(app_form)
     @app_form = app_form
     mail(to: "af@transyug.com", subject: "Application form")
+  end
+
+  def resume(message)
+    @message = message
+    if message[:file]
+      attachments['resume'] = {
+        content:    message[:file].read,
+        mime_type:  message[:file].content_type
+      }
+    end
+    mail(to: "job@transyug.com", subject: "Новое резюме")
   end
 end

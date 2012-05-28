@@ -21,6 +21,7 @@ Transyug::Application.routes.draw do
     match 'fleet' => 'fleet#index', :as => :fleet
     match 'fleet/:id' => 'fleet#show', :as => :fleet_show
     match 'vacancy' => 'jobs#index', :as => :jobs
+    match 'vacancy_send' => 'jobs#send_resume', :as => :send_resume
     match 'partners' => 'partners#index', :as => :partners
   end
 

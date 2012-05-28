@@ -200,15 +200,16 @@ form textarea, form input {margin-bottom: 20px;}
 .tech_dep ul.level_1 ul {margin: 0; padding: 0; list-style: none}
 .tech_dep ul.level_1 li {margin: 0; padding: 0}
 .tech_dep ul .root {line-height: 40px; height: 40px; font-size: 24px; color: #ffffff; position: relative; display: block; cursor: pointer; text-decoration: underline}
-.tech_dep ul .root .ui-icon {background: url("arrow_list.png") 0 0; width: 20px; height: 10px; display: inline-block; left: -30px; top: 17px; position: absolute;}
+.tech_dep ul .root:hover, .tech_dep ul.child li strong:hover {color: #5CCFFF}
+.tech_dep ul .root .ui-icon {background: url("arrow_list.png") 0 -10px; width: 20px; height: 10px; display: inline-block; left: -30px; top: 17px; position: absolute;}
 .tech_dep ul strong.ui-state-active {text-decoration: none !important;}
-.tech_dep ul strong.ui-state-active .ui-icon {background-position: 0 -10px;}
+.tech_dep ul strong.ui-state-active .ui-icon {background-position: 0 0;}
 .tech_dep ul.child {margin-bottom: 30px !important;}
 .tech_dep ul.child li {padding-left: 10px !important;}
 .tech_dep ul.child li strong {height: 30px; line-height: 30px; display: block; color: #ffffff; position: relative; font-size: 20px; text-decoration: underline}
 .tech_dep ul.child li p {line-height: 22px; padding: 5px 30px; font-size: 18px; color: #8bd4f6; display: block;}
-.tech_dep ul.child .ui-icon {background: url("arrow_list_small.png") left top no-repeat; width: 20px; height: 6px; display: inline-block;}
-.tech_dep ul.child .ui-state-active .ui-icon {background-position: 0 -6px;}
+.tech_dep ul.child .ui-icon {background: url("arrow_list_small.png") 0 -6px no-repeat; width: 20px; height: 6px; display: inline-block;}
+.tech_dep ul.child .ui-state-active .ui-icon {background-position: left top;}
 
 .tech_dep .arrow_down {left: 520px !important;}
 .tech_dep .box {padding: 40px 60px;}
@@ -224,7 +225,7 @@ form textarea, form input {margin-bottom: 20px;}
 
 .crewing .breaker {margin: 54px 0;}
 .crewing .box {padding: 20px 60px;}
-.crewing .box.form {padding: 40px 60px;}
+.crewing .box.form {padding: 40px 0 0 60px;}
 .crewing .app_form {background: url("icons/arrow_af.png") no-repeat right center; width: 580px; height: 120px; display: inline-block; text-decoration: none; font-size: 30px; color: white; line-height: 40px;}
 .crewing .app_form i {display: block; color: #00d8ff; font-style: normal; text-decoration: underline}
 .crewing .app_form:hover i, .crewing .app_form_info a:hover {text-decoration: none; color: white}
@@ -232,4 +233,21 @@ form textarea, form input {margin-bottom: 20px;}
 .crewing .app_form_info a {text-decoration: underline; color: #00d8ff}
 .crewing .form .left {width: 240px; float: left;}
 .crewing .form .left h5 {color: white; font-size: 30px; line-height: 30px; margin-bottom: 30px;}
-.crewing .form .left p {font-size: 12px; line-height: 20px; color: #bae9ff;}
+.crewing .form .left p {font-size: 12px; line-height: 20px; color: #bae9ff; margin-bottom: 40px}
+.crewing form {width: 360px; float: right;}
+.crewing form fieldset {margin-left: 20px; height: 200px; width: 310px;}
+.crewing form .box.submit {padding: 40px; margin: 20px 0 0 20px !important;}
+.crewing form .file_field {background: url("browse.png") no-repeat 190px bottom; height: 60px;}
+.crewing form .file_field span {display: block; font-size: 12px; color: #587d9a; height: 30px; line-height: 30px; margin-top: -20px; position: relative;}
+.crewing form #file {margin-top: -50px;}
+.crewing form input {width: 160px;}
+.crewing form .formErrorArrow {width: 184px; left: -134px;}
+.crewing form .formErrorContent {text-indent: 10000px}
+.crewing form #message_file {opacity: 0; filter: alpha(opacity=0); height: 30px; width: 253px; cursor: pointer; z-index: 10000; position: relative;}
+.crewing .cover {background: url("bg.png"); position: relative; overflow: hidden; border-radius: 2px 0 0 0; box-shadow: inset 1px 0px #00253C;}
+.crewing .cover .arrow_down {top: 0px; left: 180px}
+
+.jobs ul {margin-bottom: 40px !important;}
+.jobs li p {color: #8bd4f6; font-size: 16px; line-height: 20px; padding-left: 20px; padding-top: 5px}
+.jobs li {margin-bottom: 20px !important;}
+.jobs .breaker {margin: 24px 0 44px !important;}

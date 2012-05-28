@@ -58,4 +58,13 @@ en:
   crewing:
     app_form: 'You can write <i>Application Form</i> right now!'
     app_form_info: 'Also you can download %{form}<br/> and send the completed document to: %{email}<br/> or by using this form:'
+    app_form_title: 'Send completed Application Form right now.'
     app_form_description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sollicitudin vulputate augue, nec tempor nulla sodales at. Quisque venenatis lacus nec risus pellentesque at suscipit metus adipiscing. '
+    file: 'Attach file'
+    file_support: 'Support only DOC files.'
+
+  jobs:
+    form_title: 'Send your completed resume right now!'
+    form_description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sollicitudin vulputate augue, nec tempor nulla sodales at. Quisque venenatis lacus nec risus pellentesque at suscipit metus adipiscing. '
+    file_support: 'Support only DOC or PDF files.'
+

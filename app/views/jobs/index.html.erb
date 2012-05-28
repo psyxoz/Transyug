@@ -1,5 +1,4 @@
-<%= stylesheet_link_tag "validationEngine.jquery" %>
-<%= javascript_include_tag "jquery.validationEngine", "jquery.validationEngine-#{locale}" %>
+<%= javascript_include_tag "jquery.validationEngine", "jquery.validationEngine-#{locale}", "jquery.ui" %>
 <script type="text/javascript">
   function custom_validator() {
     var count_required = $(".required").length;
@@ -30,6 +29,7 @@
   }
 
   $(function() {
+    $(".level_1").accordion({collapsible: true, header: "strong.root", active: -1, autoHeight: false});
     $(".required").keyup(function(){custom_validator()});
 
     $("form .submit").animate({opacity:0.50}).find('input').prop('disabled', true).addClass('disabled');
@@ -61,32 +61,35 @@
   });
 </script>
 
-<div class="wrapper_700 crewing">
+<div class="wrapper_700 jobs crewing">
   <h3 class="title"><%== show_translate(@page, :title) %></h3>
 
-  <div class="wrapper_580">
+  <div class="wrapper_580 tech_dep">
     <div class="text">
       <%== show_translate(@page, :content) %>
       <div class="clear"></div>
     </div>
+
+    <% if defined?(@jobs) %>
+      <ul class="level_1">
+        <% @jobs.each do |job| %>
+        <li style="cursor: pointer">
+          <strong class="root"><%== show_translate(job, :title) %></strong>
+          <%== show_translate(job, :description) %>
+        </li>
+        <% end %>
+      </ul>
+    <% end %>
   </div>
 
   <div class="breaker br4"></div>
-  <div class="box">
-    <%= link_to t('crewing.app_form').html_safe, application_form_path(locale), class: 'app_form' %>
-  </div>
-  <div class="breaker br4"></div>
-
-  <div class="app_form_info">
-    <%= t('crewing.app_form_info', form: link_to('Application Form', '/application_form.zip'), email: mail_to('af@transyug.com')).html_safe %>
-  </div>
 
   <div class="box form">
     <div class="left">
-      <h5><%= t('crewing.app_form_title').html_safe %></h5>
-      <p><%= t('crewing.app_form_description').html_safe %></p>
+      <h5><%= t('jobs.form_title').html_safe %></h5>
+      <p><%= t('jobs.form_description').html_safe %></p>
     </div>
-    <%= form_tag(crewing_send_path(locale), remote: true, multipart: true, id: 'the-form') do -%>
+    <%= form_tag(send_resume_path(locale), remote: true, multipart: true, id: 'the-form') do -%>
       <fieldset>
         <%= label_tag 'message[name]', t('chartering.first_last_name') %>
         <%= text_field_tag 'message[name]', nil, class: 'input validate[required] required' %>
@@ -94,7 +97,7 @@
           <%= label_tag 'message[file]', t('crewing.file') %>
           <%= file_field_tag 'message[file]', class: 'input', onchange: "document.getElementById('file').value = this.value;" %>
           <%= text_field_tag 'file', nil, id: 'file', readonly: true, class: 'input' %>
-          <span><%= t('crewing.file_support') %></span>
+          <span><%= t('jobs.file_support') %></span>
         </div>
       </fieldset>
       <div class="cover">
@@ -107,5 +110,5 @@
     <div class="clear"></div>
   </div>
 
-  <%= render partial: 'thanks' %>
+  <%= render partial: 'pages/thanks' %>
 </div>

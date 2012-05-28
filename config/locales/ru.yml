@@ -56,7 +56,7 @@ ru:
     app_form: 'Вы можете заполнить <i>Application Form</i> прямо сейчас!'
     app_form_info: 'Вы можете также скачать %{form}<br/> и отправить заполненный документ по адресу: %{email}<br/> или с помощью этой формы:'
     app_form_title: 'Отправьте нам заполненную Application Form сейчас.'
-    app_form_description: 'Some text'
+    app_form_description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sollicitudin vulputate augue, nec tempor nulla sodales at. Quisque venenatis lacus nec risus pellentesque at suscipit metus adipiscing. '
 
   activerecord:
     models:

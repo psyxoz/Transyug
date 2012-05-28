@@ -1,0 +1,17 @@
+<div class="wrapper_700 crewing">
+  <h3 class="title"><%== show_translate(@page, :title) %></h3>
+
+  <div class="wrapper_580">
+    <div class="text">
+      <%== show_translate(@page, :content) %>
+      <div class="clear"></div>
+    </div>
+  </div>
+
+  <div class="breaker br4"></div>
+  <div class="box">
+    <%= link_to t('crewing.app_form').html_safe, application_form_path(locale), class: 'app_form' %>
+  </div>
+  <div class="breaker br4"></div>
+
+</div>

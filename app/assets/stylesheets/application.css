@@ -9,6 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require validationEngine.jquery
 */
 
 /* RESET DEFAULT STYLES */
@@ -220,3 +221,9 @@ form textarea, form input {margin-bottom: 20px;}
 .tech_dep .symbols_left {font-size:12px; float:right; display: inline-block; height: 30px; line-height: 30px; color: #75afca;}
 .tech_dep input.symbols_count {width: 27px; float: right; background: none; border: none; color: #75afca; margin-bottom: 0px; height: 30px; line-height: 30px; text-align: right; margin-right: 5px;}
 .tech_dep .symbols {margin-top: -20px; position: relative;}
+
+.crewing .breaker {margin: 54px 0;}
+.crewing .box {padding: 20px 60px;}
+.crewing .app_form {background: url("icons/arrow_af.png") no-repeat right center; width: 580px; height: 120px; display: inline-block; text-decoration: none; font-size: 30px; color: white; line-height: 40px;}
+.crewing .app_form i {display: block; color: #00d8ff; font-style: normal; text-decoration: underline}
+.crewing .app_form:hover i {text-decoration: none; color: white}

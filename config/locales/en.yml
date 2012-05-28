@@ -54,3 +54,6 @@ en:
     info: 'We are always open to interesting offers,<br/> just fill this form!'
     message: 'Your message:'
     symbols_left: 'symbols left'
+
+  crewing:
+    app_form: 'You can write <i>Application Form</i> right now!'

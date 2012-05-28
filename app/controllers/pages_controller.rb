@@ -21,4 +21,13 @@ class PagesController < ApplicationController
     BaseMailer.technical_department(params[:message]).deliver unless params[:message].blank?
     render :nothing => true
   end
+
+  def crewing_send
+    BaseMailer.crewing(params[:message]).deliver unless params[:message].blank?
+    render :nothing => true
+  end
+
+  def application_form
+
+  end
 end

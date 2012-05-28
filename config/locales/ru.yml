@@ -52,6 +52,9 @@ ru:
     message: 'Сообщение:'
     symbols_left: 'символов осталось'
 
+  crewing:
+    app_form: 'Вы можете заполнить <i>Application Form</i> прямо сейчас!'
+
   activerecord:
     models:
       user: "Пользователи"

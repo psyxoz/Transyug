@@ -11,4 +11,15 @@ class BaseMailer < ActionMailer::Base
     @message = message
     mail(to: "technical_department@transyug.com", subject: "Заявка в Тех. отдел")
   end
+
+  def crewing(message)
+    @message = message
+    if params[:file]
+      attachments['application_form'] = {
+        content:    params[:file].read,
+        mime_type:  params[:file].content_type
+      }
+    end
+    mail(to: "af@transyug.com", subject: "Application form")
+  end
 end

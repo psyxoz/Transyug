@@ -57,3 +57,5 @@ en:
 
   crewing:
     app_form: 'You can write <i>Application Form</i> right now!'
+    app_form_info: 'Also you can download %{form}<br/> and send the completed document to: %{email}<br/> or by using this form:'
+    app_form_description: 'Some text'

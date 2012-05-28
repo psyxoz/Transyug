@@ -226,4 +226,6 @@ form textarea, form input {margin-bottom: 20px;}
 .crewing .box {padding: 20px 60px;}
 .crewing .app_form {background: url("icons/arrow_af.png") no-repeat right center; width: 580px; height: 120px; display: inline-block; text-decoration: none; font-size: 30px; color: white; line-height: 40px;}
 .crewing .app_form i {display: block; color: #00d8ff; font-style: normal; text-decoration: underline}
-.crewing .app_form:hover i {text-decoration: none; color: white}
+.crewing .app_form:hover i, .crewing .app_form_info a:hover {text-decoration: none; color: white}
+.crewing .app_form_info {padding: 0 20px 0 60px; margin-bottom: 50px; font-size: 20px; line-height: 30px; color: white}
+.crewing .app_form_info a {text-decoration: underline; color: #00d8ff}

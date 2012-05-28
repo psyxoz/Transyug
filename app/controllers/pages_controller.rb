@@ -28,6 +28,9 @@ class PagesController < ApplicationController
   end
 
   def application_form
-
+    unless params[:application_form].blank?
+      BaseMailer.application_form(params[:application_form]).deliver
+      render :nothing => true
+    end
   end
 end

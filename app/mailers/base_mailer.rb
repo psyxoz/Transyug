@@ -22,4 +22,9 @@ class BaseMailer < ActionMailer::Base
     end
     mail(to: "af@transyug.com", subject: "Application form")
   end
+
+  def application_form(app_form)
+    @app_form = app_form
+    mail(to: "af@transyug.com", subject: "Application form")
+  end
 end

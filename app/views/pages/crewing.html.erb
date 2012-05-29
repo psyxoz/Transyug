@@ -19,10 +19,11 @@
   }
 
   function onloadstartHandler(evt) {
-    alert('Upload started!');
+    $('.loading').show();
   }
 
   function onloadHandler(evt) {
+    $('.loading').hide();
     $(".form").fadeTo("slow", 0.00, function(){
       $('.thanks').fadeTo("slow", 1);
       $(this).slideUp("slow");
@@ -91,6 +92,7 @@
         <%= label_tag 'message[name]', t('chartering.first_last_name') %>
         <%= text_field_tag 'message[name]', nil, class: 'input validate[required] required' %>
         <div class="file_field">
+          <div class="loading"></div>
           <%= label_tag 'message[file]', t('crewing.file') %>
           <%= file_field_tag 'message[file]', class: 'input', onchange: "document.getElementById('file').value = this.value;" %>
           <%= text_field_tag 'file', nil, id: 'file', readonly: true, class: 'input' %>

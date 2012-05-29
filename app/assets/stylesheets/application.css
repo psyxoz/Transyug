@@ -237,7 +237,7 @@ form textarea, form input {margin-bottom: 20px;}
 .crewing form {width: 360px; float: right;}
 .crewing form fieldset {margin-left: 20px; height: 200px; width: 310px;}
 .crewing form .box.submit {padding: 40px; margin: 20px 0 0 20px !important;}
-.crewing form .file_field {background: url("browse.png") no-repeat 190px bottom; height: 60px;}
+.crewing form .file_field {background: url("browse.png") no-repeat 190px bottom; height: 60px; position: relative;}
 .crewing form .file_field span {display: block; font-size: 12px; color: #587d9a; height: 30px; line-height: 30px; margin-top: -20px; position: relative;}
 .crewing form #file {margin-top: -50px;}
 .crewing form input {width: 160px;}
@@ -267,3 +267,5 @@ form textarea, form input {margin-bottom: 20px;}
 .contacts h5 {color: #ffffff; line-height: 30px; margin-bottom: 20px; font-size: 30px;}
 .contacts #step_1 .formErrorArrow {width: 164px; left: -114px;}
 .contacts #step_2 textarea {width: 320px}
+
+.loading {background: url("icons/loader.gif") no-repeat center center; width: 30px; height: 30px; position: absolute; right: 5px; top: 28px; display: none}

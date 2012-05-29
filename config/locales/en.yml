@@ -74,3 +74,38 @@ en:
     last_name: 'Last name:'
     department: 'Department:'
 
+  application_form:
+    step1:
+      title: 'Personal data'
+      birth_date: 'Birth date:'
+      citizenship: 'Citizenship:'
+      country: 'Country:'
+      city: 'City:'
+      address: 'Address:'
+      phone: 'Phone:'
+    step2:
+      title: 'Education'
+      add_education: 'Add one more?'
+      institution: 'Institution:'
+      finished: 'Graduation date:'
+      speciality: 'Speciality:'
+    step3:
+      title: 'Professional data'
+      position: 'Position:'
+      english_level: 'English level:'
+      salary: 'Demand salary:'
+      malta_endorsement: 'Malta Endorsement:'
+      date_availability: 'Date availability:'
+    step4:
+      title: 'Last three contracts, starting from last'
+      vessel_name: 'Vessel name:'
+      vessel_type: 'Vessel type:'
+      vessel_build: 'Year built:'
+      main_engine_type: 'Main Engine Type:'
+      power: 'Power(kWt):'
+      date_start: 'Sign on date:'
+      date_end: 'Sign off date:'
+      rank: 'Rank:'
+      vessel_flag: 'Vessel flag:'
+      vessel_number: 'Vessel IMO number:'
+

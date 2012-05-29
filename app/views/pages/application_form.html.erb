@@ -1,0 +1,33 @@
+<%= stylesheet_link_tag "validationEngine.jquery" %>
+<%= javascript_include_tag "jquery.validationEngine", "jquery.validationEngine-#{locale}", "jquery.dropdown" %>
+
+<div class="wrapper_700 app_form">
+  <h3 class="title">Application Form</h3>
+
+  <%= form_tag(application_form_path(locale), :remote => true) do -%>
+    <fieldset>
+      <legend class="box"><%= t('application_form.step1.title') %></legend>
+      <div class="box">
+        <div class="field">
+          <%= label_tag 'application_form[first_name]', t('contacts.first_name') %>
+          <%= text_field_tag 'application_form[first_name]', nil, class: 'input validate[required] required' %>
+        </div>
+        <div class="field">
+          <%= label_tag 'application_form[last_name]', t('contacts.last_name') %>
+          <%= text_field_tag 'application_form[last_name]', nil, class: 'input validate[required] required' %>
+        </div>
+        <div class="field date">
+          <%= label_tag 'application_form[birth_date]', t('application_form.step1.birth_date') %>
+          <%= date_select 'application_form', 'birth_date', :start_year => 1955 %>
+          <script type="text/javascript">
+            $("#application_form_birth_date_1i").MyDropdown();
+            $("#application_form_birth_date_2i").MyDropdown();
+            $("#application_form_birth_date_3i").MyDropdown();
+          </script>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="arrow_down"></div>
+    </fieldset>
+  <% end -%>
+</div>

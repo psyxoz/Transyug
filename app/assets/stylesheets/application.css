@@ -56,7 +56,7 @@ ul.menu li a:hover {color: #5ccfff;}
 ul.menu li.active {background: url("manu_bg.png") no-repeat; color: white !important;}
 
 .wrapper {padding: 20px;}
-.wrapper, .footer {width: 940px; margin: 0 auto; position: relative; overflow: hidden;}
+.wrapper, .footer {width: 940px; margin: 0 auto; position: relative;}
 .footer, .footer_inner {height: 60px; position: relative;}
 .footer {margin-top: -60px;}
 .footer .logo {background: url("logo_footer.png") no-repeat top left; padding: 2px 0px 10px 60px; height: auto !important; line-height: 22px; font-size: 20px;}
@@ -64,7 +64,7 @@ ul.menu li.active {background: url("manu_bg.png") no-repeat; color: white !impor
 .footer .menu li {width: 90px; margin-left: 0;}
 .footer .menu li a {font-size: 11px;}
 
-.content {position: relative; overflow: hidden; margin-bottom: 20px}
+.content {position: relative; padding-bottom: 20px}
 
 .home {margin-top: 360px;}
 .home .left_column {width: 280px; margin-right: 80px; float: left;}
@@ -188,7 +188,7 @@ form textarea, form input {margin-bottom: 20px;}
 .genHeader {background: url("select_box_bg.png") no-repeat; cursor:pointer; width:170px; color: #303f5c; font-size: 15px; padding: 0 40px 0 10px; margin-bottom: 20px}
 .menuHeader, .genHeader {height:30px; line-height:30px; overflow:hidden;}
 .menuHeader {position:absolute; width:220px; z-index:10000;}
-.advMenuUL {list-style: none; background-color: white; z-index:5011; margin-top: -21px; padding-left: 0px;}
+.advMenuUL {list-style: none; background-color: white; z-index:5011; margin-top: -21px; padding-left: 0px; height: 150px !important; overflow: auto;}
 .advMenuUL li {height:30px; line-height:30px; padding-left: 10px; margin: 0; cursor:pointer; z-index: 5020; position: relative; color: #525357}
 .advMenuUL li.sel, .advMenuUL li:hover {background:#d2f1ff; color: #303f5c;}
 
@@ -269,3 +269,20 @@ form textarea, form input {margin-bottom: 20px;}
 .contacts #step_2 textarea {width: 320px}
 
 .loading {background: url("icons/loader.gif") no-repeat center center; width: 30px; height: 30px; position: absolute; right: 5px; top: 28px; display: none}
+
+.app_form h3 {margin-bottom: 20px;}
+.app_form legend {width: 700px; height: 70px; line-height: 70px; font-size: 18px; color: #8bd4f6; text-align: center; position: relative; top: -1px}
+.app_form fieldset {margin-bottom: 20px; position: relative;}
+.app_form fieldset .arrow_down {left: 340px;}
+.app_form fieldset div.box {padding: 20px 40px 10px 60px;}
+.app_form .field {float: left; margin: 0 20px 20px 0}
+.app_form .field input {margin-bottom: 0}
+.app_form .input {width: 260px;}
+.app_form .genHeader {margin-bottom: 0}
+.app_form .advMenuUL {margin-top: -1px}
+.app_form .field.date .genHeader2 {width: 20px; border-radius: 2px; background-position: -150px 0;}
+.app_form .field.date .menuHeader2 {width: 70px}
+.app_form .field.date .genHeader1 {width: 80px; border-radius: 2px; background-position: -90px 0;}
+.app_form .field.date .menuHeader1 {width: 130px}
+.app_form .field.date .genHeader0 {width: 40px; border-radius: 2px; background-position: -130px 0;}
+.app_form .field.date .menuHeader0 {width: 90px}

@@ -1,0 +1,6 @@
+<div class="wrapper_700 partners">
+  <h3 class="title"><%== t('menu.partners') %></h3>
+  <% @partners.each do |p| %>
+    <%= link_to show_translate(p, :title), p.link %>
+  <% end %>
+</div>

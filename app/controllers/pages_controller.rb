@@ -33,4 +33,9 @@ class PagesController < ApplicationController
       render :nothing => true
     end
   end
+
+  def contacts_send
+    BaseMailer.contacts(params[:message]).deliver unless params[:message].blank?
+    render :nothing => true
+  end
 end

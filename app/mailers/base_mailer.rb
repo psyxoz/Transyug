@@ -38,4 +38,9 @@ class BaseMailer < ActionMailer::Base
     end
     mail(to: "job@transyug.com", subject: "Новое резюме")
   end
+
+  def contacts(message)
+    @message = message
+    mail(to: "contacts@transyug.com", subject: "Запрос с сайта")
+  end
 end

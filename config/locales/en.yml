@@ -68,3 +68,9 @@ en:
     form_description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sollicitudin vulputate augue, nec tempor nulla sodales at. Quisque venenatis lacus nec risus pellentesque at suscipit metus adipiscing. '
     file_support: 'Support only DOC or PDF files.'
 
+  contacts:
+    email_title: 'You can send a message to any department of our company!'
+    first_name: 'First name:'
+    last_name: 'Last name:'
+    department: 'Department:'
+

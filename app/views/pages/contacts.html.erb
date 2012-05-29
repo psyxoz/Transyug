@@ -1,5 +1,5 @@
 <%= stylesheet_link_tag "validationEngine.jquery" %>
-<%= javascript_include_tag "jquery.validationEngine", "jquery.validationEngine-#{locale}", "jquery.ui" %>
+<%= javascript_include_tag "jquery.validationEngine", "jquery.validationEngine-#{locale}", "jquery.dropdown" %>
 <script type="text/javascript">
   function custom_validator() {
     var count_required = $(".required").length;
@@ -19,8 +19,6 @@
   }
 
   $(function() {
-    $(".level_1").accordion({collapsible: true, header: "strong.root", active: -1, autoHeight: false});
-
     $(".required").keyup(function(){custom_validator()});
     $("form .submit").animate({opacity:0.50}).find('input').prop('disabled', true).addClass('disabled');
     $("form").validationEngine('attach', {relative: true});
@@ -44,54 +42,30 @@
   });
 </script>
 
-<div class="wrapper_700 tech_dep">
+<div class="wrapper_700 contacts tech_dep">
   <h3 class="title"><%== show_translate(@page, :title) %></h3>
-
-  <div class="wrapper_580">
-    <div class="text">
-      <%== show_translate(@page, :content) %>
-      <div class="clear"></div>
-    </div>
-
-    <% if defined?(@options) %>
-    <ul class="level_1">
-      <% @options.each do |item| %>
-      <li style="cursor: pointer">
-        <strong class="root"><%= item.title %></strong>
-        <% if item.children && item.children.size > 0 %>
-          <ul class="child child_<%= item.id %>">
-            <% item.children.each do |child| %>
-            <li>
-              <strong><%= child.title %></strong>
-              <%= "<p>#{child.content}</p>".html_safe unless child.content.blank? %>
-            </li>
-            <% end %>
-          </ul>
-          <script>
-            $(function() {
-              $(".child_<%= item.id %>").accordion({collapsible: true, header: "strong", active: -1, autoHeight: false});
-            });
-          </script>
-        <% end %>
-      </li>
-      <% end %>
-    </ul>
-    <% end %>
-  </div>
+  <div class="text"><%== show_translate(@page, :content) %></div>
+  <div class="map"><%== @page.extra %></div>
+  <div class="clear"></div>
 
   <div class="breaker br4"></div>
-  <%= form_tag(technical_department_send_path(locale), :remote => true) do -%>
+  <%= form_tag(contacts_send_path(locale), :remote => true) do -%>
     <div class="box">
-      <div class="info">
-        <h5><%== t('technical_department.title') %></h5>
-        <p><%== t('technical_department.info') %></p>
-      </div>
+      <h5><%== t('contacts.email_title') %></h5>
       <fieldset id="step_1">
-        <%= label_tag 'message[name]', t('chartering.first_last_name') %>
-        <%= text_field_tag 'message[name]', nil, class: 'input validate[required] required' %>
+        <%= label_tag 'message[first_name]', t('contacts.first_name') %>
+        <%= text_field_tag 'message[first_name]', nil, class: 'input validate[required] required' %>
+
+        <%= label_tag 'message[last_name]', t('contacts.last_name') %>
+        <%= text_field_tag 'message[last_name]', nil, class: 'input validate[required] required' %>
 
         <%= label_tag 'message[email]', t('chartering.email') %>
         <%= text_field_tag 'message[email]', nil, class: 'input validate[required] required' %>
+      </fieldset>
+      <fieldset id="step_2">
+        <%= label_tag 'message[department]', t('contacts.department') %>
+        <%= select 'message', 'department', departments.collect { |p| [ p, p] }, class: 'input validate[required]' %>
+        <script type="text/javascript">$("#message_department").MyDropdown();</script>
 
         <%= label_tag 'message[message]', t('technical_department.message') %>
         <%= text_area_tag 'message[message]', nil, onKeyDown: "limitText(this,this.form.count,162);", onKeyUp: "limitText(this,this.form.count,162);" %>
@@ -110,4 +84,5 @@
   <% end -%>
 
   <%= render partial: 'thanks' %>
+
 </div>

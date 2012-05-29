@@ -253,5 +253,17 @@ form textarea, form input {margin-bottom: 20px;}
 .jobs .breaker {margin: 24px 0 44px !important;}
 
 
-.partners h3 {margin-bottom: 35px;}
+.partners h3, .contacts h3 {margin-bottom: 35px;}
 .partners a {color: #bae9ff; font-size: 20px; line-height: 30px; text-align: center; display: block; margin-bottom: 10px;}
+
+.contacts .breaker {margin: 34px 0}
+.contacts .text {width: 280px; float:left;}
+.contacts .map {width: 400px; float:right;}
+.contacts input {width: 140px;}
+.contacts .box {padding: 40px !important;}
+.contacts #step_1 {width: 190px; float: left; margin: 0; height: auto;}
+.contacts #step_2 {width: 340px; float: right; margin-right: 20px;}
+.contacts form {width: 700px}
+.contacts h5 {color: #ffffff; line-height: 30px; margin-bottom: 20px; font-size: 30px;}
+.contacts #step_1 .formErrorArrow {width: 164px; left: -114px;}
+.contacts #step_2 textarea {width: 320px}

@@ -65,6 +65,12 @@ ru:
     form_description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sollicitudin vulputate augue, nec tempor nulla sodales at. Quisque venenatis lacus nec risus pellentesque at suscipit metus adipiscing. '
     file_support: 'Только DOC или PDF файл.'
 
+  contacts:
+    email_title: 'Можете отправить сообщение в любой из отделов нашей компании!'
+    first_name: 'Фамилия:'
+    last_name: 'Имя:'
+    department: 'Отдел:'
+
   activerecord:
     models:
       user: "Пользователи"

@@ -18,6 +18,7 @@ Transyug::Application.routes.draw do
     match 'pages/technical_department/send' => 'pages#technical_department_send', :as => :technical_department_send
     match 'pages/crewing/send' => 'pages#crewing_send', :as => :crewing_send
     match 'application_form' => 'pages#application_form', :as => :application_form
+    match 'pages/contacts/send' => 'pages#contacts_send', :as => :contacts_send
     match 'fleet' => 'fleet#index', :as => :fleet
     match 'fleet/:id' => 'fleet#show', :as => :fleet_show
     match 'vacancy' => 'jobs#index', :as => :jobs

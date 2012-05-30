@@ -9,21 +9,115 @@
       <legend class="box"><%= t('application_form.step1.title') %></legend>
       <div class="box">
         <div class="field">
-          <%= label_tag 'application_form[first_name]', t('contacts.first_name') %>
-          <%= text_field_tag 'application_form[first_name]', nil, class: 'input validate[required] required' %>
+          <%= label_tag 'application_form[personal][first_name]', t('contacts.first_name') %>
+          <%= text_field_tag 'application_form[personal][first_name]', nil, class: 'input validate[required] required' %>
         </div>
         <div class="field">
-          <%= label_tag 'application_form[last_name]', t('contacts.last_name') %>
-          <%= text_field_tag 'application_form[last_name]', nil, class: 'input validate[required] required' %>
+          <%= label_tag 'application_form[personal][last_name]', t('contacts.last_name') %>
+          <%= text_field_tag 'application_form[personal][last_name]', nil, class: 'input validate[required] required' %>
         </div>
         <div class="field date">
-          <%= label_tag 'application_form[birth_date]', t('application_form.step1.birth_date') %>
-          <%= date_select 'application_form', 'birth_date', :start_year => 1955 %>
+          <%= label_tag 'application_form[personal][birth_date]', t('application_form.step1.birth_date') %>
+          <%= date_select 'application_form[personal]', 'birth_date', :start_year => 1955 %>
           <script type="text/javascript">
-            $("#application_form_birth_date_1i").MyDropdown();
-            $("#application_form_birth_date_2i").MyDropdown();
-            $("#application_form_birth_date_3i").MyDropdown();
+            $("#application_form_personal_birth_date_1i").MyDropdown();
+            $("#application_form_personal_birth_date_2i").MyDropdown();
+            $("#application_form_personal_birth_date_3i").MyDropdown();
           </script>
+        </div>
+        <div class="field citizenship">
+          <%= label_tag 'application_form[personal][citizenship]', t('application_form.step1.citizenship') %>
+          <%=	collection_select('application_form[personal]', :citizenship, countries, :id, "name_#{locale}") %>
+          <script type="text/javascript">$("#application_form_personal_citizenship").MyDropdown();</script>
+        </div>
+        <div class="field country">
+          <%= label_tag 'application_form[personal][country]', t('application_form.step1.country') %>
+          <%=	collection_select('application_form[personal]', :country, countries, :id, "name_#{locale}") %>
+          <script type="text/javascript">$("#application_form_personal_country").MyDropdown();</script>
+        </div>
+        <div class="field city">
+          <%= label_tag 'application_form[personal][city]', t('application_form.step1.city') %>
+          <%= text_field_tag 'application_form[personal][city]', nil, class: 'input validate[required] required' %>
+        </div>
+        <div class="field address">
+          <%= label_tag 'application_form[personal][address]', t('application_form.step1.address') %>
+          <%= text_field_tag 'application_form[personal][address]', nil, class: 'input validate[required] required' %>
+        </div>
+        <div class="field">
+          <%= label_tag 'application_form[personal][phone]', t('application_form.step1.phone') %>
+          <%= text_field_tag 'application_form[personal][phone]', nil, class: 'input validate[required] required' %>
+        </div>
+        <div class="field">
+          <%= label_tag 'application_form[personal][email]', 'E-mail:' %>
+          <%= text_field_tag 'application_form[personal][email]', nil, class: 'input validate[required] required' %>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="arrow_down"></div>
+    </fieldset>
+
+    <fieldset>
+      <legend class="box"><%= t('application_form.step2.title') %></legend>
+      <div class="box">
+        <div class="field">
+          <%= label_tag 'application_form[education][0][institution]', t('application_form.step2.institution') %>
+          <%= text_field_tag 'application_form[education][0][institution]', nil, class: 'input validate[required] required' %>
+        </div>
+        <div class="field">
+          <%= label_tag 'application_form[education][0][city]', t('application_form.step1.city') %>
+          <%= text_field_tag 'application_form[education][0][city]', nil, class: 'input validate[required] required' %>
+        </div>
+        <div class="field date">
+          <%= label_tag 'application_form[education][0][finished]', t('application_form.step2.finished') %>
+          <%= date_select 'application_form[education][0]', 'finished', :start_year => 1975 %>
+          <script type="text/javascript">
+            $("#application_form_education_0_finished_1i").MyDropdown();
+            $("#application_form_education_0_finished_2i").MyDropdown();
+            $("#application_form_education_0_finished_3i").MyDropdown();
+          </script>
+        </div>
+        <div class="field">
+          <%= label_tag 'application_form[education][0][speciality]', t('application_form.step2.speciality') %>
+          <%= text_field_tag 'application_form[education][0][speciality]', nil, class: 'input validate[required] required' %>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="arrow_down"></div>
+    </fieldset>
+
+    <fieldset>
+      <legend class="box"><%= t('application_form.step3.title') %></legend>
+      <div class="box">
+        <div class="field big_select center">
+          <%= label_tag 'application_form[professional][position]', t('application_form.step3.position') %>
+          <%= select 'application_form[professional]', 'position', positions.collect { |p| [ p, p] } %>
+          <script type="text/javascript">$("#application_form_professional_position").MyDropdown();</script>
+          <div class="clear"></div>
+        </div>
+        <div class="field big_select">
+          <%= label_tag 'application_form[professional][english_level]', t('application_form.step3.english_level') %>
+          <%= select 'application_form[professional]', 'english_level', english_levels.collect { |p| [ p, p] } %>
+          <script type="text/javascript">$("#application_form_professional_english_level").MyDropdown();</script>
+        </div>
+        <div class="field">
+          <%= label_tag 'application_form[professional][salary]', t('application_form.step3.salary') %>
+          <%= text_field_tag 'application_form[professional][salary]', nil, class: 'input validate[required] required' %>
+        </div>
+        <div class="field big_select">
+          <%= label_tag 'application_form[professional][malta_endorsement]', t('application_form.step3.malta_endorsement') %>
+          <%= select 'application_form[professional]', 'malta_endorsement', [:yes, :no].collect { |p| [ p, p] } %>
+          <script type="text/javascript">$("#application_form_professional_malta_endorsement").MyDropdown();</script>
+        </div>
+        <div class="field month_year">
+          <%= label_tag 'application_form[professional][date_availability]', t('application_form.step3.date_availability') %>
+          <div class="month">
+            <%= select_month(Date.today, prefix: 'application_form[professional]', field_name: 'date_availability_month') %>
+            <script type="text/javascript">$("#application_form_professional_date_availability_month").MyDropdown();</script>
+          </div>
+          <div class="year">
+            <%= select_year(Date.today, start_year: Date.today.year, prefix: 'application_form[professional]', field_name: 'date_availability_year') %>
+            <script type="text/javascript">$("#application_form_professional_date_availability_year").MyDropdown();</script>
+          </div>
         </div>
         <div class="clear"></div>
       </div>

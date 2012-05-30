@@ -188,7 +188,7 @@ form textarea, form input {margin-bottom: 20px;}
 .genHeader {background: url("select_box_bg.png") no-repeat; cursor:pointer; width:170px; color: #303f5c; font-size: 15px; padding: 0 40px 0 10px; margin-bottom: 20px}
 .menuHeader, .genHeader {height:30px; line-height:30px; overflow:hidden;}
 .menuHeader {position:absolute; width:220px; z-index:10000;}
-.advMenuUL {list-style: none; background-color: white; z-index:5011; margin-top: -21px; padding-left: 0px; height: 150px !important; overflow: auto;}
+.advMenuUL {list-style: none; background-color: white; z-index:5011; margin-top: -21px; padding-left: 0px; max-height: 150px !important; overflow: auto;}
 .advMenuUL li {height:30px; line-height:30px; padding-left: 10px; margin: 0; cursor:pointer; z-index: 5020; position: relative; color: #525357}
 .advMenuUL li.sel, .advMenuUL li:hover {background:#d2f1ff; color: #303f5c;}
 
@@ -276,13 +276,36 @@ form textarea, form input {margin-bottom: 20px;}
 .app_form fieldset .arrow_down {left: 340px;}
 .app_form fieldset div.box {padding: 20px 40px 10px 60px;}
 .app_form .field {float: left; margin: 0 20px 20px 0}
+.app_form .field.center {float: none; margin: 0 auto 20px;}
 .app_form .field input {margin-bottom: 0}
 .app_form .input {width: 260px;}
-.app_form .genHeader {margin-bottom: 0}
+.app_form .genHeader {margin-bottom: 0; float: left; margin-right: 10px}
 .app_form .advMenuUL {margin-top: -1px}
-.app_form .field.date .genHeader2 {width: 20px; border-radius: 2px; background-position: -150px 0;}
-.app_form .field.date .menuHeader2 {width: 70px}
-.app_form .field.date .genHeader1 {width: 80px; border-radius: 2px; background-position: -90px 0;}
-.app_form .field.date .menuHeader1 {width: 130px}
-.app_form .field.date .genHeader0 {width: 40px; border-radius: 2px; background-position: -130px 0;}
-.app_form .field.date .menuHeader0 {width: 90px}
+.app_form .field.date {width: 290px; margin-right: 10px}
+.app_form .field.date .genHeader2, .app_form .field.date .genHeader7 {width: 15px; border-radius: 2px; background-position: -155px 0;}
+.app_form .field.date .menuHeader2, .app_form .field.date .menuHeader7 {width: 65px; margin-top: 29px}
+.app_form .field.date .genHeader1, .app_form .field.date .genHeader6 {width: 62px; border-radius: 2px; background-position: -108px 0;}
+.app_form .field.date .menuHeader1, .app_form .field.date .menuHeader6 {width: 112px; margin-top: 29px; margin-left: 75px;}
+.app_form .field.date .genHeader0, .app_form .field.date .genHeader5 {width: 32px; border-radius: 2px; background-position: -138px 0;}
+.app_form .field.date .menuHeader0, .app_form .field.date .menuHeader5 {width: 82px;  margin-top: 29px; margin-left: 197px;}
+.app_form .field.citizenship {margin-right: 0}
+.app_form .field.citizenship .genHeader {background: url("select_box_bg2.png"); width: 230px;}
+.app_form .field.citizenship .menuHeader {margin-top: 29px; width: 280px}
+.app_form .field.citizenship .menuHeader li, .app_form .field.country .menuHeader li {line-height: 20px; padding: 5px 0 5px 10px; height: auto}
+.app_form .field.country {margin-right: 10px; width: 170px;}
+.app_form .field.country .genHeader {width: 120px; border-radius: 2px; background-position: -50px 0;}
+.app_form .field.country .menuHeader {margin-top: 29px; width: 170px}
+.app_form .field.city {margin-right: 10px; width: 160px;}
+.app_form .field.city input {width: 140px}
+.app_form .field.address {width: 230px;}
+.app_form .field.address input {width: 210px}
+
+.app_form .field.big_select {width: 280px;}
+.app_form .field.big_select .genHeader {width: 230px; background: url("select_box_bg2.png");}
+.app_form .field.big_select .menuHeader {margin-top: 29px; width: 280px}
+
+.app_form .field.month_year {margin-right: 0; width: 280px;}
+.app_form .field.month_year .month .genHeader {width: 120px; border-radius: 2px; background-position: -50px 0}
+.app_form .field.month_year .month .menuHeader {margin-top: 29px; width: 170px}
+.app_form .field.month_year .year  .genHeader {width: 50px; border-radius: 2px; background-position: -120px 0; margin-right: 0}
+.app_form .field.month_year .year  .menuHeader {margin-top: 29px; width: 100px; margin-left: 180px;}

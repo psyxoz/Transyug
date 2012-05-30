@@ -1,6 +1,49 @@
 <%= stylesheet_link_tag "validationEngine.jquery" %>
 <%= javascript_include_tag "jquery.validationEngine", "jquery.validationEngine-#{locale}", "jquery.dropdown" %>
 
+<script type="text/javascript">
+  function custom_validator() {
+    var count_required = $(".required:enabled").length;
+    var count_required_values = 0;
+    $(".required:enabled").each(function(i,e){
+      var value = e.value;
+      if (value != '') count_required_values += 1;
+    });
+
+    if (count_required == count_required_values) {
+      var fieldset = $('form .disabled:first').removeClass('disabled').animate({opacity: 1});
+      fieldset.find('input, select').prop('disabled', false);
+
+      if (fieldset.find('.extra').length > 0) {
+        fieldset.find('.extra.disabled').animate({opacity: 0.50}).find('input, select').prop('disabled', true);
+      }
+    }
+  }
+
+  $(function() {
+    $('.education_1').hide().find('input').prop('disabled', true);
+    $('.education_0 .add_education').click(function(){
+      if ($('.education_0').hasClass('disabled')) return false;
+      $('.education_1').fadeIn().find('input').prop('disabled', false);
+      $(this).fadeOut();
+      return false;
+    });
+    $('.education_1 .add_education').click(function(){
+      $('.education_1').fadeOut().find('input').prop('disabled', true);
+      $('.education_0 .add_education').fadeIn();
+      return false;
+    });
+
+    $("form .required").keyup(function(){custom_validator()});
+    $("form").validationEngine('attach', { relative: true });
+
+    $('form fieldset:first').nextAll().addClass('disabled').animate({opacity: 0.50});
+    $('form fieldset:last .extra:first').nextAll().addClass('disabled');
+    $('form fieldset.education_1').removeClass('disabled').animate({opacity: 1}).hide();
+    $('form fieldset.disabled').find('input, select').prop('disabled', true);
+  });
+</script>
+
 <div class="wrapper_700 app_form">
   <h3 class="title">Application Form</h3>
 
@@ -56,34 +99,39 @@
       <div class="arrow_down"></div>
     </fieldset>
 
-    <fieldset>
-      <legend class="box"><%= t('application_form.step2.title') %></legend>
+    <% 2.times do |number| %>
+    <fieldset class="education_<%= number %>">
+      <span href="#" class="add_education"><%= t('application_form.step2.add_education_'+number.to_s) %></span>
+      <legend class="box">
+        <%= t('application_form.step2.title_'+number.to_s) %>
+      </legend>
       <div class="box">
         <div class="field">
-          <%= label_tag 'application_form[education][0][institution]', t('application_form.step2.institution') %>
-          <%= text_field_tag 'application_form[education][0][institution]', nil, class: 'input validate[required] required' %>
+          <%= label_tag 'application_form[education]['+number.to_s+'][institution]', t('application_form.step2.institution') %>
+          <%= text_field_tag 'application_form[education]['+number.to_s+'][institution]', nil, class: 'input validate[required] required' %>
         </div>
         <div class="field">
-          <%= label_tag 'application_form[education][0][city]', t('application_form.step1.city') %>
-          <%= text_field_tag 'application_form[education][0][city]', nil, class: 'input validate[required] required' %>
+          <%= label_tag 'application_form[education]['+number.to_s+'][city]', t('application_form.step1.city') %>
+          <%= text_field_tag 'application_form[education]['+number.to_s+'][city]', nil, class: 'input validate[required] required' %>
         </div>
         <div class="field date">
-          <%= label_tag 'application_form[education][0][finished]', t('application_form.step2.finished') %>
-          <%= date_select 'application_form[education][0]', 'finished', :start_year => 1975 %>
+          <%= label_tag 'application_form[education]['+number.to_s+'][finished]', t('application_form.step2.finished') %>
+          <%= date_select 'application_form[education]['+number.to_s+']', 'finished', :start_year => 1975 %>
           <script type="text/javascript">
-            $("#application_form_education_0_finished_1i").MyDropdown();
-            $("#application_form_education_0_finished_2i").MyDropdown();
-            $("#application_form_education_0_finished_3i").MyDropdown();
+            $("#application_form_education_<%= number %>_finished_1i").MyDropdown();
+            $("#application_form_education_<%= number %>_finished_2i").MyDropdown();
+            $("#application_form_education_<%= number %>_finished_3i").MyDropdown();
           </script>
         </div>
         <div class="field">
-          <%= label_tag 'application_form[education][0][speciality]', t('application_form.step2.speciality') %>
-          <%= text_field_tag 'application_form[education][0][speciality]', nil, class: 'input validate[required] required' %>
+          <%= label_tag 'application_form[education]['+number.to_s+'][speciality]', t('application_form.step2.speciality') %>
+          <%= text_field_tag 'application_form[education]['+number.to_s+'][speciality]', nil, class: 'input validate[required] required' %>
         </div>
         <div class="clear"></div>
       </div>
       <div class="arrow_down"></div>
     </fieldset>
+    <% end %>
 
     <fieldset>
       <legend class="box"><%= t('application_form.step3.title') %></legend>
@@ -123,5 +171,79 @@
       </div>
       <div class="arrow_down"></div>
     </fieldset>
+
+    <fieldset>
+      <legend class="box"><%= t('application_form.step4.title') %></legend>
+      <% 3.times do |number| %>
+      <div class="box extra">
+        <div class="field">
+          <%= label_tag 'application_form[contract]['+number.to_s+'][vessel_name]', t('application_form.step4.vessel_name') %>
+          <%= text_field_tag 'application_form[professional]['+number.to_s+'][vessel_name]', nil, class: 'input validate[required] required' %>
+        </div>
+        <div class="field">
+          <%= label_tag 'application_form[contract]['+number.to_s+'][vessel_number]', t('application_form.step4.vessel_number') %>
+          <%= text_field_tag 'application_form[professional]['+number.to_s+'][vessel_number]', nil, class: 'input validate[required] required' %>
+        </div>
+        <div class="field big_select">
+          <%= label_tag 'application_form[contract]['+number.to_s+'][vessel_type]', t('application_form.step4.vessel_type') %>
+          <%= select 'application_form[contract]['+number.to_s+']', 'vessel_type', vessel_type.collect { |p| [ p, p] } %>
+          <script type="text/javascript">$("#application_form_contract_<%= number %>_vessel_type").MyDropdown();</script>
+        </div>
+        <div class="field big_select">
+          <%= label_tag 'application_form[contract]['+number.to_s+'][vessel_flag]', t('application_form.step4.vessel_flag') %>
+          <%= select 'application_form[contract]['+number.to_s+']', 'vessel_flag', vessel_flags.collect { |p| [ p, p] } %>
+          <script type="text/javascript">$("#application_form_contract_<%= number %>_vessel_flag").MyDropdown();</script>
+        </div>
+        <div class="field big_select">
+          <%= label_tag 'application_form[contract]['+number.to_s+'][vessel_build]', t('application_form.step4.vessel_build') %>
+          <%= select_year Date.today, start_year: 1970, end_year: Date.today.year, prefix: 'application_form[contract]['+number.to_s+']', field_name: 'vessel_build' %>
+          <script type="text/javascript">$("#application_form_contract_<%= number %>_vessel_build").MyDropdown();</script>
+        </div>
+        <div class="field">
+          <%= label_tag 'application_form[contract]['+number.to_s+'][dwt]', 'DWT:' %>
+          <%= text_field_tag 'application_form[professional]['+number.to_s+'][dwt]', nil, class: 'input validate[required] required' %>
+        </div>
+        <div class="field">
+          <div class="engine_type">
+            <%= label_tag 'application_form[contract]['+number.to_s+'][main_engine_type]', t('application_form.step4.main_engine_type') %>
+            <%= text_field_tag 'application_form[professional]['+number.to_s+'][main_engine_type]', nil, class: 'input validate[required] required' %>
+          </div>
+          <div class="power">
+            <%= label_tag 'application_form[contract]['+number.to_s+'][power]', t('application_form.step4.power') %>
+            <%= text_field_tag 'application_form[professional]['+number.to_s+'][power]', nil, class: 'input validate[required] required' %>
+          </div>
+        </div>
+        <div class="field big_select">
+          <%= label_tag 'application_form[contract]['+number.to_s+'][rank]', t('application_form.step4.rank') %>
+          <%= select 'application_form[contract]['+number.to_s+']', 'rank', ranks.collect { |p| [ p, p] } %>
+          <script type="text/javascript">$("#application_form_contract_<%= number %>_rank").MyDropdown();</script>
+        </div>
+        <div class="field date">
+          <%= label_tag 'application_form[contract]['+number.to_s+'][date_start]', t('application_form.step4.date_start') %>
+          <%= date_select 'application_form[contract]['+number.to_s+']', 'date_start', :start_year => 1975 %>
+          <script type="text/javascript">
+            $("#application_form_contract_<%= number %>_date_start_1i").MyDropdown();
+            $("#application_form_contract_<%= number %>_date_start_2i").MyDropdown();
+            $("#application_form_contract_<%= number %>_date_start_3i").MyDropdown();
+          </script>
+        </div>
+        <div class="field date">
+          <%= label_tag 'application_form[contract]['+number.to_s+'][date_end]', t('application_form.step4.date_end') %>
+          <%= date_select 'application_form[contract]['+number.to_s+']', 'date_end', :start_year => 1975 %>
+          <script type="text/javascript">
+            $("#application_form_contract_<%= number %>_date_end_1i").MyDropdown();
+            $("#application_form_contract_<%= number %>_date_end_2i").MyDropdown();
+            $("#application_form_contract_<%= number %>_date_end_3i").MyDropdown();
+          </script>
+        </div>
+        <div class="clear"></div>
+        <div class="arrow_down"></div>
+      </div>
+      <% end %>
+    </fieldset>
+
+    <div class="box submit">
+      <%= submit_tag t('submit') %>
+    </div>
   <% end -%>
 </div>

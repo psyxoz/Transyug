@@ -183,7 +183,7 @@ form textarea, form input {margin-bottom: 20px;}
 .box.submit {padding: 40px; width: 260px; margin-top: 20px;}
 .box.submit input {width: 260px; height: 60px; line-height: 60px; border: none; background: transparent url("button_bg.png"); color: white; font-size: 24px; margin-bottom: 0; text-shadow: 0px -1px #2287c5}
 .box.submit input:hover {background-position: 0 -60px; cursor: pointer}
-.box.submit input.disabled {background-position: 0 0 !important; cursor: default}
+.box.submit input.disabled, .disabled input {background-position: 0 0 !important; cursor: default !important;}
 
 .genHeader {background: url("select_box_bg.png") no-repeat; cursor:pointer; width:170px; color: #303f5c; font-size: 15px; padding: 0 40px 0 10px; margin-bottom: 20px}
 .menuHeader, .genHeader {height:30px; line-height:30px; overflow:hidden;}
@@ -279,15 +279,17 @@ form textarea, form input {margin-bottom: 20px;}
 .app_form .field.center {float: none; margin: 0 auto 20px;}
 .app_form .field input {margin-bottom: 0}
 .app_form .input {width: 260px;}
-.app_form .genHeader {margin-bottom: 0; float: left; margin-right: 10px}
-.app_form .advMenuUL {margin-top: -1px}
+.app_form .genHeader {margin-bottom: 0; float: left; margin-right: 10px; border-radius: 2px;}
+.app_form .advMenuUL {margin-top: 29px}
 .app_form .field.date {width: 290px; margin-right: 10px}
-.app_form .field.date .genHeader2, .app_form .field.date .genHeader7 {width: 15px; border-radius: 2px; background-position: -155px 0;}
-.app_form .field.date .menuHeader2, .app_form .field.date .menuHeader7 {width: 65px; margin-top: 29px}
-.app_form .field.date .genHeader1, .app_form .field.date .genHeader6 {width: 62px; border-radius: 2px; background-position: -108px 0;}
-.app_form .field.date .menuHeader1, .app_form .field.date .menuHeader6 {width: 112px; margin-top: 29px; margin-left: 75px;}
-.app_form .field.date .genHeader0, .app_form .field.date .genHeader5 {width: 32px; border-radius: 2px; background-position: -138px 0;}
-.app_form .field.date .menuHeader0, .app_form .field.date .menuHeader5 {width: 82px;  margin-top: 29px; margin-left: 197px;}
+
+div.date_3i, div.finished_3i, div.start_3i, div.end_3i {width: 15px; background-position: -155px 0;}
+div.date_2i, div.finished_2i, div.start_2i, div.end_2i {width: 62px; background-position: -108px 0;}
+div.date_1i, div.finished_1i, div.start_1i, div.end_1i {width: 32px; background-position: -138px 0;}
+ul.date_3i, ul.finished_3i, ul.start_3i, ul.end_3i {width: 65px;}
+ul.date_2i, ul.finished_2i, ul.start_2i, ul.end_2i {width: 112px; margin-left: 75px;}
+ul.date_1i, ul.finished_1i, ul.start_1i, ul.end_1i {width: 82px; margin-left: 197px;}
+
 .app_form .field.citizenship {margin-right: 0}
 .app_form .field.citizenship .genHeader {background: url("select_box_bg2.png"); width: 230px;}
 .app_form .field.citizenship .menuHeader {margin-top: 29px; width: 280px}
@@ -309,3 +311,15 @@ form textarea, form input {margin-bottom: 20px;}
 .app_form .field.month_year .month .menuHeader {margin-top: 29px; width: 170px}
 .app_form .field.month_year .year  .genHeader {width: 50px; border-radius: 2px; background-position: -120px 0; margin-right: 0}
 .app_form .field.month_year .year  .menuHeader {margin-top: 29px; width: 100px; margin-left: 180px;}
+
+.app_form .box.extra {position: relative; margin-bottom: 20px}
+.app_form .box.submit {padding: 20px !important; margin: 0 auto;}
+
+.app_form .field .engine_type {width: 170px; margin-right: 10px; float: left;}
+.app_form .field .engine_type input {width: 150px;}
+.app_form .field .power {float: left; width: 100px}
+.app_form .field .power input {width: 80px;}
+
+.app_form .add_education {position: absolute; right: 20px; width: 160px; color: #8bd4f6; font-size: 14px; text-decoration: none; z-index: 10; top: 28px; cursor: pointer;}
+.app_form .formError {display: none !important;}
+.app_form .disabled span, .app_form .disabled label, .app_form .disabled div {cursor: default !important;}

@@ -84,8 +84,10 @@ en:
       address: 'Address:'
       phone: 'Phone:'
     step2:
-      title: 'Education'
-      add_education: 'Add one more?'
+      title_0: 'Education'
+      title_1: 'Second education'
+      add_education_0: 'Add one more?'
+      add_education_1: 'Remove?'
       institution: 'Institution:'
       finished: 'Graduation date:'
       speciality: 'Speciality:'
@@ -108,4 +110,10 @@ en:
       rank: 'Rank:'
       vessel_flag: 'Vessel flag:'
       vessel_number: 'Vessel IMO number:'
+
+  date:
+    order:
+      - :day
+      - :month
+      - :year
 

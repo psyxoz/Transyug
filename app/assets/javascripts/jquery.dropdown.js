@@ -39,12 +39,16 @@
 				genMenu += "<LI v=" + val +">" + txt;
 			}
 
+      var parent_prefix = selectmenu.attr('id').split('_');
+      var last_id = parent_prefix.pop();
+      parent_prefix = parent_prefix.pop() + '_' + last_id;
+
 			if (menuoptions.length>0)
-				genMenu = "<UL class='advMenuUL advMenuUL"+idx+"'>" + genMenu + "</UL>";
+				genMenu = "<UL class='advMenuUL advMenuUL"+idx+" "+parent_prefix+"'>" + genMenu + "</UL>";
 			else
 				genMenu = "";
 
-			var genHeader = "<DIV class='genHeader genHeader"+idx+"'>SELECT</DIV>";
+			var genHeader = "<DIV class='genHeader genHeader"+idx+" "+parent_prefix+"'>"+menuoptions[0].text+"</DIV>";
 
 			if (!opt.bDebug)
 				selectmenu.hide();

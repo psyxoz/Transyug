@@ -81,8 +81,10 @@ ru:
       address: 'Адрес:'
       phone: 'Телефон:'
     step2:
-      title: 'Образование'
-      add_education: 'Добавить еще одно?'
+      title_0: 'Образование'
+      title_1: 'Второе образование'
+      add_education_0: 'Добавить еще одно?'
+      add_education_1: 'Убрать?'
       institution: 'Учебное заведение:'
       finished: 'Дата окончания:'
       speciality: 'Специальность:'

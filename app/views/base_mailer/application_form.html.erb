@@ -9,20 +9,14 @@ E-mail: <%= @form[:personal][:email] %><br/>
 -----------------------------------------------<br/><br/>
 
 Образование<br/>
-<%= t('application_form.step2.institution') %> <%= @form[:education][0][:institution] rescue nil %><br/>
-<%= t('application_form.step1.city') %> <%= @form[:education][0][:city] rescue nil %><br/>
-<%= t('application_form.step2.finished') %> <%= @form[:education][0][:finished] rescue nil %><br/>
-<%= t('application_form.step2.speciality') %> <%= @form[:education][0][:speciality] rescue nil %><br/>
------------------------------------------------<br/><br/>
-
-<% if @form[:education][1] %>
-  Второе образование<br/>
-  <%= t('application_form.step2.institution') %> <%= @form[:education][1][:institution] rescue nil %><br/>
-  <%= t('application_form.step1.city') %> <%= @form[:education][1][:city] rescue nil %><br/>
-  <%= t('application_form.step2.finished') %> <%= @form[:education][1][:finished] rescue nil %><br/>
-  <%= t('application_form.step2.speciality') %> <%= @form[:education][1][:speciality] rescue nil %><br/>
-  -----------------------------------------------<br/><br/>
+<% @form[:education].each do |i, e| %>
+<%= t('application_form.step2.institution') %> <%= e[:institution] rescue nil %><br/>
+<%= t('application_form.step1.city') %> <%= e[:city] rescue nil %><br/>
+<%= t('application_form.step2.finished') %> <%= e[:finished] rescue nil %><br/>
+<%= t('application_form.step2.speciality') %> <%= e[:speciality] rescue nil %><br/>
+-----------------------------------------------<br/>
 <% end %>
+<br/>
 
 Профессиональные данные<br/>
 <%= t('application_form.step3.position') %> <%= @form[:professional][:position] %><br/>
@@ -33,7 +27,7 @@ E-mail: <%= @form[:personal][:email] %><br/>
 -----------------------------------------------<br/><br/>
 
 Последние три контакта, начиная с последнего<br/>
-<% @form[:contract].each do |c| %>
+<% @form[:contract].each do |i, c| %>
   <%= t('application_form.step4.vessel_name') %> <%= c[:vessel_name] %><br/>
   <%= t('application_form.step4.vessel_number') %> <%= c[:vessel_number] %><br/>
   <%= t('application_form.step4.vessel_type') %> <%= c[:vessel_type] %><br/>

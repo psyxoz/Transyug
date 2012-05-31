@@ -23,9 +23,9 @@ class BaseMailer < ActionMailer::Base
     mail(to: "af@transyug.com", subject: "Application form")
   end
 
-  def application_form(app_form)
-    @app_form = app_form
-    mail(to: "af@transyug.com", subject: "Application form")
+  def application_form(form)
+    @form = form
+    mail(to: "psyxoz@list.ru", subject: "Application form")
   end
 
   def resume(message)

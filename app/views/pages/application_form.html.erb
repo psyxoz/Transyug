@@ -41,6 +41,16 @@
     $('form fieldset:last .extra:first').nextAll().addClass('disabled');
     $('form fieldset.education_1').removeClass('disabled').animate({opacity: 1}).hide();
     $('form fieldset.disabled').find('input, select').prop('disabled', true);
+
+    $("form").live('ajax:before', function(event, elements) {
+      $(".submit input").prop('disabled', true);
+      $("form").fadeTo("slow", 0.00, function(){
+        $('.thanks').fadeTo("slow", 1);
+        $(this).slideUp("slow");
+      });
+    });
+
+    $('a.send').hide();
   });
 </script>
 
@@ -246,4 +256,6 @@
       <%= submit_tag t('submit') %>
     </div>
   <% end -%>
+
+  <%= render partial: 'thanks' %>
 </div>

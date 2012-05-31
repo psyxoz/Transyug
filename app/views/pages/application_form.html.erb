@@ -21,15 +21,15 @@
   }
 
   $(function() {
-    $('.education_1').hide().find('input').prop('disabled', true);
+    $('.education_1').hide().find('input, select').prop('disabled', true);
     $('.education_0 .add_education').click(function(){
       if ($('.education_0').hasClass('disabled')) return false;
-      $('.education_1').fadeIn().find('input').prop('disabled', false);
+      $('.education_1').fadeIn().find('input, select').prop('disabled', false);
       $(this).fadeOut();
       return false;
     });
     $('.education_1 .add_education').click(function(){
-      $('.education_1').fadeOut().find('input').prop('disabled', true);
+      $('.education_1').fadeOut().find('input, select').prop('disabled', true);
       $('.education_0 .add_education').fadeIn();
       return false;
     });

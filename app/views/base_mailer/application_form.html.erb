@@ -9,18 +9,18 @@ E-mail: <%= @form[:personal][:email] %><br/>
 -----------------------------------------------<br/><br/>
 
 Образование<br/>
-<%= t('application_form.step2.institution') %> <%= @form[:education][0][:institution] %><br/>
-<%= t('application_form.step1.city') %> <%= @form[:education][0][:city] %><br/>
-<%= t('application_form.step2.finished') %> <%= @form[:education][0][:finished] %><br/>
-<%= t('application_form.step2.speciality') %> <%= @form[:education][0][:speciality] %><br/>
+<%= t('application_form.step2.institution') %> <%= @form[:education][0][:institution] rescue nil %><br/>
+<%= t('application_form.step1.city') %> <%= @form[:education][0][:city] rescue nil %><br/>
+<%= t('application_form.step2.finished') %> <%= @form[:education][0][:finished] rescue nil %><br/>
+<%= t('application_form.step2.speciality') %> <%= @form[:education][0][:speciality] rescue nil %><br/>
 -----------------------------------------------<br/><br/>
 
 <% if @form[:education][1] %>
   Второе образование<br/>
-  <%= t('application_form.step2.institution') %> <%= @form[:education][1][:institution] %><br/>
-  <%= t('application_form.step1.city') %> <%= @form[:education][1][:city] %><br/>
-  <%= t('application_form.step2.finished') %> <%= @form[:education][1][:finished] %><br/>
-  <%= t('application_form.step2.speciality') %> <%= @form[:education][1][:speciality] %><br/>
+  <%= t('application_form.step2.institution') %> <%= @form[:education][1][:institution] rescue nil %><br/>
+  <%= t('application_form.step1.city') %> <%= @form[:education][1][:city] rescue nil %><br/>
+  <%= t('application_form.step2.finished') %> <%= @form[:education][1][:finished] rescue nil %><br/>
+  <%= t('application_form.step2.speciality') %> <%= @form[:education][1][:speciality] rescue nil %><br/>
   -----------------------------------------------<br/><br/>
 <% end %>
 

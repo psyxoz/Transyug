@@ -188,11 +188,11 @@
       <div class="box extra">
         <div class="field">
           <%= label_tag 'application_form[contract]['+number.to_s+'][vessel_name]', t('application_form.step4.vessel_name') %>
-          <%= text_field_tag 'application_form[professional]['+number.to_s+'][vessel_name]', nil, class: 'input validate[required] required' %>
+          <%= text_field_tag 'application_form[contract]['+number.to_s+'][vessel_name]', nil, class: 'input validate[required] required' %>
         </div>
         <div class="field">
           <%= label_tag 'application_form[contract]['+number.to_s+'][vessel_number]', t('application_form.step4.vessel_number') %>
-          <%= text_field_tag 'application_form[professional]['+number.to_s+'][vessel_number]', nil, class: 'input validate[required] required' %>
+          <%= text_field_tag 'application_form[contract]['+number.to_s+'][vessel_number]', nil, class: 'input validate[required] required' %>
         </div>
         <div class="field big_select">
           <%= label_tag 'application_form[contract]['+number.to_s+'][vessel_type]', t('application_form.step4.vessel_type') %>
@@ -211,16 +211,16 @@
         </div>
         <div class="field">
           <%= label_tag 'application_form[contract]['+number.to_s+'][dwt]', 'DWT:' %>
-          <%= text_field_tag 'application_form[professional]['+number.to_s+'][dwt]', nil, class: 'input validate[required] required' %>
+          <%= text_field_tag 'application_form[contract]['+number.to_s+'][dwt]', nil, class: 'input validate[required] required' %>
         </div>
         <div class="field">
           <div class="engine_type">
             <%= label_tag 'application_form[contract]['+number.to_s+'][main_engine_type]', t('application_form.step4.main_engine_type') %>
-            <%= text_field_tag 'application_form[professional]['+number.to_s+'][main_engine_type]', nil, class: 'input validate[required] required' %>
+            <%= text_field_tag 'application_form[contract]['+number.to_s+'][main_engine_type]', nil, class: 'input validate[required] required' %>
           </div>
           <div class="power">
             <%= label_tag 'application_form[contract]['+number.to_s+'][power]', t('application_form.step4.power') %>
-            <%= text_field_tag 'application_form[professional]['+number.to_s+'][power]', nil, class: 'input validate[required] required' %>
+            <%= text_field_tag 'application_form[contract]['+number.to_s+'][power]', nil, class: 'input validate[required] required' %>
           </div>
         </div>
         <div class="field big_select">

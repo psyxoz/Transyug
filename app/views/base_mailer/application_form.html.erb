@@ -1,6 +1,6 @@
 Личные данные<br/>
 ФИО: <%= @form[:personal][:first_name] %> <%= @form[:personal][:last_name] %><br/>
-<%= t('application_form.step1.birth_date') %> <%= @form[:personal][:birth_date] %><br/>
+<%= t('application_form.step1.birth_date') %> <%= @form[:personal]['birth_date(3i)'] %>-<%= @form[:personal]['birth_date(2i)'] %>-<%= @form[:personal]['birth_date(1i)'] %><br/>
 <%= t('application_form.step1.citizenship') %> <%= @form[:personal][:citizenship] %><br/>
 <%= t('application_form.step1.country') %> <%= @form[:personal][:country] %><br/>
 <%= t('application_form.step1.city') %> <%= @form[:personal][:city] %><br/>
@@ -12,7 +12,7 @@ E-mail: <%= @form[:personal][:email] %><br/>
 <% @form[:education].each do |i, e| %>
 <%= t('application_form.step2.institution') %> <%= e[:institution] rescue nil %><br/>
 <%= t('application_form.step1.city') %> <%= e[:city] rescue nil %><br/>
-<%= t('application_form.step2.finished') %> <%= e[:finished] rescue nil %><br/>
+<%= t('application_form.step2.finished') %> <%= e['finished(3i)'] %>-<%= e['finished(2i)'] %>-<%= e['finished(1i)'] %><br/>
 <%= t('application_form.step2.speciality') %> <%= e[:speciality] rescue nil %><br/>
 -----------------------------------------------<br/>
 <% end %>
@@ -37,7 +37,7 @@ E-mail: <%= @form[:personal][:email] %><br/>
   <%= t('application_form.step4.main_engine_type') %> <%= c[:main_engine_type] %><br/>
   <%= t('application_form.step4.power') %> <%= c[:power] %><br/>
   <%= t('application_form.step4.rank') %> <%= c[:rank] %><br/>
-  <%= t('application_form.step4.date_start') %> <%= c[:date_start] %><br/>
-  <%= t('application_form.step4.date_end') %> <%= c[:date_end] %><br/>
+  <%= t('application_form.step4.date_start') %> <%= c['date_start(3i)'] %>-<%= c['date_start(2i)'] %>-<%= c['date_start(1i)'] %><br/>
+  <%= t('application_form.step4.date_end') %> <%= c['date_end(3i)'] %>-<%= c['date_end(2i)'] %>-<%= c['date_end(1i)'] %><br/>
   -----------------------------------------------<br/>
 <% end %>

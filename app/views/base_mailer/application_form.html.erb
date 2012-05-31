@@ -1,39 +1,39 @@
 Личные данные<br/>
-ФИО: <%= @message[:personal][:first_name] %> <%= @message[:personal][:last_name] %><br/>
-<%= t('application_form.step1.birth_date') %> <%= @message[:personal][:birth_date] %><br/>
-<%= t('application_form.step1.citizenship') %> <%= @message[:personal][:citizenship] %><br/>
-<%= t('application_form.step1.country') %> <%= @message[:personal][:country] %><br/>
-<%= t('application_form.step1.city') %> <%= @message[:personal][:city] %><br/>
-<%= t('application_form.step1.address') %> <%= @message[:personal][:address] %><br/>
-E-mail: <%= @message[:personal][:email] %><br/>
+ФИО: <%= @form[:personal][:first_name] %> <%= @form[:personal][:last_name] %><br/>
+<%= t('application_form.step1.birth_date') %> <%= @form[:personal][:birth_date] %><br/>
+<%= t('application_form.step1.citizenship') %> <%= @form[:personal][:citizenship] %><br/>
+<%= t('application_form.step1.country') %> <%= @form[:personal][:country] %><br/>
+<%= t('application_form.step1.city') %> <%= @form[:personal][:city] %><br/>
+<%= t('application_form.step1.address') %> <%= @form[:personal][:address] %><br/>
+E-mail: <%= @form[:personal][:email] %><br/>
 -----------------------------------------------<br/><br/>
 
 Образование<br/>
-<%= t('application_form.step2.institution') %> <%= @message[:education][0][:institution] %><br/>
-<%= t('application_form.step1.city') %> <%= @message[:education][0][:city] %><br/>
-<%= t('application_form.step2.finished') %> <%= @message[:education][0][:finished] %><br/>
-<%= t('application_form.step2.speciality') %> <%= @message[:education][0][:speciality] %><br/>
+<%= t('application_form.step2.institution') %> <%= @form[:education][0][:institution] %><br/>
+<%= t('application_form.step1.city') %> <%= @form[:education][0][:city] %><br/>
+<%= t('application_form.step2.finished') %> <%= @form[:education][0][:finished] %><br/>
+<%= t('application_form.step2.speciality') %> <%= @form[:education][0][:speciality] %><br/>
 -----------------------------------------------<br/><br/>
 
-<% if @message[:education][1] %>
+<% if @form[:education][1] %>
   Второе образование<br/>
-  <%= t('application_form.step2.institution') %> <%= @message[:education][1][:institution] %><br/>
-  <%= t('application_form.step1.city') %> <%= @message[:education][1][:city] %><br/>
-  <%= t('application_form.step2.finished') %> <%= @message[:education][1][:finished] %><br/>
-  <%= t('application_form.step2.speciality') %> <%= @message[:education][1][:speciality] %><br/>
+  <%= t('application_form.step2.institution') %> <%= @form[:education][1][:institution] %><br/>
+  <%= t('application_form.step1.city') %> <%= @form[:education][1][:city] %><br/>
+  <%= t('application_form.step2.finished') %> <%= @form[:education][1][:finished] %><br/>
+  <%= t('application_form.step2.speciality') %> <%= @form[:education][1][:speciality] %><br/>
   -----------------------------------------------<br/><br/>
 <% end %>
 
 Профессиональные данные<br/>
-<%= t('application_form.step3.position') %> <%= @message[:professional][:position] %><br/>
-<%= t('application_form.step3.english_level') %> <%= @message[:professional][:english_level] %><br/>
-<%= t('application_form.step3.salary') %> <%= @message[:professional][:salary] %><br/>
-<%= t('application_form.step3.malta_endorsement') %> <%= @message[:professional][:malta_endorsement] %><br/>
-<%= t('application_form.step3.date_availability') %> <%= @message[:professional][:date_availability_month] %> <%= @message[:professional][:date_availability_year] %><br/>
+<%= t('application_form.step3.position') %> <%= @form[:professional][:position] %><br/>
+<%= t('application_form.step3.english_level') %> <%= @form[:professional][:english_level] %><br/>
+<%= t('application_form.step3.salary') %> <%= @form[:professional][:salary] %><br/>
+<%= t('application_form.step3.malta_endorsement') %> <%= @form[:professional][:malta_endorsement] %><br/>
+<%= t('application_form.step3.date_availability') %> <%= @form[:professional][:date_availability_month] %> <%= @form[:professional][:date_availability_year] %><br/>
 -----------------------------------------------<br/><br/>
 
 Последние три контакта, начиная с последнего<br/>
-<% @message[:contract].each do |c| %>
+<% @form[:contract].each do |c| %>
   <%= t('application_form.step4.vessel_name') %> <%= c[:vessel_name] %><br/>
   <%= t('application_form.step4.vessel_number') %> <%= c[:vessel_number] %><br/>
   <%= t('application_form.step4.vessel_type') %> <%= c[:vessel_type] %><br/>

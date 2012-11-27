@@ -26,4 +26,5 @@ Transyug::Application.routes.draw do
     match 'partners' => 'partners#index', :as => :partners
   end
 
+  mount Ckeditor::Engine => "/ckeditor"
 end

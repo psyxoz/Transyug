@@ -15,3 +15,5 @@ group :assets do
   gem 'therubyracer', :platform => :ruby
   gem 'uglifier', '>= 1.0.3'
 end
+
+gem 'ckeditor', '3.7.3'

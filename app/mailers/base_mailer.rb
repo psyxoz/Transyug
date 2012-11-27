@@ -20,12 +20,12 @@ class BaseMailer < ActionMailer::Base
         mime_type:  message[:file].content_type
       }
     end
-    mail(to: "af@transyug.com", subject: "Application form")
+    mail(to: "crewing@transyug.com", subject: "Application form")
   end
 
   def application_form(form)
     @form = form
-    mail(to: "psyxoz@list.ru", subject: "Application form")
+    mail(to: "crewing@transyug.com", subject: "Application form")
   end
 
   def resume(message)
@@ -36,11 +36,12 @@ class BaseMailer < ActionMailer::Base
         mime_type:  message[:file].content_type
       }
     end
-    mail(to: "job@transyug.com", subject: "Новое резюме")
+    mail(to: "navitramp@navitramp.com", subject: "Новое резюме")
   end
 
   def contacts(message)
     @message = message
-    mail(to: "contacts@transyug.com", subject: "Запрос с сайта")
+    mails = {'Technical department' => 'technical_department@transyug.com', 'Crewing' => 'crewing@transyug.com', 'General' => 'transyug@transyug.com'}
+    mail(to: mails[message[:department]] || 'transyug@transyug.com', subject: "Запрос с сайта")
   end
 end

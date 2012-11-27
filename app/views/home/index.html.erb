@@ -41,7 +41,7 @@
       <h4><%= t("menu.crewing") %></h4>
       <%== show_translate(@pages[:crewing], :description) %>
       <%= link_to t("fill_in_application_form").html_safe, application_form_path(locale), class: :fill_application %>
-      <%= link_to t("download_application_form").html_safe, "#", class: :download_application %>
+      <%= link_to t("download_application_form").html_safe, "/application_form.doc", class: :download_application %>
     </div>
     <div class="breaker br1"></div>
     <div class="block">

@@ -64,7 +64,7 @@
       </fieldset>
       <fieldset id="step_2">
         <%= label_tag 'message[department]', t('contacts.department') %>
-        <%= select 'message', 'department', departments.collect { |p| [ p, p] }, class: 'input validate[required]' %>
+        <%= select 'message', 'department', departments.collect { |p| [p, p] }, class: 'input validate[required]' %>
         <script type="text/javascript">$("#message_department").MyDropdown();</script>
 
         <%= label_tag 'message[message]', t('technical_department.message') %>

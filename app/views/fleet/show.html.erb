@@ -56,7 +56,7 @@
   <% unless @vessel.location.blank? %>
   <div class="location_map">
     <h5><%= t('vessel.location_map') %></h5>
-    <div class="cover"><%= @vessel.location %></div>
+    <div class="cover"><%== @vessel.location %></div>
   </div>
   <% end %>
 </div>

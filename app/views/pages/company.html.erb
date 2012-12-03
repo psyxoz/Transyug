@@ -23,10 +23,10 @@
   <div class="certificates">
     <% @page.certificates.each do |c| %>
       <% next unless c.file? %>
-      <% if c.file.geometry.first.to_i >= 210 %>
-        <%= link_to image_tag(c.file.url(:small)), c.file.url, class: 'fancybox' %>
-      <% else %>
+      <% if c.file.geometry.last.to_i <= 310 %>
         <%= image_tag c.file.url %>
+      <% else %>
+        <%= link_to image_tag(c.file.url(:small)), c.file.url, class: 'fancybox' %>
       <% end %>
     <% end if @page.certificates %>
   </div>

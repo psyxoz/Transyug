@@ -22,4 +22,9 @@ class PageImageUploader < CarrierWave::Uploader::Base
   def extension_white_list
     %w(jpg jpeg gif png)
   end
+
+  def geometry
+    img = ::Magick::Image::read(@file.file).first
+    [img.columns, img.rows]
+  end
 end

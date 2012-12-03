@@ -4,7 +4,7 @@ module PagesHelper
   end
 
   def departments
-    ['Technical department', :Crewing, :General]
+    [:General, :Crewing, 'Technical department']
   end
 
   def countries

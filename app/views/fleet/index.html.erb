@@ -10,7 +10,7 @@
         <div class="breaker br3"></div>
         <a href="<%= fleet_show_path(locale, v.id) %>" class="vessel">
           <%= image_tag(v.images.first.file.url(:mini)) rescue nil %>
-          <h5><%== show_translate(v, :title) %></h5>
+          <h5 style="width: 130px"><%== show_translate(v, :title) %></h5>
           <%== show_translate(v, :description) %>
         </a>
       </li>
@@ -29,7 +29,7 @@
         <div class="breaker br3"></div>
         <a href="<%= fleet_show_path(locale, v.id) %>" class="vessel">
           <%= image_tag(v.images.first.file.url(:mini)) rescue nil %>
-          <h5><%== show_translate(v, :title) %></h5>
+          <h5 style="width: 130px"><%== show_translate(v, :title) %></h5>
           <%== show_translate(v, :description) %>
         </a>
       </li>

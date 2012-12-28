@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120529191735) do
+ActiveRecord::Schema.define(:version => 20121228163653) do
 
   create_table "countries", :force => true do |t|
     t.string   "name_en"
@@ -32,6 +32,16 @@ ActiveRecord::Schema.define(:version => 20120529191735) do
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
   end
+
+  create_table "menus", :force => true do |t|
+    t.string   "code"
+    t.string   "title"
+    t.boolean  "active",     :default => true
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+  end
+
+  add_index "menus", ["code"], :name => "index_menus_on_code", :unique => true
 
   create_table "page_images", :force => true do |t|
     t.integer  "page_id"

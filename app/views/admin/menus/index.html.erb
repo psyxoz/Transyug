@@ -1,0 +1,39 @@
+<%= stylesheet_link_tag "jquery.fancybox" %>
+<%= javascript_include_tag "jquery.fancybox" %>
+
+<h2>Разделы меню:</h2>
+
+<div class="row block">
+  <% if @menus.size > 0 %>
+    <table class="zebra-striped table">
+      <thead>
+        <tr>
+          <th>Название</th>
+          <th class="medium">Активен?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @menus.each do |menu| %>
+          <tr>
+            <td><%= menu.title %></td>
+            <td><%= check_box_tag "menu_#{menu.code}", menu.active, product.active?, :class => 'active_menu' %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% else %>
+    Нет данных
+  <% end %>
+</div>
+
+<script type="text/javascript">
+  $('.active_menu').change(function(){
+    $.fancybox.showLoading();
+    $.post('/admin/menus/update',
+      { code: $(this).attr('name').split('_')[1], active: $(this).is(':checked') ? 1 : 0 },
+      function(data) {
+        $.fancybox.hideLoading();
+      }
+    );
+  });
+</script>

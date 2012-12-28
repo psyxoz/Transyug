@@ -9,6 +9,9 @@ Transyug::Application.routes.draw do
     resources :users, :partners
     resources :vessels do match :settings, :on => :collection end
     resources :jobs do match :settings, :on => :collection end
+
+    match 'menus' => 'match#index', :as => :menus
+    match 'menus/update' => 'match#update', :as => :menus_update
   end
 
   scope ':locale' do

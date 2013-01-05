@@ -15,10 +15,11 @@ class CreateMenus < ActiveRecord::Migration
       {:code => :chartering,            :title => 'Фрахтование'},
       {:code => :technical_department,  :title => 'Технический отдел'},
       {:code => :crewing,               :title => 'Крюинг'},
-      {:code => :vacancy,               :title => 'Вакансии'},
+      {:code => :jobs,                  :title => 'Вакансии'},
       {:code => :partners,              :title => 'Партнеры'},
       {:code => :contacts,              :title => 'Контакты'}
     ])
+
   end
 
   def down

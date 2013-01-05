@@ -52,29 +52,29 @@
   <div class="footer">
     <%= link_to 'Transyug <br/> Shipping Co. Ltd'.html_safe, root_path(locale), class: :logo %>
     <ul class="menu">
-      <% if menu_active?(:company) %>
-        <li><%= link_to t("menu.company"), page_path(locale, :company) %></li>
-      <% end %>
-      <% if menu_active?(:fleet) %>
-        <li><%= link_to t("menu.fleet"), fleet_path(locale) %></li>
-      <% end %>
-      <% if menu_active?(:chartering) %>
-        <li><%= link_to t("menu.chartering"), page_path(locale, :chartering) %></li>
-      <% end %>
-      <% if menu_active?(:technical_department) %>
-        <li><%= link_to t("menu.technical_department"), page_path(locale, :technical_department) %></li>
-      <% end %>
-      <% if menu_active?(:crewing) %>
-        <li><%= link_to t("menu.crewing"), page_path(locale, :crewing) %></li>
-      <% end %>
-      <% if menu_active?(:jobs) %>
-        <li><%= link_to t("menu.jobs"), jobs_path(locale) %></li>
+      <% if menu_active?(:contacts) %>
+        <li><%= link_to t("menu.contacts"), page_path(locale, :contacts) %></li>
       <% end %>
       <% if menu_active?(:partners) %>
         <li><%= link_to t("menu.partners"), partners_path(locale) %></li>
       <% end %>
-      <% if menu_active?(:contacts) %>
-        <li><%= link_to t("menu.contacts"), page_path(locale, :contacts) %></li>
+      <% if menu_active?(:jobs) %>
+        <li><%= link_to t("menu.jobs"), jobs_path(locale) %></li>
+      <% end %>
+      <% if menu_active?(:crewing) %>
+        <li><%= link_to t("menu.crewing"), page_path(locale, :crewing) %></li>
+      <% end %>
+      <% if menu_active?(:technical_department) %>
+        <li><%= link_to t("menu.technical_department"), page_path(locale, :technical_department) %></li>
+      <% end %>
+      <% if menu_active?(:chartering) %>
+        <li><%= link_to t("menu.chartering"), page_path(locale, :chartering) %></li>
+      <% end %>
+      <% if menu_active?(:fleet) %>
+        <li><%= link_to t("menu.fleet"), fleet_path(locale) %></li>
+      <% end %>
+      <% if menu_active?(:company) %>
+        <li><%= link_to t("menu.company"), page_path(locale, :company) %></li>
       <% end %>
     </ul>
   </div>

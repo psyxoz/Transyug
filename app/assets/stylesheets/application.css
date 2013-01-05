@@ -62,7 +62,7 @@ ul.menu li.active {background: url("manu_bg.png") no-repeat; color: white !impor
 .footer {margin-top: -60px;}
 .footer .logo {background: url("logo_footer.png") no-repeat top left; padding: 2px 0px 10px 60px; height: auto !important; line-height: 22px; font-size: 20px;}
 .footer .menu {width: 720px; float: right; height: 40px; margin: 5px 0 0 !important; text-align: right;}
-.footer .menu li {width: 90px; margin-left: 0; display: inline-block;}
+.footer .menu li {width: 90px; margin-left: 0; display: inline-block; float: right;}
 .footer .menu li a {font-size: 11px;}
 
 .content {position: relative; padding-bottom: 20px}

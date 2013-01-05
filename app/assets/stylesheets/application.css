@@ -49,8 +49,9 @@ ul.lang li a.en {background: url("icons/flag_en.png") no-repeat left center}
 ul.lang li.active {background: url("lang_bg.png") no-repeat;}
 ul.lang li.active a {color: white}
 
-ul.menu {list-style: none; margin: 10px 0 80px -20px; position: relative; overflow: hidden; padding: 0}
-ul.menu li {float: left; width: 100px; margin-left: 20px}
+ul.menu {list-style: none; margin: 10px 0 80px; position: relative; overflow: hidden; padding: 0; text-align: center;}
+ul.menu li {width: 100px; margin-left: 17px; display: inline-block;}
+ul.menu li:first-child {margin-left: 0;}
 ul.menu li a {height: 40px; line-height: 40px; display: block; color: white; text-decoration: underline; text-align: center}
 ul.menu li a:hover {color: #5ccfff;}
 ul.menu li.active {background: url("manu_bg.png") no-repeat; color: white !important;}
@@ -60,8 +61,8 @@ ul.menu li.active {background: url("manu_bg.png") no-repeat; color: white !impor
 .footer, .footer_inner {height: 60px; position: relative;}
 .footer {margin-top: -60px;}
 .footer .logo {background: url("logo_footer.png") no-repeat top left; padding: 2px 0px 10px 60px; height: auto !important; line-height: 22px; font-size: 20px;}
-.footer .menu {width: 720px; float: right; height: 40px; margin: 5px 0 0 !important;}
-.footer .menu li {width: 90px; margin-left: 0;}
+.footer .menu {width: 720px; float: right; height: 40px; margin: 5px 0 0 !important; text-align: right;}
+.footer .menu li {width: 90px; margin-left: 0; display: inline-block;}
 .footer .menu li a {font-size: 11px;}
 
 .content {position: relative; padding-bottom: 20px}

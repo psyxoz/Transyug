@@ -1,54 +1,67 @@
 <div class="home">
   <div class="left_column">
-    <div class="block">
-      <h4><%= t("menu.company") %></h4>
-      <%== show_translate(@pages[:company], :description) %>
-      <%= link_to t("more_information"), page_path(locale, :company), class: :link_more %>
-    </div>
-    <div class="breaker br2"></div>
-    <div class="block">
-      <h4><%= t("technical_department.name") %></h4>
-      <%== show_translate(@pages[:technical_department], :description) %>
-      <%= link_to t("list_of_necessary_equipment").html_safe, page_path(locale, :technical_department), class: :link_list_equipment %>
-    </div>
+    <% if menu_active?(:company) %>
+      <div class="block">
+        <h4><%= t("menu.company") %></h4>
+        <%== show_translate(@pages[:company], :description) %>
+        <%= link_to t("more_information"), page_path(locale, :company), class: :link_more %>
+      </div>
+      <%= '<div class="breaker br2"></div>'.html_safe if menu_active?(:technical_department) %>
+    <% end %>
+
+    <% if menu_active?(:technical_department) %>
+      <div class="block">
+        <h4><%= t("technical_department.name") %></h4>
+        <%== show_translate(@pages[:technical_department], :description) %>
+        <%= link_to t("list_of_necessary_equipment").html_safe, page_path(locale, :technical_department), class: :link_list_equipment %>
+      </div>
+    <% end %>
   </div>
 
   <div class="center_column">
-    <% if @vessel %>
-    <div class="block vessel">
-      <h4><%= t("menu.fleet") %></h4>
-      <%= image_tag(@vessel.images.first.file.url(:mini)) rescue nil %>
-      <%= link_to show_translate(@vessel, :title), fleet_show_path(locale, @vessel.id), class: :link_vessel %>
-      <%== show_translate(@vessel, :description) %>
-      <div class="clear"></div>
-      <%= link_to t("all_fleet"), fleet_path(locale), class: :link_fleet %>
-    </div>
+    <% if menu_active?(:fleet) && @vessel %>
+      <div class="block vessel">
+        <h4><%= t("menu.fleet") %></h4>
+        <%= image_tag(@vessel.images.first.file.url(:mini)) rescue nil %>
+        <%= link_to show_translate(@vessel, :title), fleet_show_path(locale, @vessel.id), class: :link_vessel %>
+        <%== show_translate(@vessel, :description) %>
+        <div class="clear"></div>
+        <%= link_to t("all_fleet"), fleet_path(locale), class: :link_fleet %>
+      </div>
+      <%= '<div class="breaker br3"></div>'.html_safe if menu_active?(:jobs) %>
     <% end %>
-    <div class="breaker br3"></div>
-    <div class="block">
-      <h4><%= t("menu.jobs") %></h4>
-      <%== show_translate(@pages[:jobs], :description) %>
-      <ul class="jobs">
-        <% @jobs.each do |j| %>
-          <li><%= link_to show_translate(j, :title), jobs_path(locale) %></li>
-        <% end %>
-      </ul>
-    </div>
+
+    <% if menu_active?(:jobs) %>
+      <div class="block">
+        <h4><%= t("menu.jobs") %></h4>
+        <%== show_translate(@pages[:jobs], :description) %>
+        <ul class="jobs">
+          <% @jobs.each do |j| %>
+            <li><%= link_to show_translate(j, :title), jobs_path(locale) %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
   </div>
 
   <div class="right_column">
-    <div class="block">
-      <h4><%= t("menu.crewing") %></h4>
-      <%== show_translate(@pages[:crewing], :description) %>
-      <%= link_to t("fill_in_application_form").html_safe, application_form_path(locale), class: :fill_application %>
-      <%= link_to t("download_application_form").html_safe, "/application_form.doc", class: :download_application %>
-    </div>
-    <div class="breaker br1"></div>
-    <div class="block">
-      <h4><%= t("contacts_home") %></h4>
-      <%== show_translate(@pages[:contacts], :description) %>
-      <%= link_to t("look_on_the_map").html_safe, page_path(locale, :contacts), class: :map %>
-    </div>
+    <% if menu_active?(:crewing) %>
+      <div class="block">
+        <h4><%= t("menu.crewing") %></h4>
+        <%== show_translate(@pages[:crewing], :description) %>
+        <%= link_to t("fill_in_application_form").html_safe, application_form_path(locale), class: :fill_application %>
+        <%= link_to t("download_application_form").html_safe, "/application_form.doc", class: :download_application %>
+      </div>
+      <%= '<div class="breaker br1"></div>'.html_safe if menu_active?(:contacts) %>
+    <% end %>
+
+    <% if menu_active?(:contacts) %>
+      <div class="block">
+        <h4><%= t("contacts_home") %></h4>
+        <%== show_translate(@pages[:contacts], :description) %>
+        <%= link_to t("look_on_the_map").html_safe, page_path(locale, :contacts), class: :map %>
+      </div>
+    <% end %>
   </div>
   <div class="clear"></div>
 </div>

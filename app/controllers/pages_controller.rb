@@ -5,6 +5,8 @@ class PagesController < ApplicationController
     Page.send("#{@active_page}_config".to_sym) if Page.respond_to?("#{@active_page}_config")
 
     @page = Page.find_by_code(@active_page)
+    check_menu(@page.code)
+
     if @page.code == 'technical_department'
       @options = PageOption.only_parents.where(page_id: @page.id, locale: I18n.locale)
     end

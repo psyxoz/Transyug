@@ -1,5 +1,6 @@
 class JobsController < ApplicationController
   def index
+    check_menu(:jobs)
     @page = Page.find_by_code(:jobs)
     @jobs = Job.order('created_at DESC')
   end

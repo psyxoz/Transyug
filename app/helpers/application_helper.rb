@@ -37,4 +37,8 @@ module ApplicationHelper
       value
     end
   end
+
+  def menu_active?(code)
+    @active_menus.include?(code.to_s)
+  end
 end

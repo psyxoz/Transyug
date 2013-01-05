@@ -1,7 +1,7 @@
 # encoding : utf-8
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  before_filter :prepare_locale
+  before_filter :prepare_locale, :prepare_menus
 
   def prepare_locale
     if params[:locale] == nil
@@ -9,6 +9,14 @@ class ApplicationController < ActionController::Base
     else
       I18n.locale = params[:locale]
     end
+  end
+
+  def prepare_menus
+    @active_menus ||= Menu.active.map(&:code)
+  end
+
+  def check_menu(code)
+    redirect_to root_url unless @active_menus.include?(code)
   end
 
   def only_for_admin

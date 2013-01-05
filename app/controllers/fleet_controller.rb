@@ -1,4 +1,8 @@
 class FleetController < ApplicationController
+  before_filter do
+    check_menu(:fleet)
+  end
+
   def index
     @page = Page.find_by_code(:fleet)
     @vessels = Vessel.active

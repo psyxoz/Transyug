@@ -16,7 +16,7 @@
         <% @menus.each do |menu| %>
           <tr>
             <td><%= menu.title %></td>
-            <td><%= check_box_tag "menu_#{menu.code}", menu.active, product.active?, :class => 'active_menu' %></td>
+            <td><%= check_box_tag "menu_#{menu.code}", menu.active, menu.active?, :class => 'active_menu' %></td>
           </tr>
         <% end %>
       </tbody>

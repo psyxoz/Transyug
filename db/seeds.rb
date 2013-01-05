@@ -16,6 +16,7 @@ if Rails.env != 'production'
     {:code => :technical_department,  :title_ru => "Технический отдел"},
     {:code => :crewing,               :title_ru => "Крюинг"},
     {:code => :jobs,                  :title_ru => "Вакансии"},
+    {:code => :partners,              :title_ru => "Партнеры"},
     {:code => :contacts,              :title_ru => "Контакты"}
   ])
 end

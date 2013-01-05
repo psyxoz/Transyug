@@ -22,7 +22,7 @@
     <li class='<%= active_class('contacts') %>'><%= link_to 'Контакты', admin_page_path(:contacts) %></li>
   </ul>
   <ul class="nav pull-right">
-    <li><%= link_to 'Настройки', menus_path %></li>
+    <li><%= link_to 'Настройки', admin_menus_path %></li>
     <li><%= link_to 'Пользователи', admin_users_path %></li>
     <li><%= link_to 'Выход', destroy_user_session_path, :method => :delete %></li>
   </ul>

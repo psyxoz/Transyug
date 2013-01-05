@@ -16,7 +16,7 @@
         <% @menus.each do |menu| %>
           <tr>
             <td><%= menu.title %></td>
-            <td><%= check_box_tag "menu_#{menu.code}", menu.active, menu.active?, :class => 'active_menu' %></td>
+            <td><%= check_box_tag menu.code, menu.active, menu.active?, :class => 'active_menu' %></td>
           </tr>
         <% end %>
       </tbody>
@@ -30,7 +30,7 @@
   $('.active_menu').change(function(){
     $.fancybox.showLoading();
     $.post('/admin/menus/update',
-      { code: $(this).attr('name').split('_')[1], active: $(this).is(':checked') ? 1 : 0 },
+      { code: $(this).attr('name'), active: $(this).is(':checked') ? 1 : 0 },
       function(data) {
         $.fancybox.hideLoading();
       }

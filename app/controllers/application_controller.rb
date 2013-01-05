@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
   end
 
   def check_menu(code)
-    redirect_to root_url unless @active_menus.include?(code)
+    redirect_to root_url unless @active_menus.include?(code.to_s)
   end
 
   def only_for_admin

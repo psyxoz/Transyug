@@ -56,13 +56,13 @@ ru:
     app_form: 'Вы можете заполнить <i>Application Form</i> прямо сейчас!'
     app_form_info: 'Вы можете также скачать %{form}<br/> и отправить заполненный документ по адресу: %{email}<br/> или с помощью этой формы:'
     app_form_title: 'Отправьте нам заполненную Application Form сейчас.'
-    app_form_description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sollicitudin vulputate augue, nec tempor nulla sodales at. Quisque venenatis lacus nec risus pellentesque at suscipit metus adipiscing. '
+    app_form_description: 'Скачайте по ссылке и отправьте нам Вашу Application Form.'
     file: 'Загрузите файл'
     file_support: 'Поддерживаем только DOC файлы.'
 
   jobs:
     form_title: 'Отправьте нам Ваше резюме прямо сейчас!'
-    form_description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sollicitudin vulputate augue, nec tempor nulla sodales at. Quisque venenatis lacus nec risus pellentesque at suscipit metus adipiscing. '
+    form_description: 'Если вы хотите работать в нашей компании, отправьте Ваше резюме.'
     file_support: 'Только DOC или PDF файл.'
 
   contacts:

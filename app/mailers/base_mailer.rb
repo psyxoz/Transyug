@@ -25,6 +25,10 @@ class BaseMailer < ActionMailer::Base
 
   def application_form(form)
     @form = form
+    @countries = {}
+    Country.where(independent: 1).order("`order` desc, `name_ru` asc").map do |c|
+      @countries[c.id] = c.name_ru  
+    end
     mail(to: "crewing@transyug.com", subject: "Application form")
   end
 

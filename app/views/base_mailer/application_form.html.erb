@@ -1,8 +1,8 @@
 Личные данные<br/>
 ФИО: <%= @form[:personal][:first_name] %> <%= @form[:personal][:last_name] %><br/>
 <%= t('application_form.step1.birth_date') %> <%= @form[:personal]['birth_date(3i)'] %>-<%= @form[:personal]['birth_date(2i)'] %>-<%= @form[:personal]['birth_date(1i)'] %><br/>
-<%= t('application_form.step1.citizenship') %> <%= @form[:personal][:citizenship] %><br/>
-<%= t('application_form.step1.country') %> <%= @form[:personal][:country] %><br/>
+<%= t('application_form.step1.citizenship') %> <%= @countries[@form[:personal][:citizenship].to_i] || '' %><br/>
+<%= t('application_form.step1.country') %> <%= @countries[@form[:personal][:country].to_i] || '' %><br/>
 <%= t('application_form.step1.city') %> <%= @form[:personal][:city] %><br/>
 <%= t('application_form.step1.address') %> <%= @form[:personal][:address] %><br/>
 E-mail: <%= @form[:personal][:email] %><br/>

@@ -13,8 +13,8 @@ module PagesHelper
   
   def positions
     ['Master','Chief Officer','Second Officer','Third Officer','Boatswain','Able Seaman','Ordinary Seaman','Cook',
-     'Able Seaman/Cook','Chief','Engineer','Second Engineer','Third Engineer','Electro Engineer','Motorman',
-     'Motorman/Welder','Able Seaman/Welder','Motorman/Turner','Welder','Turner']
+     'Able Seaman &#47; Cook','Chief','Engineer','Second Engineer','Third Engineer','Electro Engineer','Motorman',
+     'Motorman &#47; Welder','Able Seaman &#47; Welder','Motorman &#47; Turner','Welder','Turner']
   end
   
   def english_levels
@@ -38,7 +38,7 @@ module PagesHelper
   
   def ranks
     ['Master','Chief Officer','Second Officer','Third Officer','Boatswain','Able Seaman','Ordinary Seaman','Cook',
-     'Able Seaman/Cook','Chief','Engineer','Second Engineer','Third Engineer','Electro Engineer','Motorman',
-     'Motorman/Welder','Able Seaman/Welder','Motorman/Turner','Welder','Turner']
+     'Able Seaman &#47; Cook','Chief','Engineer','Second Engineer','Third Engineer','Electro Engineer','Motorman',
+     'Motorman &#47; Welder','Able Seaman &#47; Welder','Motorman &#47; Turner','Welder','Turner']
   end
 end

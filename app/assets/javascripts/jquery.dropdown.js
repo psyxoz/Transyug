@@ -36,7 +36,7 @@
 			{
 				val = menuoptions[i].value;
 				txt = menuoptions[i].text;
-				genMenu += "<LI v=" + val +">" + txt;
+				genMenu += "<LI v='" + val +"'>" + txt + "</LI>";
 			}
 
       var parent_prefix = selectmenu.attr('id').split('_');

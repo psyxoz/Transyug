@@ -31,6 +31,7 @@ class Admin::UsersController < ApplicationController
   def create
     params[:user][:password] = params[:password] if params[:password] && !params[:password].blank?
     @user = User.new(params[:user])
+    @user.role = 'admin'
     if @user.save()
       flash[:notice] = "Пользователь добавлен."
       redirect_to :action => :index

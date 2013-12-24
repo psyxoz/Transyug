@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.3'
+gem 'rails', '3.2.16'
 gem 'mysql2'
 gem 'jquery-rails'
 gem 'twitter-bootstrap-rails'
@@ -17,3 +17,4 @@ group :assets do
 end
 
 gem 'ckeditor', '3.7.3'
+gem 'rack-tor-block'

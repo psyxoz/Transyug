@@ -15,29 +15,42 @@ class PagesController < ApplicationController
   end
 
   def chartering_send
-    BaseMailer.chartering(params[:message], request.remote_ip).deliver unless params[:message].blank?
+    unless params[:message].blank?
+      IpTracking.create(message: params[:message], ip: request.remote_ip)
+      BaseMailer.chartering(params[:message], request.remote_ip).deliver
+    end
     render :nothing => true
   end
 
   def technical_department_send
-    BaseMailer.technical_department(params[:message], request.remote_ip).deliver unless params[:message].blank?
+    unless params[:message].blank?
+      IpTracking.create(message: params[:message], ip: request.remote_ip)
+      BaseMailer.technical_department(params[:message], request.remote_ip).deliver
+    end
     render :nothing => true
   end
 
   def crewing_send
-    BaseMailer.crewing(params[:message], request.remote_ip).deliver unless params[:message].blank?
+    unless params[:message].blank?
+      IpTracking.create(message: params[:message], ip: request.remote_ip)
+      BaseMailer.crewing(params[:message], request.remote_ip).deliver
+    end
     render :nothing => true
   end
 
   def application_form
     unless params[:application_form].blank?
+      IpTracking.create(message: params[:message], ip: request.remote_ip)
       BaseMailer.application_form(params[:application_form], request.remote_ip).deliver
       render :nothing => true
     end
   end
 
   def contacts_send
-    BaseMailer.contacts(params[:message], request.remote_ip).deliver unless params[:message].blank?
+    unless params[:message].blank?
+      IpTracking.create(message: params[:message], ip: request.remote_ip)
+      BaseMailer.contacts(params[:message], request.remote_ip).deliver
+    end
     render :nothing => true
   end
 end

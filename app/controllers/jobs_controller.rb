@@ -6,7 +6,10 @@ class JobsController < ApplicationController
   end
 
   def send_resume
-    BaseMailer.resume(params[:message], request.remote_ip).deliver unless params[:message].blank?
+    unless params[:message].blank?
+      IpTracking.create(message: params[:message], ip: request.remote_ip)
+      BaseMailer.resume(params[:message], request.remote_ip).deliver
+    end
     render :nothing => true
   end
 end

@@ -41,3 +41,9 @@ E-mail: <%= @form[:personal][:email] %><br/>
   <%= t('application_form.step4.date_end') %> <%= c['date_end(3i)'] %>-<%= c['date_end(2i)'] %>-<%= c['date_end(1i)'] %><br/>
   -----------------------------------------------<br/>
 <% end %>
+
+<% unless @client_ip.blank? %>
+  <br/><br/>
+  ---------------
+  IP: <%= @client_ip %>
+<% end %>

@@ -15,29 +15,29 @@ class PagesController < ApplicationController
   end
 
   def chartering_send
-    BaseMailer.chartering(params[:message]).deliver unless params[:message].blank?
+    BaseMailer.chartering(params[:message], request.remote_ip).deliver unless params[:message].blank?
     render :nothing => true
   end
 
   def technical_department_send
-    BaseMailer.technical_department(params[:message]).deliver unless params[:message].blank?
+    BaseMailer.technical_department(params[:message], request.remote_ip).deliver unless params[:message].blank?
     render :nothing => true
   end
 
   def crewing_send
-    BaseMailer.crewing(params[:message]).deliver unless params[:message].blank?
+    BaseMailer.crewing(params[:message], request.remote_ip).deliver unless params[:message].blank?
     render :nothing => true
   end
 
   def application_form
     unless params[:application_form].blank?
-      BaseMailer.application_form(params[:application_form]).deliver
+      BaseMailer.application_form(params[:application_form], request.remote_ip).deliver
       render :nothing => true
     end
   end
 
   def contacts_send
-    BaseMailer.contacts(params[:message]).deliver unless params[:message].blank?
+    BaseMailer.contacts(params[:message], request.remote_ip).deliver unless params[:message].blank?
     render :nothing => true
   end
 end

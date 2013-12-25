@@ -10,3 +10,9 @@ Cargo quantity: <%= @message[:cargo_quantity] %> <br/>
 Cargo tolerance: <%= @message[:cargo_tolerance] %> <br/>
 Load rate: <%= @message[:load_rate] %> <br/>
 Discharge rate: <%= @message[:discharge_rate] %>
+
+<% unless @client_ip.blank? %>
+  <br/><br/>
+  ---------------
+  IP: <%= @client_ip %>
+<% end %>

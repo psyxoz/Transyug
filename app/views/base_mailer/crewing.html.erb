@@ -1,2 +1,8 @@
 ФИО: <%= @message[:name] %> <br/>
 E-mail: <%= @message[:email] %>
+
+<% unless @client_ip.blank? %>
+  <br/><br/>
+  ---------------
+  IP: <%= @client_ip %>
+<% end %>

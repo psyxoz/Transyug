@@ -3,3 +3,9 @@
 E-mail: <%= @message[:email] %> <br/>
 Отдел: <%= @message[:department] %> <br/>
 Сообщение: <%= @message[:message] %>
+
+<% unless @client_ip.blank? %>
+  <br/><br/>
+  ---------------
+  IP: <%= @client_ip %>
+<% end %>

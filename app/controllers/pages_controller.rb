@@ -40,7 +40,7 @@ class PagesController < ApplicationController
 
   def application_form
     unless params[:application_form].blank?
-      IpTracking.create(message: params[:message], ip: request.remote_ip)
+      IpTracking.create(message: params[:application_form], ip: request.remote_ip)
       BaseMailer.application_form(params[:application_form], request.remote_ip).deliver
       render :nothing => true
     end

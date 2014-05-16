@@ -63,17 +63,9 @@
         <%= text_field_tag 'message[email]', nil, class: 'input validate[required] required' %>
       </fieldset>
       <fieldset id="step_2">
-        <%= label_tag 'message[department]', t('contacts.department') %>
-        <%= select 'message', 'department', departments.collect { |p| [p, p] }, class: 'input validate[required]' %>
-        <script type="text/javascript">$("#message_department").MyDropdown();</script>
-
+        <input type="hidden" name="message[department]" value="Crewing">
         <%= label_tag 'message[message]', t('technical_department.message') %>
-        <%= text_area_tag 'message[message]', nil, onKeyDown: "limitText(this,this.form.count,162);", onKeyUp: "limitText(this,this.form.count,162);" %>
-
-        <div class="symbols">
-          <span class="symbols_left"><%= t('technical_department.symbols_left') %></span>
-          <%= text_field_tag 'count', 162, readonly: 'readonly', class: 'symbols_count' %>
-        </div>
+        <%= text_area_tag 'message[message]' %>
       </fieldset>
       <div class="clear"></div>
       <div class="arrow_down"></div>

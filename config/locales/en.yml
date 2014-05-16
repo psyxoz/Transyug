@@ -69,7 +69,7 @@ en:
     file_support: 'Support only DOC or PDF files.'
 
   contacts:
-    email_title: 'You can send a message to any department of our company!'
+    email_title: 'You can send a message to crewing department!'
     first_name: 'First name:'
     last_name: 'Last name:'
     department: 'Department:'

@@ -4,11 +4,7 @@ class ApplicationController < ActionController::Base
   before_filter :prepare_locale, :prepare_menus
 
   def prepare_locale
-    if params[:locale] == nil
-      I18n.locale = 'ru'
-    else
-      I18n.locale = params[:locale]
-    end
+    I18n.locale = params[:locale].presence || I18n.default_locale
   end
 
   def prepare_menus

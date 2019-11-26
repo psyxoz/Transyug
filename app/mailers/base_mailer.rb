@@ -21,7 +21,8 @@ class BaseMailer < ActionMailer::Base
     @client_ip = client_ip
 
     if message[:file]
-      attachments['application_form'] = {
+      extension = File.extname(message[:file].original_filename) rescue ''
+      attachments["application_form#{extension}"] = {
         content:    message[:file].read,
         mime_type:  message[:file].content_type
       }
@@ -36,7 +37,7 @@ class BaseMailer < ActionMailer::Base
     @countries = {}
 
     Country.where(independent: 1).order("`order` desc, `name_ru` asc").map do |c|
-      @countries[c.id] = c.name_ru  
+      @countries[c.id] = c.name_ru
     end
 
     mail(to: "crewing@transyug.com", subject: "Application form")
@@ -47,7 +48,8 @@ class BaseMailer < ActionMailer::Base
     @client_ip = client_ip
 
     if message[:file]
-      attachments['resume'] = {
+      extension = File.extname(message[:file].original_filename) rescue ''
+      attachments["resume#{extension}"] = {
         content:    message[:file].read,
         mime_type:  message[:file].content_type
       }
